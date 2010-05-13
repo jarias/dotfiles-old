@@ -9,7 +9,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = macvim
+	editor = mvim 
 [apply]
 	whitespace = nowarn
 [github]
