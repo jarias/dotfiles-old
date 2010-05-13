@@ -1,0 +1,10 @@
+# Include plugins
+require 'autotest/fsevent'
+require 'autotest/growl'
+#require 'redgreen/autotest' # yes this is correct
+
+# Skip some paths
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .DS_Store ._* vendor .idea}.each { |exception| autotest.add_exception(exception) }
+  false
+end
