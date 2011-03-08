@@ -1,6 +1,5 @@
 [user]
 	name = Julio Arias
-	email = jarias01@gmail.com
 [alias]
 	co = checkout
 [color]
@@ -9,7 +8,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = mvim 
+	editor = mate
 [apply]
 	whitespace = nowarn
 [github]
