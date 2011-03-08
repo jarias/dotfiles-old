@@ -1,20 +1,21 @@
-#!/usr/bin/ruby
+# activerecord logging methods
+# very useful for digging into
+# queries
+require 'logger'
+require 'activerecord' if rails?(2)
 
-begin
-  require 'hirb' # sudo gem install cldwalker-hirb --source http://gems.github.com
-  Hirb.enable
-rescue LoadError
+def enable_logger
+    log_to(Logger.new(STDOUT))
 end
 
-def change_log(stream)
-  ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.clear_active_connections!
+def disable_logger
+    log_to(nil)
 end
 
-def show_log
-  change_log(STDOUT)
+def log_to(logger)
+    ActiveRecord::Base.logger = logger
+    ActiveRecord::Base.clear_active_connections!
 end
 
-def hide_log
-  change_log(nil)
-end
+# logging into console by default
+enable_logger
