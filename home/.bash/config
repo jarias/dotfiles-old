@@ -47,7 +47,7 @@ PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDi
 parse_git_branch() {
 	local DIRTY STATUS
 	STATUS=$(git status 2>/dev/null)
-	[ $? -eq 1 ] || return
+	[ $? -eq 0 ] || return
 	[[ "$STATUS" == *'working directory clean'* ]] || DIRTY=' *'
 	echo "[git:$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* //')$DIRTY]"
 }
@@ -71,5 +71,5 @@ parse_svn_revision() {
 
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
-PS1="\[$RED\]\u\[$WHITE\] ✱ \[$BLUE\]\$CurDir\[$RED\] \[$CYAN\]\$(parse_git_branch)\[$GREEN\]: ➡ \[$NO_COLOR\]"
+PS1="\[$MAGENTA\]\u\[$WHITE\] ✱ \[$BLUE\]\$CurDir\[$RED\] \[$CYAN\]\$(parse_git_branch)\[$NO_COLOR\]: ➠ "
 EDITOR="mate -w"
