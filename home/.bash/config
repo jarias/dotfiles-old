@@ -1,11 +1,18 @@
-export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=256m"
-export ANT_OPTS="-Xmx512m"
+if [ -f $DROPBOX_HOME/etc/api.keys ]; then
+	. $DROPBOX_HOME/etc/api.keys
+fi
+
+export JAVA_OPTS="-Xms128m -Xmx512m -XX:MaxPermSize=256m"
+export MAVEN_OPTS="$JAVA_OPTS"
+export ANT_OPTS="$JAVA_OPTS"
 export DISPLAY="0:0"
 
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
+
 # misc
 NO_COLOR='\033[0m' #disable any colors
-# regular colors
+
+# Regular Colors
 BLACK='\033[0;30m'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -14,7 +21,8 @@ BLUE='\033[0;34m'
 MAGENTA='\033[0;35m'
 CYAN='\033[0;36m'
 WHITE='\033[0;37m'
-# emphasized (bolded) colors
+
+# Emphasized (bolded) Colors
 EBLACK='\033[1;30m'
 ERED='\033[1;31m'
 EGREEN='\033[1;32m'
@@ -32,7 +40,8 @@ UBLUE='\033[4;34m'
 UMAGENTA='\033[4;35m'
 UCYAN='\033[4;36m'
 UWHITE='\033[4;37m'
-# background colors
+
+# Background Colors
 BBLACK='\033[40m'
 BRED='\033[41m'
 BGREEN='\033[42m'
@@ -42,8 +51,10 @@ BMAGENTA='\033[45m'
 BCYAN='\033[46m'
 BWHITE='\033[47m'
 
+# Cuts the current dir to a max of 30 chars
 PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:10}...${DIR:${#DIR}-17}; else CurDir=$DIR; fi'
 
+# Parses the current git branch and checks if dirty
 parse_git_branch() {
 	local DIRTY STATUS
 	STATUS=$(git status 2>/dev/null)
@@ -52,6 +63,7 @@ parse_git_branch() {
 	echo "[git:$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* //')$DIRTY]"
 }
 
+# Parses the current svn revision and checks if dirty
 parse_svn_revision() {
 	#local DIRTY REV=$(svn info 2>/dev/null | grep Revision | sed -e 's/Revision: //')
 	#[ "$REV" ] || return
@@ -62,14 +74,9 @@ parse_svn_revision() {
 	echo "[svn:$REV$DIRTY]"
 }
 
-#parse_svn_revision() {
-#	local REV=$(svnversion 2>/dev/null)
-#	[ $? -eq 0 ] || return
-#	[ "$REV" == 'exported' ] && return
-#	echo "($REV)"
-#}
-
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
 PS1="\[$MAGENTA\]\u\[$WHITE\] ✱ \[$BLUE\]\$CurDir\[$RED\] \[$CYAN\]\$(parse_git_branch)\[$NO_COLOR\]: ➠ "
+
+# Sets the default editor
 EDITOR="mate -w"
