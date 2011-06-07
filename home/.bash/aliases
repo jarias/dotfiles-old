@@ -155,23 +155,8 @@ function ct() {
 # Ruby
 alias r="rake"
 
-function markdown() { 
-	/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html
-}
-
-# Rails
-alias mr='mongrel_rails start'
-alias ms='mongrel_rails stop'
-alias rp='touch tmp/restart.txt'
-alias sc='./script/console'
-alias sg='./script/generate'
-alias sp='./script/plugin'
-alias ss='./script/server'
-alias tl='tail -f log/*.log'
-alias ts='thin start'
-
 # From http://github.com/suztomo/dotfiles
-function rmf(){
+function trash(){
 	for file in $*
 	do
 		__rm_single_file $file
