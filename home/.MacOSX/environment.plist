@@ -2,21 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AWS_CLOUDWATCH_HOME</key>
-	<string>/usr/local/cloud-watch-api-tools</string>
-	<key>MY_DROPBOX</key>
-	<string>/Users/jarias/Dropbox</string>
-	<key>EC2_HOME</key>
-	<string>/usr/local/ec2-api-tools</string>
-	<key>EC2_PRIVATE_KEY</key>
-	<string>/Users/jarias/.ec2/pk-PCYP5JEXO27IZB7JPW2CCO3EE3SLDBGN.pem</string>
-	<key>EC2_CERT</key>
-	<string>/Users/jarias/.ec2/cert-PCYP5JEXO27IZB7JPW2CCO3EE3SLDBGN.pem</string>
-	<key>ANT_OPTS</key>
-	<string>-Xmx512m</string>
 	<key>DISPLAY</key>
 	<string>0:0</string>
 	<key>JAVA_HOME</key>
 	<string>/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home</string>
+	<key>DROPBOX_HOME</key>
+	<string>/Users/jarias/Dropbox</string>
+	<key>PATH</key>
+	<string>$PATH</string>
 </dict>
 </plist>
