@@ -4,11 +4,13 @@
 <dict>
 	<key>DISPLAY</key>
 	<string>0:0</string>
-	<key>JAVA_HOME</key>
-	<string>/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home</string>
 	<key>DROPBOX_HOME</key>
 	<string>/Users/jarias/Dropbox</string>
+	<key>GRAILS_HOME</key>
+	<string>/opt/local/share/java/grails</string>
+	<key>JAVA_HOME</key>
+	<string>/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home</string>
 	<key>PATH</key>
-	<string>$PATH</string>
+	<string>/opt/local/bin:/opt/local/sbin:$DROPBOX_HOME/bin:$PATH</string>
 </dict>
 </plist>
