@@ -15,3 +15,5 @@
 [github]
 	user = jarias
 	token = e889c91d21858f4429950f62c275446f
+[heroku]
+	account = personal
