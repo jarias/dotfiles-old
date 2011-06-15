@@ -6,3 +6,4 @@
 .DS_Store
 .svn
 *~
+Gemfile.lock
