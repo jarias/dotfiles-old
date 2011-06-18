@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>DISPLAY</key>
-	<string>0:0</string>
+	<string>$DISPLAY</string>
 	<key>DROPBOX_HOME</key>
-	<string>/Users/jarias/Dropbox</string>
+	<string>$DROPBOX_HOME</string>
 	<key>GRAILS_HOME</key>
-	<string>/opt/local/share/java/grails</string>
+	<string>$GRAILS_HOME</string>
 	<key>JAVA_HOME</key>
-	<string>/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home</string>
+	<string>$JAVA_HOME</string>
 	<key>PATH</key>
-	<string>/opt/local/bin:/opt/local/sbin:$DROPBOX_HOME/bin:$PATH</string>
+	<string>$PATH</string>
 </dict>
 </plist>

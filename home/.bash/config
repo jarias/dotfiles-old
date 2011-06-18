@@ -6,6 +6,8 @@ export JAVA_OPTS="-Xms128m -Xmx512m -XX:MaxPermSize=256m"
 export MAVEN_OPTS="$JAVA_OPTS"
 export ANT_OPTS="$JAVA_OPTS"
 export DISPLAY="0:0"
+# Sets the default editor
+export EDITOR="mate -w"
 
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
 
@@ -77,6 +79,3 @@ parse_svn_revision() {
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
 PS1="\[$MAGENTA\]\u\[$WHITE\] ✱ \[$BLUE\]\$CurDir\[$RED\] \[$CYAN\]\$(parse_git_branch)\[$NO_COLOR\]: ➠ "
-
-# Sets the default editor
-EDITOR="mate -w"
