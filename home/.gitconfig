@@ -9,7 +9,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = mate
+	editor = vim
 [apply]
 	whitespace = nowarn
 [github]
