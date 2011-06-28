@@ -3,6 +3,7 @@
 	email = jarias01@gmail.com
 [alias]
 	co = checkout
+  cm = commit
 [color]
 	diff = auto
 	status = auto
