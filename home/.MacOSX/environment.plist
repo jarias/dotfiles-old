@@ -3,14 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>DISPLAY</key>
-	<string>$DISPLAY</string>
-	<key>DROPBOX_HOME</key>
-	<string>$DROPBOX_HOME</string>
+	<string>0:0</string>
 	<key>GRAILS_HOME</key>
-	<string>$GRAILS_HOME</string>
+	<string>/usr/local/Cellar/grails/1.3.7/libexec</string>
 	<key>JAVA_HOME</key>
-	<string>$JAVA_HOME</string>
-	<key>PATH</key>
-	<string>$PATH</string>
+	<string>/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home</string>
 </dict>
 </plist>
