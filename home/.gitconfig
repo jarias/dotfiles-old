@@ -3,6 +3,7 @@
 	email = julio.arias@edify.cr
 [alias]
 	co = checkout
+  cm = commit
 [color]
 	diff = auto
 	status = auto
