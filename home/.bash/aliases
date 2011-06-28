@@ -102,6 +102,18 @@ alias o='open . &'
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 
+# Other
+edify() {
+  if [ -f $DROPBOX_HOME/etc/api-edify.keys ]; then
+    . $DROPBOX_HOME/etc/api-edify.keys
+  fi
+}
+personal() {
+  if [ -f $DROPBOX_HOME/etc/api.keys ]; then
+    . $DROPBOX_HOME/etc/api.keys
+  fi
+}
+
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gb='git branch'

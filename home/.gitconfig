@@ -1,6 +1,5 @@
 [user]
-  name = Julio Arias
-  email = jarias01@gmail.com
+	name = Julio Arias
 [alias]
   co = checkout
   cm = commit
