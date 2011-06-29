@@ -56,6 +56,15 @@ BWHITE='\033[47m'
 # Cuts the current dir to a max of 30 chars
 PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:10}...${DIR:${#DIR}-17}; else CurDir=$DIR; fi'
 
+# Returns my current work context
+get_context() {
+  if [ "$CONTEXT" == 'edify' ]; then
+    echo "[E]"
+  else
+    echo "[P]"
+  fi
+}
+
 # Parses the current git branch and checks if dirty
 parse_git_branch() {
 	local DIRTY STATUS
@@ -78,4 +87,4 @@ parse_svn_revision() {
 
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
-PS1="\[$MAGENTA\]\u\[$WHITE\] ✱ \[$BLUE\]\$CurDir\[$RED\] \[$CYAN\]\$(parse_git_branch)\[$NO_COLOR\]: ➠ "
+PS1="\[$MAGENTA\]\$(get_context) \[$BLUE\]\$CurDir\[$RED\] \[$CYAN\]\$(parse_git_branch)\[$NO_COLOR\]: ➠ "
