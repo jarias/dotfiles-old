@@ -8,7 +8,7 @@ export ANT_OPTS="$JAVA_OPTS"
 export DISPLAY="0:0"
 # Sets the default editor
 export EDITOR="mate -w"
-
+export RBXOPT="-X19 -Xrbc.db"
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
 
 # misc
