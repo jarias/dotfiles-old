@@ -9,7 +9,7 @@
   branch = auto
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor = mvim -f
 [apply]
   whitespace = nowarn
 [heroku]
