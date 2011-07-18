@@ -1,5 +1,7 @@
 My (jarias) default dotfiles!
 
+Use [homesick](https://github.com/technicalpickles/homesick) to installed
+
 # LICENSE:
 
 Copyright (c) 2011 Julio Arias
