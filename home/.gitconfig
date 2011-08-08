@@ -1,5 +1,5 @@
 [user]
-	name = Julio Arias
+  name = Julio Arias
 [alias]
   co = checkout
   cm = commit
@@ -14,3 +14,9 @@
   whitespace = nowarn
 [heroku]
   account = personal
+[difftool "Kaleidoscope"]
+  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+  prompt = false
+[diff]
+  tool = Kaleidoscope
