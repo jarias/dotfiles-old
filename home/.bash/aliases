@@ -20,19 +20,7 @@ done
 # Tomcat
 alias tc='catalina.sh run'
 
-# MySQL
-alias my='mysql5'
-
-# MacPorts
-alias pos='sudo port sync'
-alias pod='port outdated'
-alias poi='sudo port install'
-alias pou='sudo port uninstall'
-alias poc='sudo port uninstall inactive'
-alias pog='sudo port upgrade outdated'
-
 # Ruby Gems
-
 alias gemu='gem update'
 alias gemc='gem cleanup'
 alias gemi='gem install'
@@ -43,9 +31,6 @@ alias reload='source ~/.bash_profile'
 
 # Quicker cd
 alias ..="cd .."
-function cr() {
- cd ~/repos/$*
-}
 
 # My Code folder
 function k() {
@@ -108,7 +93,7 @@ edify() {
     . $DROPBOX_HOME/etc/api-edify.keys
   fi
 }
-personal() {
+jarias() {
   if [ -f $DROPBOX_HOME/etc/api.keys ]; then
     . $DROPBOX_HOME/etc/api.keys
   fi
@@ -122,8 +107,9 @@ alias gc='git commit -v'
 alias gca='git commit -v -a'
 
 get_git_branch() {
-	echo `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  echo `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 }
+
 alias gpull='git pull origin `get_git_branch`'
 alias gpush='git push origin `get_git_branch`'
 

@@ -59,9 +59,9 @@ BWHITE='\033[47m'
 # Returns my current work context
 get_context() {
   if [ "$CONTEXT" == 'edify' ]; then
-    echo "[E]"
+    echo "[edify]"
   else
-    echo "[P]"
+    echo "[jarias]"
   fi
 }
 
