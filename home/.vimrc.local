@@ -22,3 +22,4 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
 au BufRead,BufNewFile {Buildfile,Guardfile} set ft=ruby
+au BufRead,BufNewFile {*.gradle} set ft=groovy
