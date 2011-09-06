@@ -1,6 +1,6 @@
 # Command Enhancements
 
-bundle_commands=( spec rspec cucumber cap watchr rails rackup )
+bundle_commands=( spec rspec cucumber cap guard rails rackup )
  
 function run_bundler_cmd () {
     if [ -e ./Gemfile ]; then
@@ -16,15 +16,6 @@ for cmd in $bundle_commands
 do
     alias $cmd="run_bundler_cmd $cmd"
 done
-
-# Tomcat
-alias tc='catalina.sh run'
-
-# Ruby Gems
-alias gemu='gem update'
-alias gemc='gem cleanup'
-alias gemi='gem install'
-alias gemn='gem uninstall'
 
 # Utility
 alias reload='source ~/.bash_profile'
