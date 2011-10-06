@@ -28,6 +28,8 @@ function k() {
  cd ~/Code/$*
 }
 
+alias g='gradle'
+
 # Common -- Some are from Damian Conway
 alias ls="ls -G"
 alias a='ls -A' # -A all except literal . ..
@@ -112,7 +114,6 @@ alias gnp="git-notpushed"
 alias gp='git push'
 alias gst='git status'
 alias gt='git status'
-alias g='git status'
 alias eg='mate .git/config'
 
 # Git clone from GitHub
