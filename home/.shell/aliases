@@ -1,32 +1,34 @@
 # Command Enhancements
 
-bundle_commands=( spec rspec cucumber cap guard rails rackup )
- 
-function run_bundler_cmd () {
-    if [ -e ./Gemfile ]; then
-        echo "bundle exec $@"
-        bundle exec $@
-    else
-        echo "$@"
-        $@
-    fi
-}
- 
-for cmd in $bundle_commands
-do
-    alias $cmd="run_bundler_cmd $cmd"
-done
-
 # Utility
-alias reload='source ~/.bash_profile'
+alias reload='source ~/.zshrc'
 
 # Quicker cd
 alias ..="cd .."
 
 # My Code folder
-function k() {
- cd ~/Code/$*
+edify() {
+  if [ -f $DROPBOX_HOME/etc/api-edify.keys ]; then
+    . $DROPBOX_HOME/etc/api-edify.keys
+  fi
 }
+jarias() {
+  if [ -f $DROPBOX_HOME/etc/api.keys ]; then
+    . $DROPBOX_HOME/etc/api.keys
+  fi
+}
+
+k() {
+ if [[ "$*" =~ edify* ]]; then
+ 	edify
+ else
+ 	jarias
+ fi
+ cd ~/Code/$1
+}
+
+_k() { _files -W ~/Code -/; }
+compdef _k k
 
 alias g='gradle'
 
@@ -74,18 +76,6 @@ alias o='open . &'
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
-
-# Other
-edify() {
-  if [ -f $DROPBOX_HOME/etc/api-edify.keys ]; then
-    . $DROPBOX_HOME/etc/api-edify.keys
-  fi
-}
-jarias() {
-  if [ -f $DROPBOX_HOME/etc/api.keys ]; then
-    . $DROPBOX_HOME/etc/api.keys
-  fi
-}
 
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
@@ -135,41 +125,3 @@ function ct() {
 
 # Ruby
 alias r="rake"
-
-# From http://github.com/suztomo/dotfiles
-function trash(){
-	for file in $*
-	do
-		__rm_single_file $file
-	done
-}
-
-function __rm_single_file(){
-	if ! [ -d ~/.Trash/ ]
-	then
-		command /bin/mkdir ~/.Trash
-	fi
-
-	if ! [ $# -eq 1 ]
-	then
-		echo "__rm_single_file: 1 argument required but $# passed."
-		exit
-	fi
-
-	if [ -e $1 ]
-	then
-		BASENAME=`basename $1`
-		NAME=$BASENAME
-		COUNT=0
-		while [ -e ~/.Trash/$NAME ]
-		do
-			COUNT=$(($COUNT+1))
-			NAME="$BASENAME.$COUNT"
-		done
-
-		command /bin/mv $1 ~/.Trash/$NAME
-	else
-		echo "No such file or directory: $file"
-	fi
-}
-
