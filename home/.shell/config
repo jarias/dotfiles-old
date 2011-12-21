@@ -6,7 +6,6 @@ export JAVA_OPTS="-Xms128m -Xmx512m -XX:MaxPermSize=256m"
 export MAVEN_OPTS="$JAVA_OPTS"
 export ANT_OPTS="$JAVA_OPTS"
 export GRADLE_OPTS="$JAVA_OPTS"
-export DISPLAY="0:0"
 export EDITOR="subl -w"
 
 # Returns my current work context
