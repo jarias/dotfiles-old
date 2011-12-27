@@ -7,6 +7,6 @@
 	<key>JAVA_HOME</key>
   	<string>/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home</string>
   	<key>GROOVY_HOME</key>
-  	<string>/usr/local/Cellar/groovy/1.8.4/libexec</string>
+  	<string>/usr/local/Cellar/groovy/1.8.5/libexec</string>
 </dict>
 </plist>
