@@ -2,7 +2,7 @@ if [ -f $DROPBOX_HOME/etc/api.keys ]; then
 	. $DROPBOX_HOME/etc/api.keys
 fi
 
-export JAVA_OPTS="-Xms128m -Xmx512m -XX:MaxPermSize=256m"
+export JAVA_OPTS="-server -Xms512m -Xmx512m -XX:MaxPermSize=128m"
 export MAVEN_OPTS="$JAVA_OPTS"
 export ANT_OPTS="$JAVA_OPTS"
 export GRADLE_OPTS="$JAVA_OPTS"
