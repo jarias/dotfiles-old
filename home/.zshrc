@@ -24,14 +24,12 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx bundler rvm)
+plugins=(brew osx bundler)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 source ~/.shell/aliases
 source ~/.shell/paths
 source ~/.shell/config
+
+eval "$(rbenv init -)"

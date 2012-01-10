@@ -1,3 +1,17 @@
+# Git
+alias st='git status'
+alias gpl='git smart-pull'
+alias gps='git push'
+alias gt='git track'
+alias gco='git co'
+alias gl='git l'
+alias glo='git lol'
+alias gcm='git cm'
+alias gun='git unstage'
+alias gts='git staged'
+alias gdf='git unstaged'
+alias ga='git add . ; git status'
+
 # Command Enhancements
 
 # Utility
@@ -33,7 +47,7 @@ compdef _k k
 alias g='gradle'
 
 # Common -- Some are from Damian Conway
-alias ls="ls -G"
+alias ls='ls -G'
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
 alias c='clear'
@@ -47,7 +61,7 @@ alias h='history'
 alias l.='ls -d .[^.]*'
 alias l='ls -lhGt'  # -l long listing, most recent first
                     # -G color
-alias lh="ls -lh"
+alias lh='ls -lh'
 alias ll='ls -lhG'  # -l long listing, human readable, no group info
 alias lt='ls -lt' # sort with recently modified first
 alias md='mkdir -p'
@@ -71,57 +85,9 @@ function zipr() {
 # Finder
 alias o='open . &'
 
-# General code
-
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
-
-# Git
-alias ungit="find . -name '.git' -exec rm -rf {} \;"
-alias gb='git branch'
-alias gba='git branch -a'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-
-get_git_branch() {
-  echo `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-}
-
-alias gpull='git pull origin `get_git_branch`'
-alias gpush='git push origin `get_git_branch`'
-
-alias gco='git checkout'
-alias gd='git diff'
-alias gdm='git diff master'
-alias gl='git pull'
-alias gnp="git-notpushed"
-alias gp='git push'
-alias gst='git status'
-alias gt='git status'
-alias eg='mate .git/config'
-
-# Git clone from GitHub
-function gch() {
-	git clone git://github.com/$USER/$1.git
-}
-
-# Setup a tracking branch from [remote] [branch_name]
-function gbt() { 
-	git branch --track $2 $1/$2 && git checkout $2
-}
-
-# Quickly clobber a file and checkout
-function grf() { 
-	rm $1
-	git checkout $1 
-}
-
-# Regenerate TAGS file from file arguments
-function ct() {
-	rm -f TAGS
-	etags --append --output=TAGS $*
-}
 
 # Ruby
 alias r="rake"
