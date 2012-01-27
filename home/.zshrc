@@ -27,6 +27,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(brew osx bundler)
 
 source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 
 source ~/.shell/aliases
 source ~/.shell/paths
