@@ -11,6 +11,7 @@ alias gun='git unstage'
 alias gts='git staged'
 alias gdf='git unstaged'
 alias ga='git add . ; git status'
+alias gau='git add -u ; git status'
 
 # Command Enhancements
 
