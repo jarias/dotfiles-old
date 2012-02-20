@@ -46,7 +46,7 @@ _k() { _files -W ~/Code -/; }
 compdef _k k
 
 alias g='gradle'
-alias gtr='GRADLE_OPTS="-javaagent:$REBEL_HOME/jrebel.jar -Drebel.log4j-plugin=false $JAVA_OPTS" g tomcatRun'
+alias gtr='GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 -javaagent:$REBEL_HOME/jrebel.jar -Drebel.log4j-plugin=false $JAVA_OPTS" g tomcatRun'
 
 # Common -- Some are from Damian Conway
 alias ls='ls -G'
