@@ -13,6 +13,13 @@ alias gdf='git unstaged'
 alias ga='git add . ; git status'
 alias gau='git add -u ; git status'
 
+# Git flow
+alias gfft='git flow feature start'
+alias gfff='git flow feature finish'
+alias gfrt='git flow release start'
+alias gfrf='git flow release finish'
+alias gfi='git flow init'
+
 # Command Enhancements
 
 # Utility
@@ -46,8 +53,7 @@ _k() { _files -W ~/Code -/; }
 compdef _k k
 
 alias g='gradle'
-alias gtr='GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 -javaagent:$REBEL_HOME/jrebel.jar -Drebel.log4j-plugin=false $JAVA_OPTS" g tomcatRun'
-
+alias gtd='GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" gradle tomcatRun'
 # Common -- Some are from Damian Conway
 alias ls='ls -G'
 alias a='ls -A' # -A all except literal . ..
