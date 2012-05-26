@@ -29,9 +29,9 @@ plugins=(brew osx bundler)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
-source ~/.shell/aliases
-source ~/.shell/paths
-source ~/.shell/config
+[[ -s $HOME/.shell/aliases ]] && source $HOME/.shell/aliases
+[[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
+[[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
