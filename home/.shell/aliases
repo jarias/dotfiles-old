@@ -10,8 +10,8 @@ alias gcm='git cm'
 alias gun='git unstage'
 alias gts='git staged'
 alias gdf='git unstaged'
-alias ga='git add . ; git status'
-alias gau='git add -u ; git status'
+alias ga='git add'
+alias gau='git add -u'
 
 # Git flow
 alias gfft='git flow feature start'
@@ -20,7 +20,12 @@ alias gfrt='git flow release start'
 alias gfrf='git flow release finish'
 alias gfi='git flow init'
 
-# Command Enhancements
+# Rails
+alias sc='script/console'
+alias ss='script/server'
+alias sg='script/generate'
+alias tlog='tail -f log/development.log'
+alias migrate='rake db:migrate db:test:clone'
 
 # Utility
 alias reload='source ~/.zshrc'
@@ -56,11 +61,9 @@ k() {
  cd ~/Code/$1
 }
 
-_k() { _files -W ~/Code -/; }
-compdef _k k
-
 alias g='gradle'
 alias gtd='GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" gradle tomcatRun'
+
 # Common -- Some are from Damian Conway
 alias ls='ls -G'
 alias a='ls -A' # -A all except literal . ..
