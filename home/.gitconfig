@@ -26,12 +26,6 @@
   whitespace = nowarn
 [heroku]
   account = personal
-[difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-  prompt = false
-[diff]
-  tool = Kaleidoscope
 [help]
   autocorrect = 1
 [status]
