@@ -6,4 +6,3 @@ export PATH="$PATH:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:
 export GROOVY_HOME="$(brew --prefix groovy)/libexec"
 export GRAILS_HOME="$(brew --prefix grails)/libexec"
 export NODE_PATH="/usr/local/lib/node_modules"
-export ANDROID_SDK_ROOT="$(brew --prefix android-sdk)"
