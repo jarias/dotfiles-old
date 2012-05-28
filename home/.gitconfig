@@ -20,7 +20,7 @@
   branch = auto
   ui = true
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.global-gitignore
   editor = subl -w
 [apply]
   whitespace = nowarn
