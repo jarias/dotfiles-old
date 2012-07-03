@@ -1,6 +1,7 @@
 export DROPBOX_HOME="$HOME/Dropbox"
 export DYLD_LIBRARY_PATH="/Applications/jprofiler6/bin/macos:$DYLD_LIBRARY_PATH"
-export PATH="$PATH:/Applications/Postgres.app/Contents/MacOS/bin:$HOME/.bin"
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$HOME/.bin:$PATH"
 export GROOVY_HOME="$(brew --prefix groovy)/libexec"
 export GRAILS_HOME="$(brew --prefix grails)/libexec"
 export NODE_PATH="/usr/local/lib/node_modules"
+export JAVA_HOME="$(/usr/libexec/java_home)"
