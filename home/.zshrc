@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew osx)
+plugins=(brew osx git-flow)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -33,11 +33,5 @@ unsetopt correct_all
 [[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
 [[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
-__rvm_project_rvmrc
-
 _k() { _files -W ~/Code -/; }
 compdef _k k
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
