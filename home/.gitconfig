@@ -1,5 +1,6 @@
 [user]
 	name = Julio Arias
+	email = jarias01@gmail.com
 [alias]
   co = checkout
   cm = commit
@@ -20,7 +21,7 @@
   branch = auto
   ui = true
 [core]
-  excludesfile = ~/.global-gitignore
+	excludesfile = ~/.global-gitignore
   editor = subl -w
 [apply]
   whitespace = nowarn
@@ -33,3 +34,9 @@
 [push]
   # Only push branches that have been set up to track a remote branch.
   default = current
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
