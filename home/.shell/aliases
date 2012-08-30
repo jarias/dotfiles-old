@@ -1,3 +1,8 @@
+# Git Smart
+alias gup="git smart-pull"
+alias gm="git smart-merge"
+alias gl="git smart-log"
+
 # Utility
 alias reload='source ~/.zshrc'
 
