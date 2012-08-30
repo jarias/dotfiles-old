@@ -96,6 +96,8 @@ GEM
     gherkin (2.11.1)
       json (>= 1.4.6)
     ghost (0.3.0)
+    git-smart (0.1.9)
+      colorize
     grit (2.5.0)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
@@ -265,6 +267,7 @@ DEPENDENCIES
   chef
   fog
   ghost
+  git-smart
   hirb
   homesick
   huffshell
