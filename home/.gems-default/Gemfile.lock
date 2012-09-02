@@ -33,7 +33,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.2.8)
-    af (0.3.18.2)
+    af (0.3.18.4)
       addressable (~> 2.2.6)
       interact (~> 0.4.0)
       json_pure (>= 1.5.1, < 1.7.0)
@@ -78,7 +78,7 @@ GEM
       json (>= 1.4.6)
     diff-lcs (1.1.3)
     erubis (2.7.0)
-    excon (0.15.5)
+    excon (0.16.2)
     ffi (1.1.5)
     fission (0.4.0)
       CFPropertyList (~> 2.0.17)
@@ -93,7 +93,11 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.3)
-    gherkin (2.11.1)
+    gas (0.1.7)
+      highline
+      sshkey (~> 1.2.2)
+      thor (~> 0.14.6)
+    gherkin (2.11.2)
       json (>= 1.4.6)
     ghost (0.3.0)
     git-smart (0.1.9)
@@ -102,15 +106,15 @@ GEM
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
       posix-spawn (~> 0.3.6)
-    highline (1.6.13)
+    highline (1.6.14)
     hike (1.2.1)
     hirb (0.7.0)
     homesick (0.7.0)
       thor (>= 0.14.0)
-    huffshell (0.0.11)
+    huffshell (0.0.13)
       colorize
-    i18n (0.6.0)
-    interact (0.4.6)
+    i18n (0.6.1)
+    interact (0.4.8)
     ipaddress (0.8.0)
     journey (1.0.4)
     json (1.5.4)
@@ -121,7 +125,7 @@ GEM
     knife-rackspace (0.5.14)
       chef (>= 0.10.10)
       fog (~> 1.3)
-    knife-vagrant (0.0.4)
+    knife-vagrant (0.0.5)
     libxml-ruby (2.3.3)
     log4r (1.1.10)
     lolcat (42.0.99)
@@ -198,7 +202,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rhc (0.96.9)
+    rhc (0.97.17)
       archive-tar-minitar
       commander (>= 4.0)
       highline (>= 1.5.1)
@@ -212,19 +216,20 @@ GEM
     rspec-core (2.11.1)
     rspec-expectations (2.11.2)
       diff-lcs (~> 1.1.3)
-    rspec-mocks (2.11.1)
+    rspec-mocks (2.11.2)
     ruby-hmac (0.4.0)
     ruby-vnc (1.0.1)
     rubyzip (0.9.9)
-    slop (3.3.2)
+    slop (3.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sshkey (1.2.3)
     systemu (2.5.2)
     terminal-table (1.4.5)
-    test-unit (2.5.1)
-    thor (0.15.4)
+    test-unit (2.5.2)
+    thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
@@ -265,7 +270,9 @@ PLATFORMS
 DEPENDENCIES
   af
   chef
+  ffi (~> 1.1.5)
   fog
+  gas
   ghost
   git-smart
   hirb
@@ -279,5 +286,6 @@ DEPENDENCIES
   pry
   rails
   rhc
+  thor (~> 0.14.6)
   vagrant
   veewee (= 0.3.0.beta1)

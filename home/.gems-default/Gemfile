@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "thor", "~> 0.14.6"
+gem "ffi", "~> 1.1.5"
 gem "rails"
 gem "hirb"
 gem "chef"
@@ -20,3 +22,4 @@ gem "af"
 gem "vagrant"
 gem "veewee", "0.3.0.beta1"
 gem "git-smart"
+gem "gas"
