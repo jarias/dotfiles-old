@@ -1,0 +1,26 @@
+session:
+  name: "edify"
+  windows:
+    - name: "puresrc"
+      clear: "true"
+      splits:
+        - cmd: "k puresrc/oasis ; c"
+          width: 100
+          height: 75
+          focus: true
+        - cmd: "k puresrc/IntegrationPlatformCommons ; c"
+          height: 25
+        - cmd: "k puresrc/IPCommonsData ; c"
+          width: 50
+    - name: "proctorU"
+      clear: true
+      splits:
+        - cmd: "k edify/proctor-u-bb ; c"
+          width: 100
+          height: 60
+        - cmd: "k edify/proctor-u-bb ; c"
+          height: 40
+    - name: "misc"
+      clear: true
+      splits:
+        - cmd: "c"
