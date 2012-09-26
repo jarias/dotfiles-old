@@ -1,4 +1,5 @@
-color wombat
+set background=dark
+colorscheme solarized
 set gfn=Monaco:h13
 
 set list
@@ -21,5 +22,17 @@ endfunction
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
-au BufRead,BufNewFile {Buildfile,Guardfile} set ft=ruby
 au BufRead,BufNewFile {*.gradle} set ft=groovy
+
+" Bubble single lines
+" nmap <C-k> [e
+" nmap <C-j> ]e
+" Bubble multiple lines
+" vmap <C-k> [egv
+" vmap <C-j> ]egv
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+

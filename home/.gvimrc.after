@@ -1,4 +1,4 @@
-color wombat
+colorscheme solarized
 set gfn=Monaco:h13
 set showtabline=2
 
