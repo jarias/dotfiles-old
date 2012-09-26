@@ -1,5 +1,5 @@
 colorscheme solarized
-set gfn=Monaco:h13
+" set gfn=Monaco:h13
 set showtabline=2
 
 highlight NonText guifg=#4a4a59

@@ -1,6 +1,6 @@
 set background=dark
 colorscheme solarized
-set gfn=Monaco:h13
+" set gfn=Monaco:h13
 
 set list
 set listchars=tab:▸\ ,eol:¬
@@ -25,11 +25,11 @@ nmap _= :call Preserve("normal gg=G")<CR>
 au BufRead,BufNewFile {*.gradle} set ft=groovy
 
 " Bubble single lines
-" nmap <C-k> [e
-" nmap <C-j> ]e
+nmap <LEADER>k [e
+nmap <LEADER>j ]e
 " Bubble multiple lines
-" vmap <C-k> [egv
-" vmap <C-j> ]egv
+vmap <LEADER>k [egv
+vmap <LEADER>j ]egv
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
