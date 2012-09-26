@@ -21,8 +21,8 @@
   branch = auto
   ui = true
 [core]
-	excludesfile = ~/.global-gitignore
-  editor = subl -w
+  excludesfile = ~/.global-gitignore
+  editor = vim
 [apply]
   whitespace = nowarn
 [heroku]
