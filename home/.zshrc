@@ -37,3 +37,5 @@ _k() { _files -W ~/Code -/; }
 compdef _k k
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+eval `gdircolors ~/.dircolors.256dark`
