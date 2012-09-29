@@ -6,10 +6,10 @@ session:
       splits:
         - cmd: "k puresrc/oasis ; c"
           width: 100
-          height: 75
+          height: 50
           focus: true
         - cmd: "k puresrc/IntegrationPlatformCommons ; c"
-          height: 25
+          height: 50
         - cmd: "k puresrc/IPCommonsData ; c"
           width: 50
     - name: "proctorU"
