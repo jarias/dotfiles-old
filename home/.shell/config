@@ -7,8 +7,6 @@ export MAVEN_OPTS="$JAVA_OPTS"
 export ANT_OPTS="$JAVA_OPTS"
 export GRADLE_OPTS="$JAVA_OPTS"
 export EDITOR="vim"
-export RBXOPT="-X19"
-export JRUBY_OPTS="--1.9"
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
