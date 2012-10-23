@@ -38,5 +38,4 @@ compdef _k k
 
 eval `gdircolors ~/.dircolors.256dark`
 
-source ~/.rvm/scripts/rvm
-
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
