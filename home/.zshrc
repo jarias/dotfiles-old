@@ -36,6 +36,8 @@ unsetopt correct_all
 _k() { _files -W ~/Code -/; }
 compdef _k k
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 eval `gdircolors ~/.dircolors.256dark`
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
