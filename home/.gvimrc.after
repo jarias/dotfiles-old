@@ -1,5 +1,5 @@
 colorscheme solarized
-" set gfn=Monaco:h13
+set guifont=Source_Code_Pro_for_Powerline:h14
 set showtabline=2
 
 highlight NonText guifg=#4a4a59
