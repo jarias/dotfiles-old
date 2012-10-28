@@ -9,31 +9,7 @@ alias reload='source ~/.zshrc'
 # Quicker cd
 alias ..="cd .."
 
-# My Code folder
-edify() {
-  if [ -f $DROPBOX_HOME/etc/api-edify.keys ]; then
-    . $DROPBOX_HOME/etc/api-edify.keys
-  fi
-}
-puresrc() {
-  if [ -f $DROPBOX_HOME/etc/api-puresrc.keys ]; then
-    . $DROPBOX_HOME/etc/api-puresrc.keys
-  fi
-}
-jarias() {
-  if [ -f $DROPBOX_HOME/etc/api.keys ]; then
-    . $DROPBOX_HOME/etc/api.keys
-  fi
-}
-
 k() {
- if [[ "$*" =~ edify* ]]; then
- 	edify
- elif [[ "$*" =~ puresrc* ]]; then
-  puresrc
- else
- 	jarias
- fi
  cd ~/Code/$1
 }
 
