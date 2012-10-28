@@ -2,6 +2,10 @@
 	name = Julio Arias
 	email = jarias01@gmail.com
 [alias]
+  undo = reset --soft HEAD^
+  ammend = commit --amend -C HEAD
+  credit = commit --amend --author "$1 <$2>" -C HEAD
+  st = status -sb
   co = checkout
   cm = commit
   # Log display from screencast, with train tracks.
