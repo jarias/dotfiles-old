@@ -10,14 +10,6 @@ session:
           focus: true
         - cmd: "export JAVA_HOME=`/usr/libexec/java_home -v 1.6` ; k puresrc/IntegrationPlatformCommons ; c"
           height: 50
-    - name: "proctorU"
-      clear: true
-      splits:
-        - cmd: "export JAVA_HOME=`/usr/libexec/java_home -v 1.6` ; k edify/proctor-u-bb ; c"
-          width: 100
-          height: 60
-        - cmd: "export JAVA_HOME=`/usr/libexec/java_home -v 1.6` ; c"
-          height: 40
     - name: "misc"
       clear: true
       splits:
