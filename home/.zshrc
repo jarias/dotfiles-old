@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew osx git-flow vagrant)
+plugins=(brew git-flow osx vagrant)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -36,11 +36,9 @@ unsetopt correct_all
 _k() { _files -W ~/Code -/; }
 compdef _k k
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 eval `gdircolors ~/.dircolors.256dark`
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
