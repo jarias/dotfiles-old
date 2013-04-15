@@ -26,7 +26,7 @@
   ui = true
 [core]
   excludesfile = ~/.global-gitignore
-  editor = vim
+  editor = subl -n -w
 [apply]
   whitespace = nowarn
 [heroku]
