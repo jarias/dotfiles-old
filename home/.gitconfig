@@ -29,8 +29,6 @@
   editor = subl -n -w
 [apply]
   whitespace = nowarn
-[heroku]
-  account = personal
 [help]
   autocorrect = 1
 [status]
