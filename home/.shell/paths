@@ -6,4 +6,4 @@ export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 export AWS_RDS_HOME="/usr/local/Library/LinkedKegs/rds-command-line-tools/jars"
 export JREBEL_HOME="/Applications/jrebel"
 export GOPATH=$HOME/Code/jarias/go
-export PATH="$GOPATH/bin:/usr/local/share/npm/bin:/Applications/Postgres.app/Contents/MacOS/bin:$HOME/.bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export PATH="$GOPATH/bin:/usr/local/share/npm/bin:/Applications/Postgres93.app/Contents/MacOS/bin:$HOME/.bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"

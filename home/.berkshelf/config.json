@@ -1,0 +1,31 @@
+{
+  "chef": {
+    "chef_server_url": "https://chef.edify.cr/",
+    "validation_client_name": "chef-validator",
+    "validation_key_path": "/Users/jarias/.chef/chef-validator.pem",
+    "client_key": "/Users/jarias/.chef/admin.pem",
+    "node_name": "admin"
+  },
+  "cookbook": {
+    "copyright": "YOUR_NAME",
+    "email": "YOUR_EMAIL",
+    "license": "reserved"
+  },
+  "vagrant": {
+    "vm": {
+      "box": "precise64",
+      "box_url": "",
+      "forward_port": {
+
+      },
+      "network": {
+        "bridged": false,
+        "hostonly": "33.33.33.10"
+      },
+      "provision": "chef_client"
+    }
+  },
+  "ssl": {
+    "verify": false
+  }
+}
