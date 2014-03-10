@@ -26,7 +26,7 @@
   ui = true
 [core]
   excludesfile = ~/.global-gitignore
-  editor = subl -n -w
+  editor = atom -n -w
 [apply]
   whitespace = nowarn
 [help]
@@ -36,4 +36,3 @@
 [push]
   # Only push branches that have been set up to track a remote branch.
   default = current
-
