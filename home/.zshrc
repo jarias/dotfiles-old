@@ -42,3 +42,5 @@ eval `gdircolors ~/.dircolors.256dark`
 export PATH="/usr/local/heroku/bin:$PATH"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+eval "$(direnv hook $0)"
