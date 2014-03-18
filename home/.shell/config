@@ -1,4 +1,3 @@
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export JAVA_OPTS="-server -XX:MaxPermSize=128m -Xms512m -Xmx512m -Xss512k -XX:+UseCompressedOops"
 export MAVEN_OPTS="$JAVA_OPTS"
 export ANT_OPTS="$JAVA_OPTS"
