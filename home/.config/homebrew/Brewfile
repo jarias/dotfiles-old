@@ -1,0 +1,56 @@
+
+update
+
+tap phinze/cask
+tap homebrew/binary
+
+install maven
+install ant
+install zsh
+install direnv
+install git
+install git-flow-avh
+install gradle
+install hub
+install mariadb
+install mongodb
+install node
+install redis
+install elasticsearch
+install tmux
+install tomcat
+install docker
+install gist
+install go
+install mercurial
+install boot2docker
+install heroku-toolbelt
+install rbenv
+install ruby-build
+
+# casks
+
+install brew-cask
+cask install alfred
+cask install dropbox
+cask install evernote
+cask install firefox
+cask install flash
+cask install google-chrome
+cask install google-drive
+cask install google-hangouts
+cask install hipchat
+cask install intellij-idea
+cask install java
+cask install libreoffice
+cask install reggy
+cask install skype
+cask install sublime-text
+cask install vagrant
+cask install virtualbox
+cask install vlc
+cask install wunderlist
+cask install appcleaner
+cask install postgres
+cask install iterm2
+cask alfred link
