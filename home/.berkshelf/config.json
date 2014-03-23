@@ -2,8 +2,8 @@
   "chef": {
     "chef_server_url": "https://chef.edify.cr/",
     "validation_client_name": "chef-validator",
-    "validation_key_path": "/Users/jarias/.chef/chef-validator.pem",
-    "client_key": "/Users/jarias/.chef/admin.pem",
+    "validation_key_path": "~/.chef/chef-validator.pem",
+    "client_key": "~/.chef/admin.pem",
     "node_name": "admin"
   },
   "cookbook": {
@@ -13,7 +13,7 @@
   },
   "vagrant": {
     "vm": {
-      "box": "precise64",
+      "box": "edify/saucy",
       "box_url": "",
       "forward_port": {
 

@@ -1,1 +1,4 @@
 home/.berkshelf/cookbooks/
+home/.berkshelf/default/
+home/.berkshelf/tmp/
+*.pem
