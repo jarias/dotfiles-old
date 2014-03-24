@@ -2,6 +2,60 @@ My (jarias) default dotfiles!
 
 Use [homesick](https://github.com/technicalpickles/homesick) to install
 
+# Prerequisites
+
+* Install XCode command line tools
+
+```
+curl -O https://raw.githubusercontent.com/edify/macbooks/master/xcode-cli-tools.sh
+chmod +x xcode-cli-tools.sh && ./xcode-cli-tools.sh
+```
+
+* Install homesick
+
+```
+sudo gem install homesick
+```
+
+# Installation
+
+	homesick clone jarias/dotfiles
+	homesick symlink dotfiles
+
+# Post installation
+
+* Install homebrew
+
+```
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
+
+* Bundle my default Brewfile
+
+```
+brew bundle ~/.config/homebrew/Brewfile
+
+ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+```
+
+* Install OH-MY-ZSH
+
+```
+curl -L http://install.ohmyz.sh | sh
+```
+
+* Install Ruby and default Gems
+
+```
+rbenv install 2.1.1
+rbenv global 2.1.1
+gem install bundler
+rbenv rehash
+cd ~/.gems && bundle install
+```
 # LICENSE:
 
 Copyright (c) 2011 Julio Arias
