@@ -27,6 +27,8 @@ install boot2docker
 install heroku-toolbelt
 install rbenv
 install ruby-build
+install reattach-to-user-namespace
+install python
 
 # casks
 
