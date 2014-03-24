@@ -19,7 +19,7 @@ alias reload='source ~/.zshrc'
 alias ..="cd .."
 
 k() {
- cd ~/Code/$1
+ cd ~/Workspace/$1
 }
 
 # Common -- Some are from Damian Conway
