@@ -29,6 +29,7 @@ install rbenv
 install ruby-build
 install reattach-to-user-namespace
 install python
+install packer
 
 # casks
 
