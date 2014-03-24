@@ -72,7 +72,7 @@ unsetopt correct_all
 [[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
 [[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
 
-_k() { _files -W ~/Code -/; }
+_k() { _files -W ~/Workspace -/; }
 compdef _k k
 
 eval `gdircolors ~/.dircolors.256dark`
