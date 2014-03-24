@@ -55,6 +55,7 @@ rbenv global 2.1.1
 gem install bundler
 rbenv rehash
 cd ~/.gems && bundle install
+rbenv rehash
 ```
 # LICENSE:
 
