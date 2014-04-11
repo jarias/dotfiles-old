@@ -2,3 +2,7 @@ home/.berkshelf/cookbooks/
 home/.berkshelf/default/
 home/.berkshelf/tmp/
 *.pem
+home/.config/configstore/
+apiKey.properties
+hub
+home/.chef/checksums/
