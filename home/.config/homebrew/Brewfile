@@ -22,6 +22,7 @@ install tomcat
 install docker
 install gist
 install go
+install gpm
 install mercurial
 install boot2docker
 install heroku-toolbelt
