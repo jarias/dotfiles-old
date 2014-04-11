@@ -6,3 +6,4 @@ home/.config/configstore/
 apiKey.properties
 hub
 home/.chef/checksums/
+home/.chef/knife.rb
