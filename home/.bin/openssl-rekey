@@ -1,0 +1,100 @@
+#!/bin/sh
+
+#
+# openssl-rekey -- generate a new key and CSR for each of the certificate
+#                  files specified on the command line.  Submit the new
+#                  CSRs to your certificate authority for a free reissue.
+#                  Useful for rekeying after a compromise such as Heartbleed.
+#
+# See https://www.agwa.name/blog/post/responding_to_heartbleed_a_script_to_regenerate_ssl_certs_en_masse
+#
+# If you think openssl commands and certificate authority websites are
+# hard to use and annoying, check out https://www.sslmate.com for an
+# easy way to buy and reissue certs right from the command line.
+#
+
+#
+# Copyright (C) 2014 Andrew Ayer
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+# OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#
+# Except as contained in this notice, the name(s) of the above copyright
+# holders shall not be used in advertising or otherwise to promote the
+# sale, use or other dealings in this Software without prior written
+# authorization.
+#
+
+set -e
+
+orig_umask=$(umask)
+
+COUNTRY_CODE=${COUNTRY_CODE:-US}
+
+openssl_config_file=$(mktemp -t rekey.XXXXXX)
+trap 'rm -f $openssl_config_file' EXIT
+cat >"$openssl_config_file" <<-!
+[ req ]
+distinguished_name = req_distinguished_name
+prompt = no
+[ req_distinguished_name ]
+C = $COUNTRY_CODE
+CN = \${ENV::CN}
+!
+
+for crtfile
+do
+	# Determine CN and modulus length of current cert
+	export CN="$(openssl x509 -noout -subject -in "$crtfile" | grep -o 'CN=\([^/]\+\)' | cut -b4-)"
+	if [ -z "$CN" ]
+	then
+		echo "$0: $crtfile: unable to determine common name"
+		exit 1
+	fi
+	modulus_len=$(openssl x509 -noout -modulus -in "$crtfile" | cut -b9- | wc -c)
+	modulus_len=$(expr $modulus_len - 1) # ignore newline char
+	modulus_len=$(expr $modulus_len / 2) # it's hex
+	modulus_len=$(expr $modulus_len '*' 8) # go from bytes to bits
+
+	# Move old files out of the way
+	keyfile="$CN.key"
+	csrfile="$CN.csr"
+	for file in "$keyfile" "$csrfile"
+	do
+		if [ -e "$file.old" ]
+		then
+			echo "$0: $file.old: already exists; please remove/rename"
+			exit 1
+		fi
+	done
+	for file in "$keyfile" "$csrfile"
+	do
+		if [ -e "$file" ]
+		then
+			mv "$file" "$file.old"
+		fi
+	done
+
+	# Generate a new private key
+	umask 077
+	openssl genrsa "$modulus_len" > "$keyfile"
+	umask "$orig_umask"
+
+	# Generate a CSR
+	openssl req -new -key "$keyfile" -config "$openssl_config_file" > "$csrfile"
+done
