@@ -1,10 +1,10 @@
 {
   "chef": {
-    "chef_server_url": "https://chef.edify.cr/",
-    "validation_client_name": "chef-validator",
-    "validation_key_path": "~/.chef/chef-validator.pem",
-    "client_key": "~/.chef/admin.pem",
-    "node_name": "admin"
+    "chef_server_url": "https://api.opscode.com/organizations/edify",
+    "validation_client_name": "edify-validator",
+    "validation_key_path": "~/.chef/edify-validator.pem",
+    "client_key": "~/.chef/jarias.pem",
+    "node_name": "jarias"
   },
   "cookbook": {
     "copyright": "Julio Arias",
