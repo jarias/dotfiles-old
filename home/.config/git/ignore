@@ -4,7 +4,7 @@
 .AppleDouble
 .LSOverride
 
-# Icon must ends with two \r.
+# Icon must end with two \r
 Icon
 
 # Thumbnails
@@ -19,4 +19,4 @@ Icon
 .AppleDesktop
 Network Trash Folder
 Temporary Items
-
+.apdisk
