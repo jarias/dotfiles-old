@@ -7,3 +7,5 @@ apiKey.properties
 hub
 home/.chef/checksums/
 home/.chef/knife.rb
+home/.config/direnv
+
