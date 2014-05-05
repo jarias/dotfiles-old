@@ -1,9 +1,10 @@
-
 update
 
 tap phinze/cask
 tap homebrew/binary
 
+install python
+install coreutils
 install maven
 install ant
 install zsh
@@ -23,14 +24,16 @@ install docker
 install gist
 install go
 install gpm
-install mercurial
 install boot2docker
 install heroku-toolbelt
 install rbenv
 install ruby-build
 install reattach-to-user-namespace
-install python
+install mercurial
 install packer
+install vim
+install macvim
+install speedtest_cli
 
 # casks
 
@@ -53,7 +56,6 @@ cask install sublime-text
 cask install vagrant
 cask install virtualbox
 cask install vlc
-cask install wunderlist
 cask install appcleaner
 cask install postgres
 cask install iterm2
