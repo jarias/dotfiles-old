@@ -1,0 +1,13 @@
+unsetopt correct_all
+
+[[ -s $HOME/.shell/aliases ]] && source $HOME/.shell/aliases
+[[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
+[[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
+
+_k() { _files -W ~/src -/; }
+compdef _k k
+
+eval `gdircolors ~/.dircolors.256dark`
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
