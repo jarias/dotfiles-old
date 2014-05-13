@@ -63,6 +63,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>fef :normal! gg=G``<CR>
 
 let g:go_disable_autoinstall = 1
+let NERDTreeHijackNetrw = 0
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
