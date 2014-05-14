@@ -56,9 +56,10 @@ au BufNewFile,BufRead .jshintrc,jshintrc set ft=javascript
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-			\| exe "normal! g`\"" | endif
+      \| exe "normal! g`\"" | endif
 
-map <C-n> :NERDTreeToggle<CR>
+let mapleader=','
+map <leader>n :NERDTreeToggle<CR>
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
 
