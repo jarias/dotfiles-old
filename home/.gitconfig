@@ -27,6 +27,7 @@
 [core]
   excludesfile = ~/.global-gitignore
   editor = vim
+  autocrlf = input
 [apply]
   whitespace = nowarn
 [help]
