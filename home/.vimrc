@@ -53,17 +53,23 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 au BufNewFile,BufRead .jshintrc,jshintrc set ft=javascript
 
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-      \| exe "normal! g`\"" | endif
+            \| exe "normal! g`\"" | endif
 
 let mapleader=','
 map <leader>n :NERDTreeToggle<CR>
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
 
-let g:go_disable_autoinstall = 1
+" let g:go_disable_autoinstall = 1
 let NERDTreeHijackNetrw = 0
 
 python from powerline.vim import setup as powerline_setup
