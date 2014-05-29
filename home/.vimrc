@@ -49,15 +49,15 @@ au BufNewFile,BufRead *.json set ft=javascript
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
-au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4 list!
 
 au BufNewFile,BufRead .jshintrc,jshintrc set ft=javascript
 
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer> <D-L> :call JsBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <D-L> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <D-L> :call CSSBeautify()<cr>
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
@@ -65,7 +65,9 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
             \| exe "normal! g`\"" | endif
 
 let mapleader=','
+
 map <leader>n :NERDTreeToggle<CR>
+autocmd vimenter * if !argc() | NERDTree | endif
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
 
