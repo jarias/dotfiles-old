@@ -81,6 +81,9 @@ let g:go_disable_autoinstall = 1
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
 
+" CtrlP
+let g:ctrlp_custom_ignore = '\v[\/](tmp|build|node_modules|target|dist|bower_components)|(\.(tmp|swp|ico|git|svn))$'
+
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
