@@ -8,4 +8,6 @@ hub
 home/.chef/checksums/
 home/.chef/knife.rb
 home/.config/direnv
+home/.config/gtk*
+home/.config/inkscape
 
