@@ -43,21 +43,26 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
-" Treat JSON files like JavaScript
-au BufNewFile,BufRead *.json set ft=javascript
-
+" Python
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
+" GO
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4 list!
 
+" Javascript
+au BufNewFile,BufRead *.json set ft=javascript Javascript
 au BufNewFile,BufRead .jshintrc,jshintrc set ft=javascript
+au FileType javascript setlocal ts=4 sw=4 sts=4
+au FileType javascript noremap <buffer> <D-L> :call JsBeautify()<cr>
 
-autocmd FileType javascript noremap <buffer> <D-L> :call JsBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <D-L> :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <D-L> :call CSSBeautify()<cr>
+" HTML
+au FileType html setlocal ts=4 sw=4 sts=4
+au FileType html noremap <buffer> <D-L> :call HtmlBeautify()<cr>
+
+" CSS or SCSS
+au FileType css setlocal ts=4 sw=4 sts=4
+au FileType css noremap <buffer> <D-L> :call CSSBeautify()<cr>
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
@@ -66,13 +71,15 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 
 let mapleader=','
 
+" NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
 autocmd vimenter * if !argc() | NERDTree | endif
+let NERDTreeHijackNetrw = 0
+
+let g:go_disable_autoinstall = 1
+
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
-
-" let g:go_disable_autoinstall = 1
-let NERDTreeHijackNetrw = 0
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
