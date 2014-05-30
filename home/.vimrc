@@ -3,7 +3,7 @@ syntax on
 filetype plugin indent on
 
 colorscheme molokai
-set guifont=Inconsolata-dz\ for\ Powerline:h18
+set guifont=Inconsolata-dz\ for\ Powerline:h14
 set laststatus=2
 
 ""
@@ -43,6 +43,9 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
+set foldmethod=indent
+au BufRead * normal zR
+
 " Python
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
@@ -79,7 +82,7 @@ let NERDTreeHijackNetrw = 0
 let g:go_disable_autoinstall = 1
 
 " format the entire file
-nnoremap <leader>fef :normal! gg=G``<CR>
+nmap <leader>fef :normal! gg=G``<CR>
 
 " CtrlP
 let g:ctrlp_custom_ignore = '\v[\/](tmp|build|node_modules|target|dist|bower_components)|(\.(tmp|swp|ico|git|svn))$'
@@ -87,3 +90,33 @@ let g:ctrlp_custom_ignore = '\v[\/](tmp|build|node_modules|target|dist|bower_com
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
+
+" TagBar
+nmap <leader>m :TagbarToggle<CR>
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
