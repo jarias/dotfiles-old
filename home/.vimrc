@@ -43,18 +43,15 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
-set foldmethod=indent
-au BufRead * normal zR
-
 " Python
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
 " GO
-au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4 list!
+au BufNewFile,BufRead,BufEnter *.go setlocal noet ts=4 sw=4 sts=4
 
 " Javascript
-au BufNewFile,BufRead *.json set ft=javascript Javascript
+au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead .jshintrc,jshintrc set ft=javascript
 au FileType javascript setlocal ts=4 sw=4 sts=4
 au FileType javascript noremap <buffer> <D-L> :call JsBeautify()<cr>
