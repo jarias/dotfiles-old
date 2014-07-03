@@ -1,0 +1,22 @@
+Verbose = false
+VBM = "VBoxManage"
+SSH = "ssh"
+SSHGen = "ssh-keygen"
+SSHKey = "/Users/jarias/.ssh/id_boot2docker"
+VM = "boot2docker-vm"
+Dir = "/Users/jarias/.boot2docker"
+ISO = "/Users/jarias/.boot2docker/boot2docker.iso"
+VMDK = ""
+DiskSize = 20000
+Memory = 2048
+SSHPort = 2022
+DockerPort = 2375
+HostIP = "192.168.59.3"
+DHCPIP = "192.168.59.99"
+NetMask = [255, 255, 255, 0]
+LowerIP = "192.168.59.103"
+UpperIP = "192.168.59.254"
+DHCPEnabled = true
+Serial = false
+SerialFile = "/Users/jarias/.boot2docker/boot2docker-vm.sock"
+
