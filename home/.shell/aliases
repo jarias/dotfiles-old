@@ -23,7 +23,6 @@ k() {
 }
 
 # Common -- Some are from Damian Conway
-alias ls='gls --color=auto'
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
 alias c='clear'

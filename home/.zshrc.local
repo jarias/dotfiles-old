@@ -7,7 +7,5 @@ unsetopt correct_all
 _k() { _files -W ~/src -/; }
 compdef _k k
 
-eval `gdircolors ~/.dircolors.256dark`
-
 eval "$(direnv hook zsh)"
 eval "$(rbenv init -)"
