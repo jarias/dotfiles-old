@@ -1,6 +1,7 @@
 home/.berkshelf/cookbooks/
 home/.berkshelf/default/
 home/.berkshelf/tmp/
+home/.berkshelf/.cache/
 *.pem
 home/.config/configstore/
 apiKey.properties
