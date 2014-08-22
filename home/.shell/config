@@ -12,3 +12,5 @@ export PGHOST=localhost
 export DOCKER_HOST=tcp://127.0.0.1:2375
 
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
