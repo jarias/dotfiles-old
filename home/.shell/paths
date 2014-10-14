@@ -3,4 +3,4 @@ export GRAILS_HOME="$(brew --prefix grails)/libexec"
 export NODE_PATH="/usr/local/lib/node_modules"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export GOPATH=$HOME
-export PATH="$(brew --prefix go)/libexec/bin:$GOPATH/bin:/usr/local/share/npm/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export PATH="/opt/chefdk/bin:$(brew --prefix go)/libexec/bin:$GOPATH/bin:/usr/local/share/npm/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
