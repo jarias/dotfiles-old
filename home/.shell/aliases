@@ -1,9 +1,9 @@
 # Docker
 funcation dc() {
-    docker rm $(docker ps -a -q)
+    docker rm $(docker ps -aq)
 }
 function dci() {
-    docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
+    docker rmi $(docker images -f "dangling=true" -q)
 }
 alias b2d="boot2docker"
 
