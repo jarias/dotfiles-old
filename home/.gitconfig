@@ -1,6 +1,6 @@
 [user]
-	name = Julio Arias
-	email = jarias01@gmail.com
+  name = Julio Arias
+  email = jarias01@gmail.com
 [alias]
   undo = reset --soft HEAD^
   ammend = commit --amend -C HEAD
@@ -19,14 +19,14 @@
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
   # Usage: git track origin/feature-123-login-form
   track = checkout -t
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
+  switch = !legit switch \"$@\"
+  branches = !legit branches
+  sprout = !legit sprout \"$@\"
+  unpublish = !legit unpublish \"$@\"
+  harvest = !legit harvest \"$@\"
+  sync = !legit sync \"$@\"
+  publish = !legit publish \"$@\"
+  graft = !legit graft \"$@\"
 [color]
   diff = auto
   status = auto
@@ -46,5 +46,5 @@
   # Only push branches that have been set up to track a remote branch.
   default = current
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
