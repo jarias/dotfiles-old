@@ -2,9 +2,11 @@
 function dc() {
     docker rm $(docker ps -aq)
 }
+
 function dci() {
-    docker rmi $(docker images -f "dangling=true" -q)
+    docker rmi $(docker images -q -f dangling=true)
 }
+
 alias b2d="boot2docker"
 
 # Git Smart
