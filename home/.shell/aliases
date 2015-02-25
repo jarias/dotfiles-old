@@ -14,6 +14,9 @@ alias gup="git smart-pull"
 alias gm="git smart-merge"
 alias gl="git smart-log"
 
+#Git
+alias cmb="git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d"
+
 # Utility
 alias reload='source ~/.zshrc'
 
@@ -21,7 +24,7 @@ alias reload='source ~/.zshrc'
 alias ..="cd .."
 
 k() {
- cd ~/src/$1
+ cd ~/src/github.com/$1
 }
 
 # Common -- Some are from Damian Conway
