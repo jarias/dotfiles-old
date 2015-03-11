@@ -9,14 +9,13 @@
 				"function": "powerline.segments.common.sys.system_load",
 				"priority": 50
 			},
-			{				
-				"function": "powerline.segments.common.time.date",
-				"before": ""
+			{
+				"function": "powerline.segments.common.time.date"
 			},
 			{
 				"function": "powerline.segments.common.time.date",
-				"before": "",
 				"name": "time",
+				"before": "",
 				"args": {
 					"format": "%H:%M",
 					"istime": true
