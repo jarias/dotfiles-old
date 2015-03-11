@@ -77,7 +77,9 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let NERDTreeHijackNetrw = 0
 
 let g:go_disable_autoinstall = 1
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "gofmt"
+
+let g:neocomplete#enable_at_startup = 1
 
 " format the entire file
 nmap <leader>fef :normal! gg=G``<CR>
