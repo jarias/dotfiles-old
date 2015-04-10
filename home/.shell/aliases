@@ -24,7 +24,7 @@ alias reload='source ~/.zshrc'
 alias ..="cd .."
 
 k() {
- cd ~/src/github.com/$1
+ cd ~/Projects/$1
 }
 
 # Common -- Some are from Damian Conway
