@@ -1,3 +1,5 @@
+unalias gb
+
 # Docker
 function dc() {
     docker rm $(docker ps -aq)
