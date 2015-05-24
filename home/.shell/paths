@@ -1,6 +1,12 @@
-export GROOVY_HOME="$(brew --prefix groovy)/libexec"
-export GRAILS_HOME="$(brew --prefix grails)/libexec"
-export NODE_PATH="/usr/local/lib/node_modules"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+if [ $(uname -s) = "Darwin" ]; then
+	export GROOVY_HOME="$(brew --prefix groovy)/libexec"
+	export GRAILS_HOME="$(brew --prefix grails)/libexec"
+	export NODE_PATH="/usr/local/lib/node_modules"
+	export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+	export PATH="/opt/chefdk/bin:$(brew --prefix go)/libexec/bin:$GOPATH/bin:/usr/local/share/npm/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+fi
+
 export GOPATH=$HOME/Golang
-export PATH="/opt/chefdk/bin:$(brew --prefix go)/libexec/bin:$GOPATH/bin:/usr/local/share/npm/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+if [ $(uname -s) = "Linux" ]; then
+	export PATH=$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.npm-packages/bin
+fi
