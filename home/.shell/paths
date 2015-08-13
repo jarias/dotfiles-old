@@ -1,3 +1,5 @@
+export GOPATH=$HOME/Golang
+
 if [ $(uname -s) = "Darwin" ]; then
 	export GROOVY_HOME="$(brew --prefix groovy)/libexec"
 	export GRAILS_HOME="$(brew --prefix grails)/libexec"
@@ -7,7 +9,6 @@ if [ $(uname -s) = "Darwin" ]; then
 	export PATH="$HOME/.npm-packages/bin:$HOME/Library/Python/2.7/bin:/opt/chefdk/bin:$(brew --prefix go)/libexec/bin:$GOPATH/bin:/usr/local/share/npm/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 fi
 
-export GOPATH=$HOME/Golang
 if [ $(uname -s) = "Linux" ]; then
 	export TMUX_POWERLINE_PATH=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
 	export PATH=$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.npm-packages/bin
