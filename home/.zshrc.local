@@ -8,3 +8,8 @@ _k() { _files -W ~/Projects -/; }
 compdef _k k
 
 eval "$(direnv hook zsh)"
+
+if [ $(uname -s) = "Linux" ]; then
+  /usr/bin/keychain --quiet $HOME/.ssh/id_rsa $HOME/.ssh/heroku_edify_id_rsa $HOME/.ssh/heroku_personal_id_rsa
+  source $HOME/.keychain/$HOST-sh
+fi
