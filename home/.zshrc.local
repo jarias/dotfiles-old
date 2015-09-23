@@ -13,3 +13,10 @@ if [ $(uname -s) = "Linux" ]; then
   /usr/bin/keychain --quiet $HOME/.ssh/id_rsa $HOME/.ssh/heroku_edify_id_rsa $HOME/.ssh/heroku_personal_id_rsa
   source $HOME/.keychain/$HOST-sh
 fi
+
+if [ $(uname -s) = "Darwin" ]; then
+  export DOCKER_TLS_VERIFY="1"
+  export DOCKER_HOST="tcp://192.168.99.100:2376"
+  export DOCKER_CERT_PATH="/Users/jarias/.docker/machine/machines/default"
+  export DOCKER_MACHINE_NAME="default"
+fi
