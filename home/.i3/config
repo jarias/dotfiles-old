@@ -166,6 +166,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # finds out, if available)
 
 bar {
+ tray_output none
   status_command i3blocks -c ~/.i3/i3blocks.conf
   colors {
     background $bg-color
