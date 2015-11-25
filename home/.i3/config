@@ -30,7 +30,7 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -92,8 +92,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1 "
-set $workspace2 "2  "
+set $workspace1 "1"
+set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"

@@ -12,6 +12,7 @@ eval "$(direnv hook zsh)"
 if [ $(uname -s) = "Linux" ]; then
   /usr/bin/keychain --quiet $HOME/.ssh/id_rsa $HOME/.ssh/heroku_edify_id_rsa $HOME/.ssh/heroku_personal_id_rsa
   source $HOME/.keychain/$HOST-sh
+  eval $(dircolors ~/.dircolors)
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
