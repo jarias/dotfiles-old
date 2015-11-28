@@ -11,5 +11,5 @@ fi
 
 if [ $(uname -s) = "Linux" ]; then
 	export TMUX_POWERLINE_PATH=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
-	export PATH=$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.npm-packages/bin:$GOPATH/bin:$HOME/.bin
+	export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/.npm-packages/bin:$GOPATH/bin:$HOME/.bin
 fi

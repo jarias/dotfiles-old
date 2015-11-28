@@ -2,7 +2,7 @@ export JAVA_OPTS="-server -Xms512m -Xmx512m -Xss512k -XX:+UseCompressedOops"
 export MAVEN_OPTS="$JAVA_OPTS"
 export ANT_OPTS="$JAVA_OPTS"
 export GRADLE_OPTS="$JAVA_OPTS"
-export EDITOR="subl -n"
+export EDITOR="vim"
 
 if [ $(uname -s) = "Darwin" ]; then
 	export PGHOST=localhost
