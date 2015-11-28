@@ -36,7 +36,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "83" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -200,3 +200,13 @@ exec --no-startup-id dropbox start
 # lock
 bindsym $mod+Shift+x exec i3lock --color 475263
 
+set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
+bindsym $mod+Ctrl+Shift+x      mode $sysmenu
+mode $sysmenu {
+  bindsym e         exec i3-msg exit
+  bindsym r         restart
+  bindsym p         exec shutdown -P now
+  bindsym b         exec shutdown -r now
+  bindsym Return    mode "default"
+  bindsym Escape    mode "default"
+}
