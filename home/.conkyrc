@@ -93,5 +93,8 @@ TEXT
 {"full_text": " ${fs_free /home}", "color":"\#FFFFFF"},
 {"full_text": "${exec ~/.scripts/dropbox.sh}", "color":"\#007ee5"},
 {"full_text": "${exec ~/.scripts/wifi}", "color":"\#39bd00"},
+{"full_text": "  ${memperc} %", "color": "\#FFFFFF"},
+{"full_text": " ${execi 50 ~/.scripts/temp.sh} °C", "color": "\#FFFFFF"},
+{"full_text": "${exec ~/.scripts/current-lang.sh}", "color": "\#FFFFFF"},
 {"full_text": "  ${time %b %d}    ${time %I:%M %p}", "color":"\#FFFFFF"}
 ],

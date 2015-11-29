@@ -210,3 +210,5 @@ mode $sysmenu {
   bindsym Return    mode "default"
   bindsym Escape    mode "default"
 }
+
+bindsym Ctrl+Shift+space exec ~/.scripts/lang.sh
