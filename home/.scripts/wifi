@@ -1,3 +1,4 @@
 #!/bin/bash
-name=`iwconfig wlp2s0 | grep ESSID | awk '{print $4}' | sed 's/ESSID\:"\(.*\)"/\1/'`
+INTERFACE=$(iwconfig 2>&1 | grep wlp | awk '{print $1}')
+name=`iwconfig $INTERFACE | grep ESSID | sed 's/.*ESSID\:"\(.*\)"/\1/'`
 echo "" $name
