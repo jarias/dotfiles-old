@@ -1,0 +1,17 @@
+remove mod1 = Alt_L
+remove mod4 = Super_L
+add mod1 = Super_L
+add mod4 = Alt_L
+
+keycode 160 = XF86AudioMute
+keycode 176 = XF86AudioRaiseVolume
+keycode 174 = XF86AudioLowerVolume
+
+keycode 144 = XF86AudioPrev
+keycode 162 = XF86AudioPlay
+keycode 153 = XF86AudioNext
+
+keycode 101 = XF86MonBrightnessDown
+keycode 212 = XF86MonBrightnessUp
+
+keycode 204 = XF86Eject

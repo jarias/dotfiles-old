@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 20
+font pango:System San Francisco Display 13
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,7 +37,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 50 -padding 20 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18" -terminal termite
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 50 -padding 20 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 15" -terminal termite
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -177,12 +177,13 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 bar {
  tray_output none
-  status_command ~/.scripts/i3bar-wrapper.sh
+  status_command i3blocks -c ~/.i3/i3blocks.conf 
+  #~/.scripts/i3bar-wrapper.sh
   colors {
     background $bg-color
     separator #757575
 		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color #ffffff
+		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
@@ -193,7 +194,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-#exec --no-startup-id compton -f
 exec --no-startup-id dropbox start
 exec_always feh --bg-scale ~/Dropbox/troopers.png
 exec --no-startup-id sleep 3 && xfce4-power-manager

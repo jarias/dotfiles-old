@@ -1,1 +1,4 @@
-xrdb -merge ~/.Xresources
+#!/bin/sh
+
+xrdb ~/.Xresources.hidpi
+xmodmap .Xmodmap.das
