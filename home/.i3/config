@@ -196,3 +196,5 @@ mode $sysmenu {
 bindsym Ctrl+Shift+space exec ~/.scripts/lang.sh
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+
+bindsym Ctrl+Shift+4 exec import -window root ~/Images/screenshot-$(date '+%Y%m%d-%H%M%S').png
