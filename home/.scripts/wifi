@@ -1,4 +1,3 @@
 #!/bin/bash
-INTERFACE=$(iwconfig 2>&1 | grep wlp | awk '{print $1}')
-name=`iwconfig $INTERFACE | grep ESSID | sed 's/.*ESSID\:"\(.*\)"/\1/'`
-echo "" $name
+ESSID=`netctl-auto list | grep \* | sed 's/.*-\(.*\)/\1/'`
+echo "" $ESSID
