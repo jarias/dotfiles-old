@@ -24,7 +24,7 @@ bindsym $mod+Return exec termite
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 50 -padding 20 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 15" -terminal termite
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 50 -padding 20 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "pango:System San Francisco Display 18"
 
 # change focus
 bindsym $mod+j focus left
@@ -177,7 +177,6 @@ exec --no-startup-id xrandr --dpi 220
 exec --no-startup-id xrdb -merge ~/.Xresources.hidpi
 exec --no-startup-id dropbox start
 exec_always feh --bg-scale ~/Dropbox/troopers.png
-exec --no-startup-id sleep 3 && xfce4-power-manager
 exec xautolock -time 15 -locker ~/.scripts/lock.sh
 
 # lock
@@ -199,3 +198,4 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 bindsym Ctrl+Shift+4 exec import -window root ~/Images/screenshot-$(date '+%Y%m%d-%H%M%S').png
+
