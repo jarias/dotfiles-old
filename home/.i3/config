@@ -11,7 +11,8 @@
 
 set $mod Mod4
 
-font pango:System San Francisco Display 10
+#font pango:System San Francisco Display 10
+font pango:Hack 8
 
 focus_follows_mouse no
 
@@ -156,6 +157,7 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 bar {
+  position top
   tray_output none
   status_command i3blocks -c ~/.i3/i3blocks.conf
   colors {
@@ -173,14 +175,14 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-exec --no-startup-id xrandr --dpi 220
+#exec --no-startup-id xrandr --dpi 220
 exec --no-startup-id xrdb -merge ~/.Xresources.hidpi
 exec --no-startup-id dropbox start
 exec_always feh --bg-scale ~/Dropbox/troopers.png
 exec xautolock -time 15 -locker ~/.scripts/lock.sh
 
 # lock
-bindsym $mod+Shift+x exec ~/.scripts/lock.sh 
+bindsym $mod+Shift+x exec ~/.scripts/lock.sh
 
 set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
 bindsym $mod+Shift+e      mode $sysmenu
@@ -199,3 +201,4 @@ bindsym $mod+Shift+Tab workspace prev
 
 bindsym Ctrl+Shift+4 exec import -window root ~/Images/screenshot-$(date '+%Y%m%d-%H%M%S').png
 
+new_window pixel 1
