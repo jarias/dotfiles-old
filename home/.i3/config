@@ -20,7 +20,7 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -179,10 +179,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 exec --no-startup-id xrdb -merge ~/.Xresources.hidpi
 exec --no-startup-id dropbox start
 exec_always feh --bg-scale ~/Dropbox/troopers.png
-exec xautolock -time 15 -locker ~/.scripts/lock.sh
+exec --no-startup-id xautolock -time 15 -locker slock
+exec –no-startup-id sleep 3 && xfce4-power-manager
 
 # lock
-bindsym $mod+Shift+x exec ~/.scripts/lock.sh
+bindsym $mod+Shift+x exec slock
 
 set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
 bindsym $mod+Shift+e      mode $sysmenu
