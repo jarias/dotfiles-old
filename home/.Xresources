@@ -1,0 +1,22 @@
+Xft.dpi: 282
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+
+Xft.rgba: rgb
+
+rofi.font: Hack 28
+rofi.lines: 3
+rofi.eh: 2
+rofi.width: 50
+rofi.padding: 20
+rofi.bw: 0
+rofi.bc: #2f343f
+rofi.bg: #2f343f
+rofi.fg: #f3f4f5
+rofi.hlbg: #2f343f
+rofi.hlfg: #9575cd
+rofi.terminal: xfce4-terminal
+rofi.disable-history: true
