@@ -77,7 +77,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let NERDTreeHijackNetrw = 0
 
 let g:go_disable_autoinstall = 1
-let g:go_fmt_command = "gofmt"
+let g:go_fmt_command = "goimports"
 
 let g:neocomplete#enable_at_startup = 1
 
@@ -116,3 +116,10 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
