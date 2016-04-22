@@ -9,29 +9,32 @@ function dci() {
     docker rmi $(docker images -q -f dangling=true)
 }
 
-alias b2d="boot2docker"
-
 # Git Smart
-alias gup="git smart-pull"
-alias gm="git smart-merge"
-alias gl="git smart-log"
+alias gup='git smart-pull'
+alias gm='git smart-merge'
+alias gl='git smart-log'
 
 #Git
-alias cmb="git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d"
+alias cmb='git branch --merged master | grep -v '\* master' | xargs -n 1 git branch -d'
 
 # Utility
 alias reload='source ~/.zshrc'
 
 # Quicker cd
-alias ..="cd .."
+alias ..='cd ..'
 
 k() {
  cd ~/Projects/$1
 }
 
+unalias g
+g() {
+  cd ~/Golang/src/github.com/$1
+}
+
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
-alias la="ls -A -l -G"
+alias la='ls -A -l -G'
 alias c='clear'
 alias cdd='cd -'  # goto last dir cd'ed from
 alias cl='clear; l'
@@ -50,12 +53,12 @@ alias md='mkdir -p'
 alias s='cd ..'   # up one dir
 
 function take() {
-    mkdir -p "$1"
-    cd "$1"
+    mkdir -p '$1'
+    cd '$1'
 }
 
 alias e='exit'
-alias k9="killall -9"
+alias k9='killall -9'
 function killnamed () {
 	ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill
 }
