@@ -1,3 +1,3 @@
 xrdb -merge $HOME/.Xresources
 
-setxkbmap -device $(xinput list | grep -o -P 'AT Translated Set 2 keyboard\s+id=\d+' | sed -e 's/AT Translated Set 2 keyboard\s*id=\(.\)/\1/') -option altwin:swap_lalt_lwin
+setxkbmap -device 3 -option altwin:swap_alt_win
