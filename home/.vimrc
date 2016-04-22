@@ -2,9 +2,12 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme molokai
+colorscheme base16-tomorrow
+set background=dark
 set guifont=Inconsolata-dz\ for\ Powerline:h14
 set laststatus=2
+
+let base16colorspace=256
 
 ""
 "" Basic Setup
@@ -50,11 +53,15 @@ au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 " GO
 au BufNewFile,BufRead,BufEnter *.go setlocal noet ts=4 sw=4 sts=4
 
+au BufNewFile,BufRead *.recipe set ft=xml
+
 " Javascript
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead .jshintrc,jshintrc set ft=javascript
-au FileType javascript setlocal ts=4 sw=4 sts=4
+au FileType javascript setlocal ts=2 sw=2 sts=2
 au FileType javascript noremap <buffer> <D-L> :call JsBeautify()<cr>
+au bufwritepost *.js silent !standard-format -w %
+set autoread
 
 " HTML
 au FileType html setlocal ts=4 sw=4 sts=4
@@ -123,3 +130,5 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+let g:syntastic_javascript_checkers = ['standard']
