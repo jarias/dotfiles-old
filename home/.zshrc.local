@@ -7,12 +7,18 @@ unsetopt correct_all
 _k() { _files -W ~/Projects -/; }
 compdef _k k
 
+_g() { _files -W ~/Golang/src/github.com -/; }
+compdef _g g
+
 eval "$(direnv hook zsh)"
 
 if [ $(uname -s) = "Linux" ]; then
   /usr/bin/keychain --quiet $HOME/.ssh/id_rsa $HOME/.ssh/heroku_edify_id_rsa $HOME/.ssh/heroku_personal_id_rsa
   source $HOME/.keychain/$HOST-sh
   eval $(dircolors ~/.dircolors)
+
+  BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
