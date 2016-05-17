@@ -6,6 +6,7 @@ colorscheme base16-tomorrow
 set background=dark
 set guifont=Inconsolata-dz\ for\ Powerline:h14
 set laststatus=2
+set clipboard=unnamedplus
 
 let base16colorspace=256
 
