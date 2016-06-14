@@ -1,5 +1,7 @@
 unalias gb
 
+alias vsc='visual-studio-code'
+
 # Docker
 function dc() {
     docker rm $(docker ps -aq)
