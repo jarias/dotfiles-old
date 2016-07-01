@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
 # Get the status from command line applet
 DROP_STATUS="$(dropbox-cli status)"
 
@@ -6,9 +7,9 @@ DROP_STATUS="$(dropbox-cli status)"
 SYNCED="Up to date"
 STOPPED="Dropbox isn't running!"
 if [ "$DROP_STATUS" == "$STOPPED" ]; then
-	echo  OFF # Long message
+  echo '<span background="#007ee5" foreground="white">  OFF </span>'
 elif [ "$DROP_STATUS" == "$SYNCED" ]; then
-	echo  Synced # Long message
+  echo '<span background="#007ee5" foreground="white">  Synced </span>'
 else
-	echo  Syncing # Long message
+  echo '<span background="#007ee5" foreground="white">  Syncing </span>'
 fi

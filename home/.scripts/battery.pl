@@ -22,6 +22,7 @@ my $percent;
 my $full_text;
 my $short_text;
 my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
+my $bg_color;
 
 # read the first line of the "acpi" command output
 open (ACPI, "acpi -b | grep 'Battery $bat_number' |") or die;
@@ -30,39 +31,45 @@ close(ACPI);
 
 # fail on unexpected output
 if ($acpi !~ /: (\w+), (\d+)%/) {
-	die "$acpi\n";
+  die "$acpi\n";
 }
 
 $status = $1;
 $percent = $2;
+$full_text = "$percent%";
 
-if ($status eq 'Charging') {
-	$full_text = "";
-} elsif ($status eq 'Discharging') {
-	if ($percent < 20) {
-		$full_text = "";
-	} elsif ($percent < 40) {
-		$full_text = "";
-	} elsif ($percent < 60) {
-		$full_text = "";
-	} elsif ($percent < 80) {
-		$full_text = "";
-	} else {
-		$full_text = "";
-	}
+if ($status eq 'Discharging') {
+  $full_text .= ' DIS';
+} elsif ($status eq 'Charging') {
+  $full_text .= ' CHR';
 }
-
-$full_text .= " $percent%";
 
 $short_text = $full_text;
 
-# Print the times
-#if ($acpi =~ /(\d\d:\d\d):/){
-#	$full_text .= " ($1)";
-#}
+if ($acpi =~ /(\d\d:\d\d):/) {
+  $full_text .= " ($1)";
+}
+
+# consider color and urgent flag only on discharge
+
+if ($percent < 20) {
+  $bg_color = "#FF0000";
+} elsif ($percent < 40) {
+  $bg_color = "#FFAE00";
+} elsif ($percent < 60) {
+  $bg_color = "#FFF600";
+} elsif ($percent < 85) {
+  $bg_color = "#55d400";
+} elsif ($percent < 100) {
+  $bg_color = "#55d400";
+}
+
+if ($percent < 5) {
+  exit(33);
+}
 
 # print text
-print "$full_text\n";
+print "<span background=\"$bg_color\" foreground=\"#303030\"> $full_text </span>\n";
 
 
 exit(0);

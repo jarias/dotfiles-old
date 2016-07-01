@@ -1,3 +1,0 @@
-#!/bin/bash
-ESSID=`netctl-auto list | grep \* | sed 's/.*-\(.*\)/\1/'`
-echo "" $ESSID
