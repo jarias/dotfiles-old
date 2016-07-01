@@ -11,8 +11,7 @@
 
 set $mod Mod4
 
-#font pango:System San Francisco Display 10
-font pango:Hack 9
+font pango:Hack 8
 
 focus_follows_mouse no
 
