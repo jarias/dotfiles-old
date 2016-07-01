@@ -39,29 +39,30 @@ $percent = $2;
 $full_text = "$percent%";
 
 if ($status eq 'Discharging') {
-  $full_text .= ' DIS';
+  $full_text .= ' ';
 } elsif ($status eq 'Charging') {
-  $full_text .= ' CHR';
+  $full_text .= ' ';
 }
 
 $short_text = $full_text;
-
-if ($acpi =~ /(\d\d:\d\d):/) {
-  $full_text .= " ($1)";
-}
 
 # consider color and urgent flag only on discharge
 
 if ($percent < 20) {
   $bg_color = "#FF0000";
+  $full_text .= ' ';
 } elsif ($percent < 40) {
   $bg_color = "#FFAE00";
+  $full_text .= ' ';
 } elsif ($percent < 60) {
   $bg_color = "#FFF600";
+  $full_text .= ' ';
 } elsif ($percent < 85) {
   $bg_color = "#55d400";
-} elsif ($percent < 100) {
+  $full_text .= ' ';
+} elsif ($percent <= 100) {
   $bg_color = "#55d400";
+  $full_text .= ' ';
 }
 
 if ($percent < 5) {

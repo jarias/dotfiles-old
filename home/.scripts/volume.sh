@@ -6,13 +6,13 @@ if [ $mute == "[on]" ]
 then
   if [ $vol == "100" ]
   then
-    echo "<span background=\"#db00db\" foreground=\"#303030\">   $vol% </span>"
+    echo "<span background=\"#2F343F\" foreground=\"white\">    $vol% </span>"
   elif [ $vol \< "50" ]
   then
-    echo "<span background=\"#db00db\" foreground=\"#303030\">  $vol% </span>"
+    echo "<span background=\"#2F343F\" foreground=\"white\">   $vol% </span>"
   else
-    echo "<span background=\"#db00db\" foreground=\"#303030\">   $vol% </span>"
+    echo "<span background=\"#2F343F\" foreground=\"white\">    $vol% </span>"
   fi
 else
-  echo "<span background=\"#db00db\" foreground=\"#303030\">  $vol% </span>"
+  echo "<span background=\"#2F343F\" foreground=\"white\">   $vol% </span>"
 fi
