@@ -47,9 +47,7 @@ alias cls='clear; ls'
 alias h='history'
 alias l.='ls -d .[^.]*'
 alias l='ls -lhGt'  # -l long listing, most recent first
-                    # -G color
-alias lh='ls -lh'
-alias ll='ls -lhG'  # -l long listing, human readable, no group info
+alias ll='ls -lh'
 alias lt='ls -lt' # sort with recently modified first
 alias md='mkdir -p'
 alias s='cd ..'   # up one dir
