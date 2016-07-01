@@ -1,6 +1,6 @@
 [user]
 	name = Julio Arias
-	email = jarias01@gmail.com
+	email = jarias@users.noreply.github.com
 
 [alias]
 	undo = reset --soft HEAD^
