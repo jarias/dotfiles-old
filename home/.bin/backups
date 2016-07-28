@@ -1,0 +1,14 @@
+#!/bin/sh
+
+date=`date "+%Y-%m-%dT%H_%M_%S"`
+
+rsync -azP \
+  -e ssh \
+  --delete \
+  --delete-excluded \
+  --link-dest=../current \
+  $HOME/Dropbox $HOME/Arduino $HOME/devtools $HOME/Projects $HOME/Documents $HOME/Images jarias@gray::home/Backups/incomplete_back-$date \
+  && ssh jarias@gray \
+  "mv Backups/incomplete_back-$date Backups/back-$date \
+  && rm -f Backups/current \
+  && ln -s back-$date Backups/current"
