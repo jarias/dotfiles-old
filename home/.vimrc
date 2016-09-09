@@ -51,9 +51,6 @@ set smartcase   " ... unless they contain at least one capital letter
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
-" GO
-au BufNewFile,BufRead,BufEnter *.go setlocal noet ts=4 sw=4 sts=4
-
 au BufNewFile,BufRead *.recipe set ft=xml
 
 " Javascript
@@ -72,6 +69,8 @@ au FileType html noremap <buffer> <D-L> :call HtmlBeautify()<cr>
 au FileType css setlocal ts=4 sw=4 sts=4
 au FileType css noremap <buffer> <D-L> :call CSSBeautify()<cr>
 
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
@@ -86,6 +85,19 @@ let NERDTreeHijackNetrw = 0
 
 let g:go_disable_autoinstall = 1
 let g:go_fmt_command = "goimports"
+let g:go_snippet_case_type = "camelcase"
+nnoremap <leader>nn :cnext<CR>
+nnoremap <leader>mm :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 let g:neocomplete#enable_at_startup = 1
 
