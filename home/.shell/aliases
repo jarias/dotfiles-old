@@ -1,6 +1,6 @@
 unalias gb
 
-alias vsc='visual-studio-code'
+alias cb='xsel --clipboard'
 
 # Docker
 function dc() {
