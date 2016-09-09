@@ -4,7 +4,7 @@ Xft.hinting:   true
 Xft.rgba:      rgb
 Xft.hintstyle: hintfull
 
-rofi.font: Hack 28
+rofi.font: Hack 26
 rofi.lines: 3
 rofi.eh: 2
 rofi.width: 50
