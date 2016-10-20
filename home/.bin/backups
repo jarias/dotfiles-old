@@ -7,8 +7,8 @@ rsync -azP \
   --delete \
   --delete-excluded \
   --link-dest=../current \
-  $HOME/Dropbox $HOME/Arduino $HOME/devtools $HOME/Projects $HOME/Documents $HOME/Images jarias@gray::home/Backups/incomplete_back-$date \
-  && ssh jarias@gray \
+  $HOME/Dropbox $HOME/Arduino $HOME/devtools $HOME/Projects $HOME/Documents $HOME/Images jarias@gray.carrillo::home/Backups/incomplete_back-$date \
+  && ssh jarias@gray.carrillo \
   "mv Backups/incomplete_back-$date Backups/back-$date \
   && rm -f Backups/current \
   && ln -s back-$date Backups/current"
