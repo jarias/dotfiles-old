@@ -1,23 +1,18 @@
 execute pathogen#infect()
-syntax on
-filetype plugin indent on
 
-colorscheme base16-tomorrow
-set background=dark
-set guifont=Inconsolata-dz\ for\ Powerline:h14
-set laststatus=2
+set nocompatible      " Use vim, no vi defaults
 set clipboard=unnamedplus
+set autoread
 
-let base16colorspace=256
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 ""
 "" Basic Setup
 ""
-
-set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
-set ruler             " Show line and column number
-syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 
 ""
@@ -29,13 +24,11 @@ set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
-set backspace=indent,eol,start    " backspace through everything in insert mode
 
 set listchars=""
 set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:.
 set listchars+=extends:>
-
 set listchars+=precedes:<
 
 ""
@@ -43,31 +36,20 @@ set listchars+=precedes:<
 ""
 
 set hlsearch    " highlight matches
-set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
-
-" Python
-" make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
 au BufNewFile,BufRead *.recipe set ft=xml
 
 " Javascript
-au BufNewFile,BufRead *.json set ft=javascript
-au BufNewFile,BufRead .jshintrc,jshintrc set ft=javascript
 au FileType javascript setlocal ts=2 sw=2 sts=2
-au FileType javascript noremap <buffer> <D-L> :call JsBeautify()<cr>
-au bufwritepost *.js silent !standard-format -w %
-set autoread
+autocmd bufwritepost *.js silent !standard --fix %
 
 " HTML
 au FileType html setlocal ts=4 sw=4 sts=4
-au FileType html noremap <buffer> <D-L> :call HtmlBeautify()<cr>
 
 " CSS or SCSS
 au FileType css setlocal ts=4 sw=4 sts=4
-au FileType css noremap <buffer> <D-L> :call CSSBeautify()<cr>
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
@@ -80,8 +62,6 @@ let mapleader=','
 
 " NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
-autocmd vimenter * if !argc() | NERDTree | endif
-let NERDTreeHijackNetrw = 0
 
 let g:go_disable_autoinstall = 1
 let g:go_fmt_command = "goimports"
@@ -100,6 +80,8 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 let g:neocomplete#enable_at_startup = 1
+set completeopt+=menuone
+set completeopt-=preview
 
 " format the entire file
 nmap <leader>fef :normal! gg=G``<CR>
@@ -109,6 +91,7 @@ let g:ctrlp_custom_ignore = '\v[\/](tmp|build|node_modules|target|dist|bower_com
 
 " TagBar
 nmap <leader>m :TagbarToggle<CR>
+
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -144,4 +127,10 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['standard']
+
+nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
