@@ -1,10 +1,5 @@
-Xft.dpi: 282
-Xft.antialias: true
-Xft.hinting:   true
-Xft.rgba:      rgb
 Xft.hintstyle: hintfull
-
-rofi.font: Hack 26
+rofi.font: Hack 15
 rofi.lines: 3
 rofi.eh: 2
 rofi.width: 50

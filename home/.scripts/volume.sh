@@ -1,7 +1,7 @@
 #!/bin/sh
 
-mute=`amixer get Master | grep "Front Left:" | awk '{print $6}'`
-vol=`amixer get Master | grep "Front Left:" | awk '{print $5}' | tr -d '[%]'`
+mute=`amixer get Master | grep "Mono:" | awk '{print $6}'`
+vol=`amixer get Master | grep "Mono:" | awk '{print $4}' | tr -d '[%]'`
 if [ $mute == "[on]" ]
 then
   if [ $vol == "100" ]

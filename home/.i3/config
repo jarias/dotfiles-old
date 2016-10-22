@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-font pango:Hack 8
+font pango:Hack 18
 
 focus_follows_mouse no
 
@@ -178,7 +178,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 exec --no-startup-id dropbox start
-exec_always feh --bg-scale ~/Images/wallpaper.png
 exec --no-startup-id xautolock -time 15 -locker slock
 exec --no-startup-id xfce4-power-manager
 
@@ -221,3 +220,7 @@ for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
+
+exec_always --no-startup-id /usr/local/bin/display-setup
+#exec unity-settings-daemon
+exec_always feh --bg-scale ~/Pictures/wallpaper.png
