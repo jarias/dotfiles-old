@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-font pango:Hack 18
+font pango:Hack 12
 
 focus_follows_mouse no
 
@@ -160,7 +160,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 bar {
   position top
-  tray_output none
+  #tray_output none
   status_command i3blocks -c ~/.i3/i3blocks.conf
   colors {
     background $bg-color
@@ -221,6 +221,7 @@ for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
 
-exec_always --no-startup-id /usr/local/bin/display-setup
-#exec unity-settings-daemon
+#exec_always --no-startup-id /usr/local/bin/display-setup
+exec --no-startup-id unity-settings-daemon
+exec --no-startup-id nm-applet
 exec_always feh --bg-scale ~/Pictures/wallpaper.png
