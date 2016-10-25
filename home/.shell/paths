@@ -1,17 +1,4 @@
-export GOPATH=$HOME/Golang
+export GOPATH=$HOME/go
 
-if [ $(uname -s) = "Darwin" ]; then
-	export GROOVY_HOME="$(brew --prefix groovy)/libexec"
-	export GRAILS_HOME="$(brew --prefix grails)/libexec"
-	export NODE_PATH="/usr/local/lib/node_modules"
-	export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-	export TMUX_POWERLINE_PATH=$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
-	export PATH="$HOME/.npm-packages/bin:$HOME/Library/Python/2.7/bin:/opt/chefdk/bin:$(brew --prefix go)/libexec/bin:$GOPATH/bin:/usr/local/share/npm/bin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
-fi
+export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/.node_modules/bin:$GOPATH/bin:$HOME/.bin
 
-if [ $(uname -s) = "Linux" ]; then
-	export TMUX_POWERLINE_PATH=/usr/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf
-	export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/.npm-packages/bin:$GOPATH/bin:$HOME/.bin
-fi
-
-export PATH="$HOME/devtools/spin:$PATH"
