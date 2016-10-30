@@ -1,7 +1,5 @@
-Xft.dpi: 282
 Xft.hintstyle: hintfull
 Xcursor.size: 16
-rofi.font: Hack 18
 rofi.lines: 3
 rofi.eh: 2
 rofi.width: 50
