@@ -7,7 +7,7 @@ rsync -azP \
   --delete \
   --delete-excluded \
   --link-dest=../current \
-  $HOME/Downloads $HOME/Dropbox $HOME/Projects $HOME/Documents $HOME/Pictures jarias@gray.carrillo::home/Backups/incomplete_back-$date \
+  $HOME/Downloads $HOME/.ssh $HOME/Dropbox $HOME/Projects $HOME/Documents $HOME/Pictures jarias@gray.carrillo::home/Backups/incomplete_back-$date \
   && ssh jarias@gray.carrillo \
   "mv Backups/incomplete_back-$date Backups/back-$date \
   && rm -f Backups/current \
