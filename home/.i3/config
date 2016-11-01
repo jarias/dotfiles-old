@@ -158,19 +158,19 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00    $inactive-bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00    $urgent-bg-color
 
-#bar {
-#  position bottom
+bar {
+  position top
 #  tray_output none
-#  status_command i3blocks -c ~/.i3/i3blocks.conf
-#  colors {
-#    background $bg-color
-#    separator #757575
+  status_command i3blocks -c ~/.i3/i3blocks.conf
+  colors {
+    background $bg-color
+    separator #757575
     #                  border             background         text
-#    focused_workspace  $bg-color          $bg-color          $text-color
-#    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-#    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-#  }
-#}
+    focused_workspace  $bg-color          $bg-color          $text-color
+    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+  }
+}
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
