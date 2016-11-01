@@ -24,7 +24,7 @@ bindsym $mod+Return exec xfce4-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec rofi -font "Hack 12" -show drun
+bindsym $mod+d exec rofi -font "Hack 26" -show drun
 
 # change focus
 bindsym $mod+j focus left
