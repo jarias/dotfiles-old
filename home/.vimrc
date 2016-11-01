@@ -86,6 +86,8 @@ set completeopt-=preview
 " format the entire file
 nmap <leader>fef :normal! gg=G``<CR>
 
+let g:terraform_fmt_on_save = 1
+
 " CtrlP
 let g:ctrlp_custom_ignore = '\v[\/](tmp|build|node_modules|target|dist|bower_components)|(\.(tmp|swp|ico|git|svn))$'
 
