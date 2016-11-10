@@ -199,7 +199,8 @@ bindsym Ctrl+Shift+4 exec import -window root ~/Pictures/Screenshots/screenshot-
 
 new_window pixel 1
 
-
+for_window [class="Keybase"] floating enable
+for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
 # https://github.com/ValveSoftware/steam-for-linux/issues/1040
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
@@ -218,7 +219,11 @@ for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
 
-exec --no-startup-id nm-applet
-exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command --lock" 
+exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command --lock"
+exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always feh --bg-scale ~/Pictures/wallpaper.png
+
+exec --no-startup-id echo "$0: DESKTOP_AUTOSTART_ID $DESKTOP_AUTOSTART_ID, registering with org.gnome.SessionManager"
+
+exec --no-startup-id dbus-send --session --print-reply=literal --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:i3" "string:$DESKTOP_AUTOSTART_ID"
 
