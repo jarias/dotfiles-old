@@ -1,7 +1,6 @@
 unalias gb
 
-alias cb='xsel --clipboard'
-
+alias o='xdg-open'
 # Docker
 function dc() {
     docker rm $(docker ps -aq)
@@ -66,9 +65,6 @@ function killnamed () {
 function zipr() {
 	zip -r $1.zip $1
 }
-
-# Finder
-alias o='open . &'
 
 # Processes
 alias tu='top -o cpu' # cpu
