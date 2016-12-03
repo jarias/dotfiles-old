@@ -4,12 +4,6 @@ unsetopt correct_all
 [[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
 [[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
 
-_k() { _files -W ~/Projects -/; }
-compdef _k k
-
-_g() { _files -W ~/Golang/src/github.com -/; }
-compdef _g g
-
 eval "$(direnv hook zsh)"
 
 if [ $(uname -s) = "Linux" ]; then
