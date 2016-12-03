@@ -24,15 +24,6 @@ alias reload='source ~/.zshrc'
 # Quicker cd
 alias ..='cd ..'
 
-k() {
- cd ~/Projects/$1
-}
-
-unalias g
-g() {
-  cd ~/Golang/src/github.com/$1
-}
-
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
 alias la='ls -A -l -G'
