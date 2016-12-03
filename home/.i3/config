@@ -160,7 +160,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 bar {
   position top
-#  tray_output none
+  tray_output primary
   status_command i3blocks -c ~/.i3/i3blocks.conf
   colors {
     background $bg-color
@@ -186,8 +186,8 @@ bindsym $mod+Shift+e      mode $sysmenu
 mode $sysmenu {
   bindsym e         exec gnome-session-quit --force
   bindsym r         restart
-  bindsym p         exec shutdown -P now
-  bindsym b         exec shutdown -r now
+  bindsym p         exec gnome-session-quit --power-off
+  bindsym b         exec gnome-session-quit --reboot
   bindsym Return    mode "default"
   bindsym Escape    mode "default"
 }
@@ -220,6 +220,7 @@ for_window [class="^Shutter$"] floating enable
 for_window [title="Share your screen - Google Cast"] floating enable
 
 exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command --lock"
+exec --no-startup-id nm-applet
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always feh --bg-scale ~/Pictures/wallpaper.png
 
