@@ -7,8 +7,6 @@ unsetopt correct_all
 eval "$(direnv hook zsh)"
 
 if [ $(uname -s) = "Linux" ]; then
-  /usr/bin/keychain --quiet $HOME/.ssh/id_rsa $HOME/.ssh/heroku_edify_id_rsa $HOME/.ssh/heroku_personal_id_rsa
-  source $HOME/.keychain/$HOST-sh
   eval $(dircolors ~/.dircolors)
 
   BASE16_SHELL=$HOME/.config/base16-shell/
