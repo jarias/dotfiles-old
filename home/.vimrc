@@ -11,7 +11,7 @@ set clipboard=unnamedplus
 set autoread
 set textwidth=100
 set colorcolumn=+1
-set guioptions-=m  "remove menu bar
+"set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
@@ -63,6 +63,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 "" NERDTree stuff
 ""
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 ""
 "" Vim GO
@@ -81,10 +82,10 @@ nnoremap <leader>nn :cnext<CR>
 nnoremap <leader>mm :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <leader>gb  <Plug>(go-build)
+autocmd FileType go nmap <leader>gr  <Plug>(go-run)
+autocmd FileType go nmap <leader>gt  <Plug>(go-test)
+autocmd FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
@@ -124,9 +125,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
+  return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -210,3 +211,8 @@ nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
 "" Autoformat
 ""
 au BufWrite *.py :Autoformat
+
+""
+"" Airline
+""
+let g:airline_powerline_fonts = 1
