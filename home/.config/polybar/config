@@ -8,10 +8,10 @@
 ;=====================================================
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #55
+background = #2f343f
+background-alt = #2f343f
+foreground = #f3f4f5
+foreground-alt = #f3f4f5
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -275,31 +275,34 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
+format-volume = <ramp-volume> <label-volume>
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = │
-bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = #ff
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted =  muted
+label-muted-foreground = #66
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+; If defined, it will replace <ramp-volume> when
+; headphones are plugged in to `headphone_control_numid`
+; If undefined, <ramp-volume> will be used for both
+; Only applies if <ramp-volume> is used
+ramp-headphones-0 = 
+ramp-headphones-1 = 
 
 [module/battery]
 type = internal/battery
