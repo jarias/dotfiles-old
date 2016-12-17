@@ -158,19 +158,19 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00    $inactive-bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00    $urgent-bg-color
 
-bar {
-  position top
-  tray_output primary
-  status_command i3blocks -c ~/.i3/i3blocks.conf
-  colors {
-    background $bg-color
-    separator #757575
+#bar {
+#  position top
+#  tray_output primary
+#  status_command i3blocks -c ~/.i3/i3blocks.conf
+#  colors {
+#    background $bg-color
+#    separator #757575
     #                  border             background         text
-    focused_workspace  $bg-color          $bg-color          $text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-}
+#    focused_workspace  $bg-color          $bg-color          $text-color
+#    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  }
+#}
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -181,16 +181,16 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # lock
 bindsym $mod+Shift+x exec xautolock -locknow
 
-set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
-bindsym $mod+Shift+e      mode $sysmenu
-mode $sysmenu {
-  bindsym e         exec gnome-session-quit --force
-  bindsym r         restart
-  bindsym p         exec gnome-session-quit --power-off
-  bindsym b         exec gnome-session-quit --reboot
-  bindsym Return    mode "default"
-  bindsym Escape    mode "default"
-}
+#set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
+#bindsym $mod+Shift+e      mode $sysmenu
+#mode $sysmenu {
+#  bindsym e         exec gnome-session-quit --force
+#  bindsym r         restart
+#  bindsym p         exec gnome-session-quit --power-off
+#  bindsym b         exec gnome-session-quit --reboot
+#  bindsym Return    mode "default"
+#  bindsym Escape    mode "default"
+#}
 
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
@@ -219,12 +219,11 @@ for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
 
-exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command --lock"
-exec --no-startup-id nm-applet
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
-exec_always feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command --lock"
 exec --no-startup-id echo "$0: DESKTOP_AUTOSTART_ID $DESKTOP_AUTOSTART_ID, registering with org.gnome.SessionManager"
-
 exec --no-startup-id dbus-send --session --print-reply=literal --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:i3" "string:$DESKTOP_AUTOSTART_ID"
-
+exec --no-startup-id nm-applet
