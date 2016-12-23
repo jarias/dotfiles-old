@@ -181,16 +181,16 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # lock
 bindsym $mod+Shift+x exec xautolock -locknow
 
-#set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
-#bindsym $mod+Shift+e      mode $sysmenu
-#mode $sysmenu {
-#  bindsym e         exec gnome-session-quit --force
-#  bindsym r         restart
-#  bindsym p         exec gnome-session-quit --power-off
-#  bindsym b         exec gnome-session-quit --reboot
-#  bindsym Return    mode "default"
-#  bindsym Escape    mode "default"
-#}
+set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
+bindsym $mod+Shift+e      mode $sysmenu
+mode $sysmenu {
+  bindsym e         exec gnome-session-quit --force
+  bindsym r         restart
+  bindsym p         exec gnome-session-quit --power-off
+  bindsym b         exec gnome-session-quit --reboot
+  bindsym Return    mode "default"
+  bindsym Escape    mode "default"
+}
 
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
