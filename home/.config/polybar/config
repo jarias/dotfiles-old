@@ -257,7 +257,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 1
 
-date = "%%{F#666}%{F#cc} %Y-%m-%d %%{F#666}%%{F#cc} %H:%M"
+date = " %Y-%m-%d  %H:%M"
 
 format-prefix-foreground = ${colors.foreground}
 format-underline = #0a6cf5
