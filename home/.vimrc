@@ -27,7 +27,7 @@ set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:.
 set listchars+=extends:>
 set listchars+=precedes:<
-
+set completeopt-=preview
 ""
 "" Mappings
 ""
