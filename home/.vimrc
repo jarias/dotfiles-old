@@ -1,5 +1,27 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
 
+Plug 'Shougo/neocomplete.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'majutsushi/tagbar'
+Plug 'hashivim/vim-terraform'
+Plug 'airblade/vim-gitgutter'
+Plug 'Chiel92/vim-autoformat'
+Plug 'pangloss/vim-javascript'
+Plug 'SirVer/ultisnips'
+
+call plug#end()
+
+set t_Co=256
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
@@ -27,6 +49,7 @@ set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:.
 set listchars+=extends:>
 set listchars+=precedes:<
+set laststatus=2
 set completeopt-=preview
 ""
 "" Mappings
