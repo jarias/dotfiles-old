@@ -51,6 +51,7 @@ set listchars+=extends:>
 set listchars+=precedes:<
 set laststatus=2
 set completeopt-=preview
+set ttimeoutlen=10
 ""
 "" Mappings
 ""
