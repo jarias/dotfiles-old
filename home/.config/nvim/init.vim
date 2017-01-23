@@ -19,6 +19,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'jsx/jsx.vim'
 
 call plug#end()
 
@@ -29,14 +31,9 @@ endif
 
 set guifont=Hack\ 14
 set nocompatible      " Use vim, no vi defaults
-set clipboard=unnamedplus
 set autoread
 set textwidth=100
 set colorcolumn=+1
-"set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
 set number         "Show line numbers
 set encoding=utf-8 "Set default encoding to UTF-8
 set nowrap         "don't wrap lines
@@ -168,6 +165,8 @@ let g:syntastic_javascript_checkers = ['standard']
 ""
 "" Buffergator
 ""
+let g:buffergator_viewport_split_policy='B'
+let g:buffergator_hsplit_size=5
 nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
 
 ""
