@@ -2,4 +2,4 @@ export GOPATH=$HOME/go
 export CDPATH=$HOME/Projects:$HOME/go/src
 
 export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:/usr/local/go/bin:$HOME/.node_modules/bin:$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/opt/wine-staging/bin
