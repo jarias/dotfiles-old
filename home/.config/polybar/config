@@ -21,7 +21,7 @@ alert = #bd2c40
 #margin-bottom = 5
 
 [bar/int]
-monitor = eDP1
+monitor = eDP-1
 width = 100%
 height = 60
 dpi = ${xrdb:Xft.dpi:288}
