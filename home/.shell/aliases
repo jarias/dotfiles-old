@@ -1,5 +1,9 @@
 unalias gb
 
+function randp() {
+  < /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-32};echo;
+}
+
 alias o='xdg-open'
 # Docker
 function dc() {
