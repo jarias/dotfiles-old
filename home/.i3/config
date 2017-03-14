@@ -19,7 +19,7 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -222,11 +222,12 @@ for_window [title="Share your screen - Google Cast"] floating enable
 #exec_always --no-startup-id /usr/local/bin/display-setup
 
 exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command --lock"
-exec --no-startup-id echo "$0: DESKTOP_AUTOSTART_ID $DESKTOP_AUTOSTART_ID, registering with org.gnome.SessionManager"
 exec --no-startup-id dbus-send --session --print-reply=literal --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:i3" "string:$DESKTOP_AUTOSTART_ID"
 exec --no-startup-id nm-applet
 
-exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
+#gsettings set org.gnome.settings-daemon.plugins.keyboard active false
+exec_always setxkbmap -layout us -variant altgr-intl
+
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
