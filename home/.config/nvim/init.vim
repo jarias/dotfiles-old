@@ -21,6 +21,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'jsx/jsx.vim'
+Plug 'zchee/deoplete-jedi'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -47,6 +49,8 @@ set listchars+=trail:.
 set listchars+=extends:>
 set listchars+=precedes:<
 set completeopt-=preview
+set mouse=a
+
 ""
 "" Mappings
 ""
@@ -65,7 +69,7 @@ au BufNewFile,BufRead *.recipe set ft=xml
 
 " Javascript
 au FileType javascript setlocal ts=2 sw=2 sts=2
-autocmd bufwritepost *.js silent !standard --fix %
+" autocmd bufwritepost *.js silent !standard --fix %
 
 " HTML
 au FileType html setlocal ts=4 sw=4 sts=4
@@ -78,6 +82,7 @@ au FileType css setlocal ts=4 sw=4 sts=4
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal! g`\"" | endif
 
+autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
 ""
 "" NERDTree stuff
 ""
@@ -160,7 +165,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['standard']
+"let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_disabled_filetypes=['js']
 
 ""
 "" Buffergator
@@ -180,4 +186,3 @@ au BufWrite *.py :Autoformat
 let g:airline_powerline_fonts = 1
 
 let g:deoplete#enable_at_startup = 1
-
