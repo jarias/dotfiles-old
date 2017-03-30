@@ -20,9 +20,10 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'jeetsukumaran/vim-buffergator'
-Plug 'jsx/jsx.vim'
+Plug 'mxw/vim-jsx'
 Plug 'zchee/deoplete-jedi'
 Plug 'mileszs/ack.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -34,7 +35,7 @@ endif
 set guifont=Hack\ 14
 set nocompatible      " Use vim, no vi defaults
 set autoread
-set textwidth=100
+set textwidth=105
 set colorcolumn=+1
 set number         "Show line numbers
 set encoding=utf-8 "Set default encoding to UTF-8
@@ -51,6 +52,8 @@ set listchars+=precedes:<
 set completeopt-=preview
 set mouse=a
 
+
+
 ""
 "" Mappings
 ""
@@ -64,6 +67,14 @@ nmap <leader>fef :normal! gg=G``<CR>
 set hlsearch    " highlight matches
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
+
+function! s:LoadLocalVimrc()
+    if filereadable(glob(getcwd() . '/.vimrc.local'))
+        :execute 'source '.fnameescape(glob(getcwd(). '/.vimrc.local'))
+    endif
+endfunction
+
+autocmd VimEnter,BufNewFile,BufReadPost * call s:LoadLocalVimrc()
 
 au BufNewFile,BufRead *.recipe set ft=xml
 
@@ -165,8 +176,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_disabled_filetypes=['js']
+let g:syntastic_javascript_checkers = ['eslint']
 
 ""
 "" Buffergator
@@ -186,3 +196,5 @@ au BufWrite *.py :Autoformat
 let g:airline_powerline_fonts = 1
 
 let g:deoplete#enable_at_startup = 1
+
+let g:jsx_ext_required = 0
