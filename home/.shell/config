@@ -5,3 +5,4 @@ export GRADLE_OPTS="$JAVA_OPTS"
 export EDITOR="vim"
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 export _JAVA_AWT_WM_NONREPARENTING=1
+export TERM=xterm
