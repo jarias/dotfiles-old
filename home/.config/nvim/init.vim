@@ -6,7 +6,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'kien/ctrlp.vim'
@@ -80,7 +80,6 @@ au BufNewFile,BufRead *.recipe set ft=xml
 
 " Javascript
 au FileType javascript setlocal ts=2 sw=2 sts=2
-" autocmd bufwritepost *.js silent !standard --fix %
 
 " HTML
 au FileType html setlocal ts=4 sw=4 sts=4
@@ -172,11 +171,11 @@ let g:tagbar_type_go = {
 ""
 "" Syntastic
 ""
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['eslint']
 
 ""
 "" Buffergator
