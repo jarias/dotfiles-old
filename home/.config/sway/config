@@ -64,16 +64,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 " 1  "
-set $workspace2 " 2  "
-set $workspace3 " 3  "
-set $workspace4 " 4  "
-set $workspace5 " 5  "
-set $workspace6 " 6  "
-set $workspace7 " 7  "
-set $workspace8 " 8  "
-set $workspace9 " 9  "
-set $workspace10 " 10  "
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -100,9 +100,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -158,7 +156,6 @@ bar {
 
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id xautolock -time 15 -locker swaylock
-#exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 
 # lock

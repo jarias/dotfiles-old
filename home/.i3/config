@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-font pango:Hack 10
+font pango:Hack 18
 
 focus_follows_mouse no
 
