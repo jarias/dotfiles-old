@@ -51,7 +51,7 @@ set listchars+=extends:>
 set listchars+=precedes:<
 set completeopt-=preview
 set mouse=a
-
+set noswapfile
 
 
 ""
