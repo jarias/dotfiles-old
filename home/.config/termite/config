@@ -1,0 +1,3 @@
+[options]
+font = Hack 16
+scrollback_lines = 1000000
