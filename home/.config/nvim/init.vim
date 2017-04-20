@@ -16,7 +16,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'majutsushi/tagbar'
 Plug 'hashivim/vim-terraform'
 Plug 'airblade/vim-gitgutter'
-Plug 'Chiel92/vim-autoformat'
+Plug 'sbdchd/neoformat'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -67,14 +67,6 @@ nmap <leader>fef :normal! gg=G``<CR>
 set hlsearch    " highlight matches
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
-
-function! s:LoadLocalVimrc()
-    if filereadable(glob(getcwd() . '/.vimrc.local'))
-        :execute 'source '.fnameescape(glob(getcwd(). '/.vimrc.local'))
-    endif
-endfunction
-
-autocmd VimEnter,BufNewFile,BufReadPost * call s:LoadLocalVimrc()
 
 au BufNewFile,BufRead *.recipe set ft=xml
 
@@ -169,25 +161,11 @@ let g:tagbar_type_go = {
       \ }
 
 ""
-"" Syntastic
-""
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['eslint']
-
-""
 "" Buffergator
 ""
 let g:buffergator_viewport_split_policy='B'
 let g:buffergator_hsplit_size=5
 nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
-
-""
-"" Autoformat
-""
-au BufWrite *.py :Autoformat
 
 ""
 "" Airline
@@ -197,3 +175,11 @@ let g:airline_powerline_fonts = 1
 let g:deoplete#enable_at_startup = 1
 
 let g:jsx_ext_required = 0
+
+"
+" Neoformat
+"
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--print-width 105', '--single-quote', '--jsx-bracket-same-line', '--no-semi'],
+            \ }
