@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-font pango:Hack 18
+font pango:Hack 10
 
 focus_follows_mouse no
 
@@ -24,7 +24,7 @@ bindsym $mod+Return exec termite
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec rofi -font "Hack 26" -show drun
+bindsym $mod+d exec rofi -font "Hack 28" -show drun
 
 # change focus
 bindsym $mod+j focus left
@@ -77,9 +77,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace6 "4 "
 set $workspace5 "5 "
 set $workspace6 "6 "
 set $workspace7 "7 "
@@ -184,13 +184,18 @@ bindsym $mod+Shift+x exec xautolock -locknow
 set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
 bindsym $mod+Shift+e      mode $sysmenu
 mode $sysmenu {
-  bindsym e         exec gnome-session-quit --force
+  bindsym e         exit
   bindsym r         restart
-  bindsym p         exec gnome-session-quit --power-off
-  bindsym b         exec gnome-session-quit --reboot
+  bindsym p         exec systemctl poweroff
+  bindsym b         exec systemctl reboot
   bindsym Return    mode "default"
   bindsym Escape    mode "default"
 }
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
@@ -219,15 +224,16 @@ for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
 
-#exec_always --no-startup-id /usr/local/bin/display-setup
+for_window [title="Enpass"] move window to scratchpad
 
-exec --no-startup-id xautolock -time 15 -locker "gnome-screensaver-command --lock"
-exec --no-startup-id dbus-send --session --print-reply=literal --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:i3" "string:$DESKTOP_AUTOSTART_ID"
-exec --no-startup-id nm-applet
-
-#gsettings set org.gnome.settings-daemon.plugins.keyboard active false
-exec_always setxkbmap -layout us -variant altgr-intl
-
+exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000
+exec --no-startup-id compton
+exec --no-startup-id /opt/Enpass/bin/runenpass.sh
+#exec --no-startup-id /usr/local/bin/display-setup
+
+bar {
+        status_command i3status
+}

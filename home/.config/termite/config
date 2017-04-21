@@ -1,4 +1,4 @@
 [options]
-font = Hack 16
+font = Hack 12
 scrollback_lines = 1000000
 clickable_url = false

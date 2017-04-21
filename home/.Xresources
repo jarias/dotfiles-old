@@ -1,11 +1,12 @@
 Xft.hintstyle: hintfull
-Xcursor.size: 16
+Xcursor.size: 48
+Xcursor.theme: DMZ-Black
 rofi.lines: 3
 rofi.eh: 2
 rofi.width: 50
 rofi.padding: 20
 rofi.bw: 0
-rofi.terminal: xfce4-terminal
+rofi.terminal: termite
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme

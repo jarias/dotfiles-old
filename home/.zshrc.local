@@ -13,3 +13,5 @@ if [ $(uname -s) = "Linux" ]; then
   [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 fi
 
+export GDK_SCALE=2
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
