@@ -216,7 +216,7 @@ exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000
-exec --no-startup-id compton
+#exec --no-startup-id compton
 exec --no-startup-id /opt/Enpass/bin/runenpass.sh
 exec --no-startup-id /usr/local/bin/display-setup
 
