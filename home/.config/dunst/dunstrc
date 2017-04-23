@@ -76,7 +76,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "600x5-30+20"
+    geometry = "800x5-30+20"
 
     # Define the title of the windows spawned by dunst
     title = Dunst
