@@ -210,16 +210,17 @@ for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
 
-for_window [title="Enpass"] move window to scratchpad
+for_window [class="Enpass-Desktop" title="Enpass"] move window to scratchpad
 
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000
+exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
 exec --no-startup-id compton
 exec --no-startup-id /opt/Enpass/bin/runenpass.sh
 exec --no-startup-id /usr/local/bin/display-setup
 exec --no-startup-id /usr/bin/xfce4-power-manager
+exec --no-startup-id /usr/bin/run_keybase
 
 bar {
   position top
