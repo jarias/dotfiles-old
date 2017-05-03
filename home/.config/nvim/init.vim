@@ -24,6 +24,10 @@ Plug 'mxw/vim-jsx'
 Plug 'zchee/deoplete-jedi'
 Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'jodosha/vim-godebug'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
+Plug 'othree/jspc.vim'
 
 call plug#end()
 
@@ -52,8 +56,10 @@ set listchars+=precedes:<
 set completeopt-=preview
 set mouse=a
 set noswapfile
-
-
+" neocomplete like
+set completeopt+=noinsert
+" deoplete.nvim recommend
+set completeopt+=noselect
 ""
 "" Mappings
 ""
@@ -69,15 +75,6 @@ set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
 au BufNewFile,BufRead *.recipe set ft=xml
-
-" Javascript
-au FileType javascript setlocal ts=2 sw=2 sts=2
-
-" HTML
-au FileType html setlocal ts=4 sw=4 sts=4
-
-" CSS or SCSS
-au FileType css setlocal ts=4 sw=4 sts=4
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
@@ -172,12 +169,38 @@ nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
 ""
 let g:airline_powerline_fonts = 1
 
+"
+" Deoplete
+"
+
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources._ = ['buffer']
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+let g:deoplete#omni#functions.java = ['javacomplete#Complete']
 
 "
 " Neoformat
 "
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
 let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--print-width 105', '--single-quote', '--jsx-bracket-same-line', '--no-semi'],
             \ }
+
+"
+" ALE
+"
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_linters = {
+\   'java': [],
+\}
+
