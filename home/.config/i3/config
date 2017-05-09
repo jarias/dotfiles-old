@@ -220,7 +220,7 @@ exec --no-startup-id compton
 exec --no-startup-id /opt/Enpass/bin/runenpass.sh
 exec --no-startup-id /usr/local/bin/display-setup
 exec --no-startup-id /usr/bin/xfce4-power-manager
-exec --no-startup-id /usr/bin/run_keybase
+#exec --no-startup-id /usr/bin/run_keybase
 
 bar {
   position top
