@@ -3,3 +3,6 @@ export CDPATH=$HOME/Projects:$HOME/go/src
 
 export PATH=$HOME/.node_modules/bin:$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:/opt/wine-staging/bin
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
