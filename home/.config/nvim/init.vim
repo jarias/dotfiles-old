@@ -28,6 +28,7 @@ Plug 'artur-shaik/vim-javacomplete2'
 Plug 'jodosha/vim-godebug'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
 Plug 'othree/jspc.vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -39,7 +40,7 @@ endif
 set guifont=Hack\ 14
 set nocompatible      " Use vim, no vi defaults
 set autoread
-set textwidth=105
+set textwidth=150
 set colorcolumn=+1
 set number         "Show line numbers
 set encoding=utf-8 "Set default encoding to UTF-8
@@ -193,7 +194,7 @@ augroup fmt
 augroup END
 let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--print-width 105', '--single-quote', '--jsx-bracket-same-line', '--no-semi'],
+            \ 'args': ['--print-width 150', '--single-quote', '--jsx-bracket-same-line', '--no-semi'],
             \ }
 
 "
@@ -201,7 +202,5 @@ let g:neoformat_javascript_prettier = {
 "
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:ale_linters = {
-\   'java': [],
-\}
 
+let g:airline_section_y = '%{strftime("%r")}'
