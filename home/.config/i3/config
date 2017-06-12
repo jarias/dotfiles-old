@@ -24,7 +24,8 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec rofi -font "Hack 28" -show drun
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+p exec /usr/local/bin/rofi-pass
 
 # change focus
 bindsym $mod+j focus left
@@ -216,12 +217,8 @@ exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
-exec --no-startup-id compton --config ~/.config/compton.conf
-exec --no-startup-id /opt/Enpass/bin/runenpass.sh
 exec --no-startup-id /usr/local/bin/display-setup
 exec --no-startup-id /usr/bin/xfce4-power-manager
-exec --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
-#exec --no-startup-id /usr/bin/run_keybase
 
 bar {
   position top
