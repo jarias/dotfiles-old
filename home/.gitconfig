@@ -1,6 +1,6 @@
 [user]
 	name = Julio Arias
-	email = jarias@users.noreply.github.com
+	email = jarias01@gmail.com
 
 [alias]
 	undo = reset --soft HEAD^
@@ -20,14 +20,6 @@
 	current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
 	# Usage: git track origin/feature-123-login-form
 	track = checkout -t
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
 
 [color]
 	diff = auto
@@ -37,7 +29,7 @@
 
 [core]
 	excludesfile = ~/.global-gitignore
-	editor = vim 
+	editor = vim
 	autocrlf = input
 
 [apply]
