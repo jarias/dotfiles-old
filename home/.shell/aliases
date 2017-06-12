@@ -1,3 +1,5 @@
+alias timestamp='date +%s'
+
 unalias gb
 
 function randp() {
