@@ -9,14 +9,10 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 # ORDER
 SPACESHIP_PROMPT_ORDER=(
-  time
-  user
-  host
   dir
   git
   venv
   line_sep
-  vi_mode
   char
 )
 
