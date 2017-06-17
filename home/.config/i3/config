@@ -19,13 +19,14 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+p exec /usr/local/bin/rofi-pass
+bindsym $mod+b exec /usr/local/bin/buku_run
 
 # change focus
 bindsym $mod+j focus left
