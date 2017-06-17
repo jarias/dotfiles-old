@@ -18,10 +18,13 @@ MiscHighlightUrls=TRUE
 ScrollingLines=100000
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 FontName=Hack 14
+ColorCursor=#c5c5c8c8c6c6
+MiscBellUrgent=FALSE
+MiscMouseWheelZoom=TRUE
+MiscMiddleClickOpensUri=FALSE
+MiscCopyOnSelect=FALSE
+MiscDefaultWorkingDir=
+MiscRewrapOnResize=TRUE
+MiscUseShiftArrowsToScroll=FALSE
+MiscSlimTabs=FALSE
 
-[Scheme]
-Name=Base16-Tomorrow Night
-ColorForeground=#c5c8c6
-ColorBackground=#1d1f21
-ColorCursor=#c5c8c6
-ColorPalette=#1d1f21;#cc6666;#b5bd68;#f0c674;#81a2be;#b294bb;#8abeb7;#c5c8c6;#969896;#cc6666;#b5bd68;#f0c674;#81a2be;#b294bb;#8abeb7;#ffffff
