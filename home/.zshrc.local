@@ -1,3 +1,9 @@
+fpath=( $HOME/.zfunctions $fpath )
+
+autoload -Uz promptinit
+promptinit
+prompt pure
+
 unsetopt correct_all
 
 [[ -s $HOME/.shell/aliases ]] && source $HOME/.shell/aliases
