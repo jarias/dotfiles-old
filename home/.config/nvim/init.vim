@@ -6,7 +6,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
+Plug 'neomake/neomake'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'kien/ctrlp.vim'
@@ -24,10 +25,8 @@ Plug 'mxw/vim-jsx'
 Plug 'zchee/deoplete-jedi'
 Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'jodosha/vim-godebug'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
-Plug 'othree/jspc.vim'
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
@@ -37,8 +36,6 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-set guifont=Hack\ 14
-set nocompatible      " Use vim, no vi defaults
 set autoread
 set textwidth=150
 set colorcolumn=+1
@@ -61,7 +58,8 @@ set noswapfile
 set completeopt+=noinsert
 " deoplete.nvim recommend
 set completeopt+=noselect
-set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+"set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+
 ""
 "" Mappings
 ""
@@ -84,6 +82,8 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
       \| exe "normal! g`\"" | endif
 
 autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 ""
 "" NERDTree stuff
 ""
@@ -171,6 +171,7 @@ nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
 "" Airline
 ""
 let g:airline_powerline_fonts = 1
+let g:airline_section_y = '%{strftime("%r")}'
 
 "
 " Deoplete
@@ -181,10 +182,8 @@ let g:deoplete#ignore_sources._ = ['buffer']
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
-  \ 'tern#Complete',
-  \ 'jspc#omni'
+  \ 'tern#Complete'
 \]
-let g:deoplete#omni#functions.java = ['javacomplete#Complete']
 
 "
 " Neoformat
@@ -200,10 +199,11 @@ let g:neoformat_javascript_prettier = {
             \ 'args': ['--print-width 150', '--single-quote', '--jsx-bracket-same-line', '--no-semi'],
             \ }
 
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
 "
 " ALE
 "
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+"nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-let g:airline_section_y = '%{strftime("%r")}'

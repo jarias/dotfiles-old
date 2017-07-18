@@ -19,7 +19,7 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -188,7 +188,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym Ctrl+Shift+4 exec import -window root ~/Pictures/Screenshots/screenshot-$(date '+%Y%m%d-%H%M%S').png
+bindsym Ctrl+Shift+4 exec /usr/local/bin/flameshot gui -p ~/Pictures/Screenshots
 
 new_window pixel 1
 
@@ -205,12 +205,14 @@ for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
 for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
+for_window [class="ssh-askpass"] floating enable
 
 # assign special properties
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
+for_window [class="vlc"] floating enable
 
 for_window [class="Enpass-Desktop" title="Enpass"] move window to scratchpad
 
@@ -220,6 +222,8 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
 exec --no-startup-id /usr/local/bin/display-setup
 exec --no-startup-id /usr/bin/xfce4-power-manager
+exec --no-startup-id /usr/bin/lxpolkit
+exec --no-startup-id /usr/local/bin/flameshot
 
 bar {
   position top
