@@ -28,6 +28,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jodosha/vim-godebug'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
 Plug 'rust-lang/rust.vim'
+Plug 'benjie/neomake-local-eslint.vim'
 
 call plug#end()
 
@@ -201,9 +202,5 @@ let g:neoformat_javascript_prettier = {
 
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
-"
-" ALE
-"
-"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-"nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+let g:jsx_ext_required = 0
