@@ -216,6 +216,8 @@ for_window [class="vlc"] floating enable
 
 for_window [class="Enpass-Desktop" title="Enpass"] move window to scratchpad
 
+for_window [title="Slack Call Minipanel"] floating enable
+
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 

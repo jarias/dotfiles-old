@@ -199,6 +199,7 @@ let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--print-width 150', '--single-quote', '--jsx-bracket-same-line', '--no-semi'],
             \ }
+let g:neoformat_enabled_sql = []
 
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
