@@ -1,10 +1,9 @@
 export GOPATH=$HOME/go
 export CDPATH=$HOME/Projects:$HOME/go/src
 
-export PATH=/usr/pkg/bin:/usr/pkg/sbin:$PATH:$HOME/.node_modules/bin:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:/opt/wine-staging/bin:$HOME/.cargo/bin:/opt/FlameGraph
+export PATH=$PATH:$HOME/.node_modules/bin:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:/opt/wine-staging/bin:$HOME/.cargo/bin:/opt/FlameGraph
 
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 export TMPDIR=/tmp
 
-export MANPATH=/usr/pkg/man:$MANPATH

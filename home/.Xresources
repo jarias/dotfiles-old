@@ -6,7 +6,7 @@ rofi.eh: 2
 rofi.width: 50
 rofi.padding: 20
 rofi.bw: 0
-rofi.terminal: xfce4-terminal
+rofi.terminal: urxvt
 rofi.font: Hack 28
 
 ! ------------------------------------------------------------------------------

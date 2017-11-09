@@ -19,7 +19,7 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -161,9 +161,9 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00    $urgent-bg-color
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 
 # lock
@@ -223,8 +223,8 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
 exec --no-startup-id /usr/local/bin/display-setup
-exec --no-startup-id /usr/bin/xfce4-power-manager
-exec --no-startup-id /usr/bin/lxpolkit
+#exec --no-startup-id /usr/bin/xfce4-power-manager
+#exec --no-startup-id /usr/bin/lxpolkit
 exec --no-startup-id /usr/local/bin/flameshot
 
 bar {
