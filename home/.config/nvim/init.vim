@@ -6,11 +6,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-"Plug 'w0rp/ale'
 Plug 'neomake/neomake'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
@@ -23,12 +21,12 @@ Plug 'SirVer/ultisnips'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mxw/vim-jsx'
 Plug 'zchee/deoplete-jedi'
-Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jodosha/vim-godebug'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
 Plug 'rust-lang/rust.vim'
 Plug 'benjie/neomake-local-eslint.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
@@ -197,7 +195,6 @@ augroup END
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--print-width 150', '--single-quote', '--jsx-bracket-same-line', '--no-semi'],
             \ }
 let g:neoformat_enabled_sql = []
 
