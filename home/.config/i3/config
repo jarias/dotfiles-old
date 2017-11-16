@@ -19,7 +19,7 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec tilix
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -27,6 +27,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+p exec /usr/local/bin/rofi-pass
 bindsym $mod+b exec /usr/local/bin/buku_run
+bindsym $mod+Shift+w exec /usr/local/bin/networkmanager_dmenu
 
 # change focus
 bindsym $mod+j focus left
@@ -78,16 +79,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 " 1  "
-set $workspace2 " 2  "
-set $workspace3 " 3  "
-set $workspace4 " 4  "
-set $workspace5 " 5  "
-set $workspace6 " 6  "
-set $workspace7 " 7  "
-set $workspace8 " 8  "
-set $workspace9 " 9  "
-set $workspace10 " 10  "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -165,6 +166,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # lock
 bindsym $mod+Shift+x exec xautolock -locknow
@@ -188,8 +191,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym Ctrl+Shift+4 exec /usr/local/bin/flameshot gui -p ~/Pictures/Screenshots
-
+bindsym Ctrl+Shift+4 exec xfce4-screenshooter
 new_window pixel 1
 
 #for_window [class="Keybase"] floating enable
@@ -220,24 +222,9 @@ for_window [title="Slack Call Minipanel"] floating enable
 
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id /usr/local/bin/display-setup
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+exec --no-startup-id compton --backend glx
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
-exec --no-startup-id /usr/local/bin/display-setup
-#exec --no-startup-id /usr/bin/xfce4-power-manager
-#exec --no-startup-id /usr/bin/lxpolkit
-exec --no-startup-id /usr/local/bin/flameshot
 
-bar {
-  position top
-  status_command i3status
-  tray_output primary
-
-  colors {
-    background $bg-color
-    separator #757575
-    #                  border             background         text
-    focused_workspace  $bg-color          $bg-color          $text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-}
