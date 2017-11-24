@@ -220,11 +220,9 @@ for_window [class="Enpass-Desktop" title="Enpass"] move window to scratchpad
 
 for_window [title="Slack Call Minipanel"] floating enable
 
-exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec_always --no-startup-id /usr/local/bin/display-setup
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-exec --no-startup-id compton --backend glx
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
+exec --no-startup-id udiskie -2 -s
 
