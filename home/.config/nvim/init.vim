@@ -8,7 +8,7 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
 Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
@@ -24,9 +24,10 @@ Plug 'zchee/deoplete-jedi'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jodosha/vim-godebug'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
-Plug 'rust-lang/rust.vim'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'equalsraf/neovim-gui-shim'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -199,3 +200,6 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let g:jsx_ext_required = 0
 
 hi Normal guibg=NONE ctermbg=NONE
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+

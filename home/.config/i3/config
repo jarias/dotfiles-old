@@ -196,6 +196,7 @@ new_window pixel 1
 
 #for_window [class="Keybase"] floating enable
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
+for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move window to scratchpad
 # https://github.com/ValveSoftware/steam-for-linux/issues/1040
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
@@ -215,6 +216,7 @@ for_window [class="^Shutter$"] floating enable
 # Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
 for_window [class="vlc"] floating enable
+for_window [class="mpv"] floating enable
 
 for_window [class="Enpass-Desktop" title="Enpass"] move window to scratchpad
 
@@ -225,4 +227,6 @@ exec_always --no-startup-id /usr/local/bin/display-setup
 
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
 exec --no-startup-id udiskie -2 -s
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id xfce4-power-manager
 

@@ -48,7 +48,7 @@ font-1 = FontAwesome:pixelsize=10;1
 
 modules-left = i3
 modules-center =
-modules-right = mpd wlan eth battery date
+modules-right = wlan eth battery date
 
 ;tray-position = right
 ;tray-padding = 2
