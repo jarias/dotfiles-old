@@ -8,7 +8,6 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
 Plug 'chriskempson/base16-vim'
-"Plug 'vim-airline/vim-airline'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
@@ -23,11 +22,15 @@ Plug 'mxw/vim-jsx'
 Plug 'zchee/deoplete-jedi'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jodosha/vim-godebug'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
+"Plug 'carlitux/deoplete-ternjs', { 'do': 'yarn global add tern' }
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'mileszs/ack.vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': './install.sh'
+    \ }
 
 call plug#end()
 
@@ -39,60 +42,46 @@ endif
 set autoread
 set textwidth=150
 set colorcolumn=+1
-set number         "Show line numbers
-set encoding=utf-8 "Set default encoding to UTF-8
-set nowrap         "don't wrap lines
-set tabstop=2      "a tab is two spaces
-set shiftwidth=2   "an autoindent (with <<) is two spaces
-set expandtab      "use spaces, not tabs
-set list           "Show invisible characters
+set encoding=utf-8
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set list
 set listchars=""
 set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:.
 set listchars+=extends:>
 set listchars+=precedes:<
 set completeopt-=preview
-set mouse=a
 set noswapfile
-" neocomplete like
 set completeopt+=noinsert
-" deoplete.nvim recommend
 set completeopt+=noselect
-"set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+set hlsearch
+set ignorecase
+set smartcase
 
-""
-"" Mappings
-""
+hi Normal guibg=NONE ctermbg=NONE
+
 let mapleader=','
 nmap <leader>fef :normal! gg=G``<CR>
 
-""
-"" Searching
-""
+autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
 
-set hlsearch    " highlight matches
-set ignorecase  " searches are case insensitive...
-set smartcase   " ... unless they contain at least one capital letter
-
+" AutoPkg recipe files
 au BufNewFile,BufRead *.recipe set ft=xml
+au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal! g`\"" | endif
 
-autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
-
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-""
-"" NERDTree stuff
-""
+" NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-""
-"" Vim GO
-""
+" Vim GO
 let g:go_disable_autoinstall = 1
 let g:go_fmt_command = "goimports"
 let g:go_snippet_case_type = "camelcase"
@@ -118,88 +107,51 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
-""
-"" Terraform
-""
+" Terraform
 let g:terraform_fmt_on_save = 1
 
-""
-"" TagBar
-""
-nmap <leader>m :TagbarToggle<CR>
-let g:tagbar_type_go = {
-      \ 'ctagstype' : 'go',
-      \ 'kinds'     : [
-      \ 'p:package',
-      \ 'i:imports:1',
-      \ 'c:constants',
-      \ 'v:variables',
-      \ 't:types',
-      \ 'n:interfaces',
-      \ 'w:fields',
-      \ 'e:embedded',
-      \ 'm:methods',
-      \ 'r:constructor',
-      \ 'f:functions'
-      \ ],
-      \ 'sro' : '.',
-      \ 'kind2scope' : {
-      \ 't' : 'ctype',
-      \ 'n' : 'ntype'
-      \ },
-      \ 'scope2kind' : {
-      \ 'ctype' : 't',
-      \ 'ntype' : 'n'
-      \ },
-      \ 'ctagsbin'  : 'gotags',
-      \ 'ctagsargs' : '-sort -silent'
-      \ }
-
-""
-"" Buffergator
-""
+" Buffergator
 let g:buffergator_viewport_split_policy='B'
 let g:buffergator_hsplit_size=5
 nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
 
-""
-"" Airline
-""
-let g:airline_powerline_fonts = 1
-let g:airline_section_y = '%{strftime("%r")}'
-
-"
 " Deoplete
-"
-
 let g:deoplete#ignore_sources = {}
 let g:deoplete#ignore_sources._ = ['buffer']
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
-  \ 'tern#Complete'
-\]
+      \ 'tern#Complete'
+      \]
 
-"
 " Neoformat
-"
-augroup fmt
+let g:neoformat_try_formatprg = 1
+let g:neoformat_enabled_sql = []
+
+augroup NeoformatAutoFormat
   autocmd!
+
+  autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier
   autocmd BufWritePre * Neoformat
 augroup END
 
-let g:neoformat_enabled_javascript = ['prettier']
-let g:neoformat_javascript_prettier = {
-            \ 'exe': 'prettier',
-            \ }
-let g:neoformat_enabled_sql = []
-
+" Neomake
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 
+" jsx
 let g:jsx_ext_required = 0
 
-hi Normal guibg=NONE ctermbg=NONE
-
+" ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" Language server
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ }
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
