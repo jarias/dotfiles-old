@@ -31,6 +31,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': './install.sh'
     \ }
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -40,6 +41,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 set autoread
+set noshowmode
 set textwidth=150
 set colorcolumn=+1
 set encoding=utf-8
@@ -155,3 +157,9 @@ let g:LanguageClient_serverCommands = {
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'Dracula',
+      \ }
+
