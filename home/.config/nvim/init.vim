@@ -11,7 +11,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'hashivim/vim-terraform'
 Plug 'airblade/vim-gitgutter'
 Plug 'sbdchd/neoformat'
@@ -32,6 +32,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': './install.sh'
     \ }
 Plug 'itchyny/lightline.vim'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
@@ -62,6 +63,7 @@ set completeopt+=noselect
 set hlsearch
 set ignorecase
 set smartcase
+set mouse=a
 
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -161,5 +163,11 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'Dracula',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
       \ }
-
