@@ -31,6 +31,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -41,7 +43,7 @@ endif
 
 set autoread
 set noshowmode
-set textwidth=150
+set textwidth=100
 set colorcolumn=+1
 set encoding=utf-8
 set nowrap
@@ -133,7 +135,7 @@ let g:neoformat_enabled_sql = []
 augroup NeoformatAutoFormat
   autocmd!
 
-  autocmd FileType javascript,javascript.jsx setlocal formatprg=prettier
+  autocmd FileType javascript,javascript.jsx,typescript setlocal formatprg=prettier
   autocmd BufWritePre * Neoformat
 augroup END
 

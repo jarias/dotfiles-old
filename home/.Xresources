@@ -1,13 +1,15 @@
 Xft.hintstyle: hintfull
 Xcursor.size: 48
 Xcursor.theme: DMZ-Black
+
 rofi.lines: 3
 rofi.eh: 2
 rofi.width: 50
 rofi.padding: 20
 rofi.bw: 0
 rofi.terminal: tilix
-rofi.font: Hack 28
+rofi.font: Hack 10
+rofi.dpi: 288
 
 rofi.color-enabled: true
 rofi.color-window: #273238, #273238, #1e2529

@@ -78,7 +78,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 10.0
+  size: 11.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -97,6 +97,10 @@ font:
   # for retina displays, but for non-retina you probably want this set to
   # false.
   use_thin_strokes: true
+
+dpi:
+  x: 288
+  y: 288
 
 # Should display the render timer
 render_timer: false
@@ -177,7 +181,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.7
+background_opacity: 0.70
 
 # Mouse bindings
 #
@@ -198,8 +202,23 @@ mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
 mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
+
+  # Faux Scrollback
+  #
+  # The `faux_scrollback_lines` setting controls the number
+  # of lines the terminal should scroll when the alternate
+  # screen buffer is active. This is used to allow mouse
+  # scrolling for applications like `man`.
+  #
+  # To disable this completely, set `faux_scrollback_lines` to 0.
+  faux_scrollback_lines: 1
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
