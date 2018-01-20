@@ -1,0 +1,34 @@
+# vim: filetype=muttrc
+
+set signature = "~/.mutt/edify.sig"
+set smtp_url = "smtp://julio.arias@edify.cr@smtp.gmail.com:587/"
+set smtp_pass = `pass show edify/mail`
+set from = "julio.arias@edify.cr"
+set realname = "Julio Arias"
+set spoolfile = "~/.mail/edify/Inbox"
+set postponed = "~/.mail/edify/Drafts"
+set mbox_type=Maildir
+set folder=~/.mail/edify
+set record = "+Sent"
+mailboxes =Inbox \
+=All \
+=Sent \
+=Drafts \
+=Spam \
+=Trash
+
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+bind editor <space> noop
+macro index,pager y "<save-message>=All<enter><enter><sync-mailbox>" "Archive"
+macro index,pager d "<save-message>=Trash<enter><enter>" "Trash"
+macro index,pager s "<save-message>=Spam<enter><enter><sync-mailbox>" "Spam"
+
+bind index g noop
+macro index gi "<change-folder>=Inbox<enter>" "Go to inbox"
+macro index ga "<change-folder>=All<enter>" "Go to all mail"
+macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
+macro index gs "<change-folder>=Sent<enter>" "Go to sent"
+

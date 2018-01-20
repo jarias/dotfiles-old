@@ -1,3 +1,4 @@
 .config
 .config/xfce4/terminal
 .gnupg
+.mutt

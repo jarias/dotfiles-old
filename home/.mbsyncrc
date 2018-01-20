@@ -1,0 +1,150 @@
+IMAPAccount personal
+# Address to connect to
+Host imap.gmail.com
+User jarias01@gmail.com
+PassCmd "pass show personal/mail"
+# Use SSL
+SSLType IMAPS
+# The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+# The trailing "/" is important
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/Inbox
+
+Channel sync-personal-default
+Master :personal-remote:"INBOX"
+Slave :personal-local:Inbox
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-personal-sent
+Master :personal-remote:"[Gmail]/Sent Mail"
+Slave :personal-local:Sent
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-personal-trash
+Master :personal-remote:"[Gmail]/Trash"
+Slave :personal-local:Trash
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-personal-drafts
+Master :personal-remote:"[Gmail]/Drafts"
+Slave :personal-local:Drafts
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-personal-spam
+Master :personal-remote:"[Gmail]/Spam"
+Slave :personal-local:Spam
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-personal-all
+Master :personal-remote:"[Gmail]/All Mail"
+Slave :personal-local:All
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+# Get all the channels together into a group.
+Group personal
+Channel sync-personal-default
+Channel sync-personal-sent
+Channel sync-personal-trash
+Channel sync-personal-drafts
+Channel sync-personal-spam
+Channel sync-personal-all
+
+# ------- Edify Account -------
+IMAPAccount edify
+# Address to connect to
+Host imap.gmail.com
+User julio.arias@edify.cr
+PassCmd "pass show edify/mail"
+# Use SSL
+SSLType IMAPS
+# The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore edify-remote
+Account edify
+
+MaildirStore edify-local
+# The trailing "/" is important
+Path ~/.mail/edify/
+Inbox ~/.mail/edify/Inbox
+
+Channel sync-edify-default
+Master :edify-remote:"INBOX"
+Slave :edify-local:Inbox
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-edify-sent
+Master :edify-remote:"[Gmail]/Sent Mail"
+Slave :edify-local:Sent
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-edify-trash
+Master :edify-remote:"[Gmail]/Trash"
+Slave :edify-local:Trash
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-edify-drafts
+Master :edify-remote:"[Gmail]/Drafts"
+Slave :edify-local:Drafts
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-edify-spam
+Master :edify-remote:"[Gmail]/Spam"
+Slave :edify-local:Spam
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+Channel sync-edify-all
+Master :edify-remote:"[Gmail]/All Mail"
+Slave :edify-local:All
+Create Both
+SyncState *
+Sync All
+Expunge Both
+
+# Get all the channels together into a group.
+Group edify
+Channel sync-edify-default
+Channel sync-edify-sent
+Channel sync-edify-trash
+Channel sync-edify-drafts
+Channel sync-edify-spam
+Channel sync-edify-all
