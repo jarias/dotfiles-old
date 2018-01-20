@@ -9,7 +9,7 @@ rofi.padding: 20
 rofi.bw: 0
 rofi.terminal: tilix
 rofi.font: Hack 10
-rofi.dpi: 288
+rofi.dpi: 280
 
 rofi.color-enabled: true
 rofi.color-window: #273238, #273238, #1e2529
