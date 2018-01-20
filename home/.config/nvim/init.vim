@@ -6,6 +6,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'neomake/neomake'
 Plug 'chriskempson/base16-vim'
 Plug 'Lokaltog/vim-easymotion'
