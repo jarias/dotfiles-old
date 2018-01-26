@@ -18,8 +18,59 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+[bar/ext]
+monitor = HDMI1
+dpi = ${xrdb:Xft.dpi:280}
+width = 100%
+height = 55
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Hack:pixelsize=10;1
+font-1 = FontAwesome:pixelsize=10;1
+
+modules-left = i3
+modules-center =
+modules-right = wlan eth battery date
+
+;tray-position = right
+;tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
 [bar/int]
-monitor = ${env:MONITOR:eDP1}
+monitor = eDP1
 dpi = ${xrdb:Xft.dpi:280}
 width = 100%
 height = 55

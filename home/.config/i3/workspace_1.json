@@ -1,0 +1,21 @@
+{
+  "border": "pixel",
+  "current_border_width": 3,
+  "floating": "auto_off",
+  "geometry": {
+    "height": 2092,
+    "width": 3834,
+    "x": 3842,
+    "y": 64
+  },
+  "name": "qutebrowser",
+  "percent": 1,
+  "swallows": [
+    {
+      "class": "^qutebrowser$",
+      "instance": "^qutebrowser$",
+      "transient_for": "^$"
+    }
+  ],
+  "type": "con"
+}
