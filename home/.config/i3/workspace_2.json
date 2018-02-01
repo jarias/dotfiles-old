@@ -13,8 +13,7 @@
   "swallows": [
     {
       "class": "^Slack$",
-      "instance": "^slack$",
-      "transient_for": "^$"
+      "title": "^Slack - .*"
     }
   ],
   "type": "con"
