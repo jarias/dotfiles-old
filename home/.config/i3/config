@@ -14,70 +14,53 @@ set $mod Mod4
 font pango:Hack 10
 
 focus_follows_mouse no
-
+new_window pixel 1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec /usr/local/bin/alacritty
-
 # kill focused window
 bindsym $mod+Shift+q kill
-
+# rofi and friends
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+p exec /usr/local/bin/rofi-pass
 bindsym $mod+b exec /usr/local/bin/buku_run
 bindsym $mod+Shift+w exec /usr/local/bin/networkmanager_dmenu
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
 # split in horizontal orientation
-bindsym $mod+Mod1+h split h
-
+bindsym $mod+n split h
 # split in vertical orientation
-bindsym $mod+Mod1+v split v
-
+bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 set $workspace1 "1"
 set $workspace2 "2"
@@ -192,12 +175,9 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 bindsym Ctrl+Shift+4 exec xfce4-screenshooter
-new_window pixel 1
 
-#for_window [class="Keybase"] floating enable
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move window to scratchpad
-# https://github.com/ValveSoftware/steam-for-linux/issues/1040
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
 for_window [class="^Steam$" title=".* - Chat"] floating enable
@@ -209,23 +189,16 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 for_window [class="ssh-askpass"] floating enable
-
-# assign special properties
 for_window [class="^Pavucontrol$"] floating enable
-for_window [class="^Shutter$"] floating enable
-# Share your screen from Google Cast extension
 for_window [title="Share your screen - Google Cast"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
-
-for_window [class="Enpass-Desktop" title="Enpass"] move window to scratchpad
-
 for_window [title="Slack Call Minipanel"] floating enable
 
 exec_always --no-startup-id /usr/local/bin/display-setup
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/lock.png'
+exec --no-startup-id xautolock -time 10 -locker 'i3lock -f -e -d -c 000000 -i ~/Pictures/wallpaper.png'
 exec --no-startup-id udiskie -2 -s
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id xfce4-power-manager
