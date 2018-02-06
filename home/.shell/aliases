@@ -28,6 +28,7 @@ alias reload='source ~/.zshrc'
 # Quicker cd
 alias ..='cd ..'
 
+alias ls='ls -G --color=auto'
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
 alias la='ls -A -l -G'

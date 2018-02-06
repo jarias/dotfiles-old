@@ -105,6 +105,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+bindsym $mod+a [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] scratchpad show; [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move position center
+bindsym $mod+m [instance="^bc$"] scratchpad show; [instance="^bc$"] move position center
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
@@ -176,8 +179,6 @@ bindsym $mod+Shift+Tab workspace prev
 
 bindsym Ctrl+Shift+4 exec xfce4-screenshooter
 
-for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
-for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move window to scratchpad
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
 for_window [class="^Steam$" title=".* - Chat"] floating enable
@@ -204,3 +205,14 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/bin/load_i3_layout.sh
 
+# Auth
+for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
+for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
+exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
+
+# bc as calculator
+for_window [instance="bc"] floating enable
+for_window [instance="bc"] resize set 2000 1000
+for_window [instance="bc"] move scratchpad
+for_window [instance="bc"] border pixel 5
+exec --no-startup-id alacritty -t bc -e bc -q
