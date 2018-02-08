@@ -25,14 +25,12 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jodosha/vim-godebug'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'equalsraf/neovim-gui-shim'
 Plug 'mileszs/ack.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': './install.sh'
     \ }
 Plug 'itchyny/lightline.vim'
-Plug 'edkolev/tmuxline.vim'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'leafgarland/typescript-vim'
 
