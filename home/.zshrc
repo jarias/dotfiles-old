@@ -1,3 +1,10 @@
+setopt HIST_IGNORE_ALL_DUPS
+
+[[ -s $HOME/.shell/aliases ]] && source $HOME/.shell/aliases
+[[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
+[[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
+[[ -s $HOME/.shell/history-substring-search.zsh ]] && source $HOME/.shell/history-substring-search.zsh
+
 os=$(uname -s)
 
 autoload -U colors && colors
@@ -108,22 +115,28 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# bind UP and DOWN arrow keys (compatibility fallback
+# for Ubuntu 12.04, Fedora 21, and MacOSX 10.9 users)
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 # ===================
 #    Other
 # ===================
 unsetopt correct_all
 
-[[ -s $HOME/.shell/aliases ]] && source $HOME/.shell/aliases
-[[ -s $HOME/.shell/paths ]] && source $HOME/.shell/paths
-[[ -s $HOME/.shell/config ]] && source $HOME/.shell/config
 
 eval "$(direnv hook zsh)"
 
