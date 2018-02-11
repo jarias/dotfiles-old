@@ -159,3 +159,10 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
