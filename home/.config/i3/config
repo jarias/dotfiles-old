@@ -19,14 +19,14 @@ new_window pixel 1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/local/bin/alacritty
+bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 # rofi and friends
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+p exec /usr/local/bin/rofi-pass
 bindsym $mod+b exec /usr/local/bin/buku_run
-bindsym $mod+Shift+w exec /usr/local/bin/networkmanager_dmenu
+bindsym $mod+Shift+w exec networkmanager_dmenu
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -201,14 +201,14 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 
 exec --no-startup-id xautolock -time 10 -locker '~/bin/lock.sh'
 exec --no-startup-id udiskie -2 -s
-exec --no-startup-id start-pulseaudio-x11
+#exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/bin/load_i3_layout.sh
 
 # Auth
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
-exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
+exec --no-startup-id /usr/bin/chromium --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
 
 # bc as calculator
 for_window [instance="bc"] floating enable

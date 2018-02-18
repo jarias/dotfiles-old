@@ -1,5 +1,5 @@
 [global]
-    font = Hack 24
+    font = Hack 11
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:

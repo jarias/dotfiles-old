@@ -44,7 +44,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = Hack:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=10;1
+font-1 = FontAwesome:fontformat=truetype:pixelsize=10;1
 
 modules-left = i3
 modules-center =
@@ -95,7 +95,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = Hack:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=10;1
+font-1 = FontAwesome:fontformat=truetype:pixelsize=10;1
 
 modules-left = i3
 modules-center =
