@@ -24,8 +24,8 @@ bindsym $mod+Return exec alacritty -e tmux
 bindsym $mod+Shift+q kill
 # rofi and friends
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+p exec /usr/local/bin/rofi-pass
-bindsym $mod+b exec /usr/local/bin/buku_run
+bindsym $mod+p exec rofi-pass
+bindsym $mod+b exec buku_run
 bindsym $mod+Shift+w exec networkmanager_dmenu
 # change focus
 bindsym $mod+h focus left

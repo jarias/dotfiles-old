@@ -7,4 +7,4 @@ i3-msg "workspace 2; append_layout ~/.config/i3/workspace_2.json"
 #(slack &)
 
 i3-msg "workspace 3; append_layout ~/.config/i3/workspace_3.json"
-(alacritty &)
+(alacritty -e tmux &)
