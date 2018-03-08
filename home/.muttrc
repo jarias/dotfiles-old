@@ -25,6 +25,7 @@ macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.
 macro index G "<shell-escape>mbsync -a<enter>" "Sync mailboxes"
 bind index,pager B sidebar-toggle-visible
 
+set mailcap_path = ~/.mailcap
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 

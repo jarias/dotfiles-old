@@ -1,2 +1,3 @@
+mpd_music_dir=/run/media/jarias/speed/Music
 visualizer_type = "spectrum"
 visualizer_look = "+|"
