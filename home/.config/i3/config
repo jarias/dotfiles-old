@@ -194,7 +194,7 @@ for_window [class="^Pavucontrol$"] floating enable
 for_window [title="Share your screen - Google Cast"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [title="Slack Call Minipanel"] floating enable
+for_window [title="Slack Call Minipanel"] floating enable sticky enable
 
 exec_always --no-startup-id /usr/local/bin/display-setup
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
