@@ -18,6 +18,9 @@ new_window pixel 1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# MPD
+bindsym F5 exec mpc toggle
+
 # start a terminal
 bindsym $mod+Return exec alacritty -e tmux
 # kill focused window
@@ -195,6 +198,7 @@ for_window [title="Share your screen - Google Cast"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="Slack Call Minipanel"] floating enable sticky enable
+for_window [title="Slack call.*"] resize shrink left 400 px
 
 exec_always --no-startup-id /usr/local/bin/display-setup
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png

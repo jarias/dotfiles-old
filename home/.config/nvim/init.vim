@@ -68,6 +68,7 @@ set mouse=a
 hi Normal guibg=NONE ctermbg=NONE
 
 let mapleader=','
+let maplocalleader=';'
 nmap <leader>fef :normal! gg=G``<CR>
 
 autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
