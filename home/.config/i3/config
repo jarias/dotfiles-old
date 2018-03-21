@@ -15,6 +15,7 @@ font pango:Hack 10
 
 focus_follows_mouse no
 new_window pixel 1
+hide_edge_borders smart
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -197,7 +198,7 @@ for_window [class="^Pavucontrol$"] floating enable
 for_window [title="Share your screen - Google Cast"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [title="Slack Call Minipanel"] floating enable sticky enable
+for_window [title="Slack Call Minipanel"] floating enable sticky enable move position center move right 1000px move down 800px
 for_window [title="Slack call.*"] resize shrink left 400 px
 
 exec_always --no-startup-id /usr/local/bin/display-setup
@@ -206,11 +207,10 @@ exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option cap
 
 exec --no-startup-id xautolock -time 10 -locker '~/bin/lock.sh'
 exec --no-startup-id udiskie -2 -s
-#exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/bin/load_i3_layout.sh
 
-# Auth
+# Authy
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
 exec --no-startup-id /usr/bin/chromium --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb

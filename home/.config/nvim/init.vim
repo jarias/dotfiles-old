@@ -1,29 +1,23 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'roxma/nvim-completion-manager'
 Plug 'fatih/vim-go'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'jodosha/vim-godebug'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'neomake/neomake'
 Plug 'chriskempson/base16-vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'hashivim/vim-terraform'
-Plug 'airblade/vim-gitgutter'
 Plug 'sbdchd/neoformat'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'jeetsukumaran/vim-buffergator'
-Plug 'mxw/vim-jsx'
-Plug 'zchee/deoplete-jedi'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jodosha/vim-godebug'
-Plug 'benjie/neomake-local-eslint.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -31,8 +25,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': './install.sh'
     \ }
 Plug 'itchyny/lightline.vim'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -70,6 +64,7 @@ hi Normal guibg=NONE ctermbg=NONE
 let mapleader=','
 let maplocalleader=';'
 nmap <leader>fef :normal! gg=G``<CR>
+nmap <leader>h :set hlsearch!<cr>
 
 autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
 
@@ -120,29 +115,18 @@ let g:buffergator_viewport_split_policy='B'
 let g:buffergator_hsplit_size=5
 nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
 
-" Deoplete
-let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources._ = ['buffer']
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = [
-      \ 'tern#Complete'
-      \]
-
 " Neoformat
-let g:neoformat_try_formatprg = 1
 let g:neoformat_enabled_sql = []
 
 augroup NeoformatAutoFormat
   autocmd!
 
-  autocmd FileType javascript,javascript.jsx,typescript setlocal formatprg=prettier
   autocmd BufWritePre * Neoformat
 augroup END
 
 " Neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
+" autocmd! BufWritePost * Neomake
+" let g:neomake_javascript_enabled_makers = ['eslint']
 
 " jsx
 let g:jsx_ext_required = 0
@@ -155,6 +139,7 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'python': ['pyls'],
     \ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>

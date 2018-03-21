@@ -106,7 +106,7 @@ zstyle ':completion:*' list-dirs-first true
 # ===================
 #    KEY BINDINGS
 # ===================
-bindkey -v
+bindkey -e
 
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -133,7 +133,6 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 # ===================
@@ -146,23 +145,25 @@ eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-VIM_PROMPT="[I] ❯"
-PROMPT='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
-
-prompt_pure_update_vim_prompt() {
-    zle || {
-        print "error: pure_update_vim_prompt must be called when zle is active"
-        return 1
-    }
-    VIM_PROMPT=${${KEYMAP/vicmd/[N] ❯}/(main|viins)/[I] ❯}
-    zle .reset-prompt
-}
-
-function zle-line-init zle-keymap-select {
-    prompt_pure_update_vim_prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+#VIM_PROMPT="[I] ❯"
+#
+#PROMPT='%(12V.%F{242}%12v%f .)'
+#PROMPT+='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
+#
+#prompt_pure_update_vim_prompt() {
+#    zle || {
+#        print "error: pure_update_vim_prompt must be called when zle is active"
+#        return 1
+#    }
+#    VIM_PROMPT=${${KEYMAP/vicmd/[N] ❯}/(main|viins)/[I] ❯}
+#    zle .reset-prompt
+#}
+#
+#function zle-line-init zle-keymap-select {
+#    prompt_pure_update_vim_prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
