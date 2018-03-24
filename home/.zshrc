@@ -171,3 +171,4 @@ eval "$(direnv hook zsh)"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+source /usr/share/nvm/init-nvm.sh
