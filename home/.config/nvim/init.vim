@@ -27,6 +27,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'itchyny/lightline.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
+Plug 'dracula/vim'
 
 call plug#end()
 

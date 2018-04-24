@@ -3,18 +3,16 @@
   "current_border_width": 3,
   "floating": "auto_off",
   "geometry": {
-    "height": 2092,
-    "width": 3834,
-    "x": 3842,
-    "y": 64
+    "height": 2112,
+    "width": 3828,
+    "x": 0,
+    "y": 0
   },
-  "name": "qutebrowser",
+  "name": "Firefox",
   "percent": 1,
   "swallows": [
     {
-      "class": "^qutebrowser$",
-      "instance": "^qutebrowser$",
-      "transient_for": "^$"
+      "class": "^Firefox$"
     }
   ],
   "type": "con"

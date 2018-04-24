@@ -1,7 +1,7 @@
 alias timestamp='date +%s'
 
 function randp() {
-  < /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-32};echo;
+  < /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-32} | tr -d '\n'
 }
 
 alias o='xdg-open'

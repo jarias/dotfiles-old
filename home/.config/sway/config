@@ -14,9 +14,13 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term tilix
+set $term termite -e tmux
 # Your preferred application launcher
-set $menu rofi -location 1 -show drun
+set $menu rofi -show drun
+
+bindsym $mod+p exec rofi-pass
+bindsym $mod+b exec buku_run
+bindsym $mod+Shift+w exec networkmanager_dmenu
 
 ### Output configuration
 #

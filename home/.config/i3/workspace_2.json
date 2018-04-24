@@ -8,12 +8,11 @@
     "x": 3839,
     "y": 60
   },
-  "name": "Slack",
+  "name": "WeeChat 2.1",
   "percent": 1,
   "swallows": [
     {
-      "class": "^Slack$",
-      "title": "^Slack - .*"
+      "class": "^weechat$"
     }
   ],
   "type": "con"

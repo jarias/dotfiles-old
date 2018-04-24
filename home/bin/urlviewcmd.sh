@@ -12,5 +12,5 @@ elif echo $mpvFiles | grep -w $ext >/dev/null; then
 elif echo $wgetFiles | grep -w $ext >/dev/null; then
   nohup wget "$1" >/dev/null &
 else
-  nohup qutebrowser --target tab "$1" >/dev/null &
+  nohup firefox "$1" >/dev/null &
 fi
