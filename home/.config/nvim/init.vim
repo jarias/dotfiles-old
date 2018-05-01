@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'roxma/nvim-completion-manager'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go'
 Plug 'jodosha/vim-godebug'
 Plug 'tpope/vim-git'
@@ -16,18 +16,18 @@ Plug 'hashivim/vim-terraform'
 Plug 'sbdchd/neoformat'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'editorconfig/editorconfig-vim'
+"Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
-    \ 'do': './install.sh'
+    \ 'do': 'bash install.sh'
     \ }
 Plug 'itchyny/lightline.vim'
-Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'dracula/vim'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -35,6 +35,8 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+let g:deoplete#enable_at_startup = 1
 
 set autoread
 set noshowmode
@@ -65,7 +67,7 @@ hi Normal guibg=NONE ctermbg=NONE
 let mapleader=','
 let maplocalleader=';'
 nmap <leader>fef :normal! gg=G``<CR>
-nmap <leader>h :set hlsearch!<cr>
+nmap <leader>h :set hlsearch!<CR>
 
 autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
 
@@ -114,11 +116,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Terraform
 let g:terraform_fmt_on_save = 1
 
-" Buffergator
-let g:buffergator_viewport_split_policy='B'
-let g:buffergator_hsplit_size=5
-nnoremap <silent> <Leader>g :BuffergatorOpen<CR>
-
 " Neoformat
 let g:neoformat_enabled_sql = []
 
@@ -127,10 +124,6 @@ augroup NeoformatAutoFormat
 
   autocmd BufWritePre * Neoformat
 augroup END
-
-" Neomake
-" autocmd! BufWritePost * Neomake
-" let g:neomake_javascript_enabled_makers = ['eslint']
 
 " jsx
 let g:jsx_ext_required = 0
@@ -161,3 +154,10 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+map <leader>b :Buffers<cr>
+map <leader>f :Files<cr>
+map <leader>g :GFiles<cr>
+map <leader>t :Tags<cr>
+
+map <leader><leader>t :TagbarToggle<CR>

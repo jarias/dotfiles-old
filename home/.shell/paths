@@ -1,6 +1,5 @@
-export GOPATH=$HOME/go
 export CDPATH=$HOME/Projects:$HOME/go/src
-export PATH=$PATH:$HOME/.node_modules/bin:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:/opt/wine-staging/bin:$HOME/.cargo/bin:/opt/FlameGraph
+export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin
 export JAVA_HOME=/usr/lib/jvm/default
 export TMPDIR=/tmp
 
