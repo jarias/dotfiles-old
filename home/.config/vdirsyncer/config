@@ -1,0 +1,19 @@
+[general]
+status_path = "~/.vdirsyncer/status/"
+
+[pair my_contacts]
+b = "my_contacts_local"
+a = "icloud"
+collections = ["from b", "from a"]
+conflict_resolution = "a wins"
+
+[storage my_contacts_local]
+type = "filesystem"
+path = "~/.contacts/"
+fileext = ".vcf"
+
+[storage icloud]
+type = "carddav"
+url = "https://contacts.icloud.com/"
+username = "jarias1@mac.com"
+password.fetch = ["command", "pass", "personal/apple/contacts"]

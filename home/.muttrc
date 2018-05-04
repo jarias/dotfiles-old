@@ -29,10 +29,12 @@ set mailcap_path = ~/.mailcap
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
-set query_command = "abook --mutt-query '%s'"
-macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
-macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+set query_command = "khard email --parsable '%s'"
 bind editor <Tab> complete-query
+bind editor ^T    complete
+macro index,pager A \
+    "<pipe-message>khard add-email<return>" \
+    "add the sender email address to khard"
 
 # basic colors ---------------------------------------------------------
 color normal        color241        color234
