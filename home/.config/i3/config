@@ -21,6 +21,8 @@ floating_modifier $mod
 
 # MPD
 bindsym F5 exec mpc toggle
+# Spoticy
+bindsym F12 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 
 # start a terminal
 bindsym $mod+Return exec alacritty -e tmux
@@ -110,7 +112,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bindsym $mod+a [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] scratchpad show; [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move position center
-bindsym $mod+m [instance="^bc$"] scratchpad show; [instance="^bc$"] move position center
+bindsym $mod+m [title="^bc$"] scratchpad show; [title="^bc$"] move position center
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -209,6 +211,8 @@ exec --no-startup-id xautolock -time 10 -locker '~/bin/lock.sh'
 exec --no-startup-id udiskie -2 -s
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/bin/load_i3_layout.sh
+exec --no-startup-id nm-applet
+#exec --no-startup-id run_keybase
 
 # Authy
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
@@ -216,8 +220,8 @@ for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
 exec --no-startup-id /usr/bin/chromium --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
 
 # bc as calculator
-for_window [instance="bc"] floating enable
-for_window [instance="bc"] resize set 2000 1000
-for_window [instance="bc"] move scratchpad
-for_window [instance="bc"] border pixel 5
+for_window [title="bc"] floating enable
+for_window [title="bc"] resize set 2000 1000
+for_window [title="bc"] move scratchpad
+for_window [title="bc"] border pixel 5
 exec --no-startup-id alacritty -t bc -e bc -q

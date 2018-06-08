@@ -27,7 +27,7 @@ bindsym $mod+Shift+w exec networkmanager_dmenu
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/Pictures/wallpaper.png fill
 
-output eDP-1 scale 3
+output eDP-1 scale 2.5
 #
 # Example configuration:
 #

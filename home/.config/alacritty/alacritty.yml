@@ -98,10 +98,6 @@ font:
   # false.
   use_thin_strokes: true
 
-dpi:
-  x: 288
-  y: 288
-
 # Should display the render timer
 render_timer: false
 

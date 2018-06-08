@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go'
@@ -16,7 +17,6 @@ Plug 'hashivim/vim-terraform'
 Plug 'sbdchd/neoformat'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
-"Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
@@ -28,6 +28,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mxw/vim-jsx'
 Plug 'dracula/vim'
 Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/yaml.vim'
 
 call plug#end()
 

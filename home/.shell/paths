@@ -1,3 +1,10 @@
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_AVD_HOME=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$HOME/go/bin
 export CDPATH=$HOME/Projects:$HOME/go/src
 export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin
 export JAVA_HOME=/usr/lib/jvm/default

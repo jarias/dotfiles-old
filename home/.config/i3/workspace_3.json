@@ -13,8 +13,6 @@
   "swallows": [
     {
       "class": "^Alacritty$",
-      "instance": "^Alacritty$",
-      "title": "^Alacritty$",
       "transient_for": "^$"
     }
   ],
