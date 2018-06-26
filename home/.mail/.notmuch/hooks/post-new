@@ -1,0 +1,31 @@
+#!/bin/sh
+
+notmuch tag +edify -- folder:edify/All
+notmuch tag +personal -- folder:personal/All
+
+notmuch tag +inbox -- folder:personal/Inbox
+notmuch tag +inbox -- folder:edify/Inbox
+
+notmuch tag -inbox tag:archive
+
+notmuch search --output files tag:archive and tag:edify and folder:edify/Inbox \
+  | grep 'edify/Inbox' \
+  | xargs -I '{}' mv '{}' ~/.mail/edify/All/
+notmuch search --output files tag:archive and tag:personal and folder:personal/Inbox \
+  | grep 'personal/Inbox' \
+  | xargs -I '{}' mv '{}' ~/.mail/personal/All/
+
+# Prepare the desktop notification messages
+newcount=$(notmuch count tag:new)
+summary="${newcount} new message"
+# Come on, who here doesn't actually hate "you have 1 new message(s)"?
+if [ $newcount -gt 1 ]; then summary="${summary}s"; fi
+
+notmuch tag -new -- tag:new
+
+if [ $newcount -gt 0 ]; then logger -t notmuch "calling notify-send '$summary'"; /usr/bin/notify-send "$summary"; fi
+
+logger -t notmuch "Astroid polling start requested during post-new hook"; /usr/bin/astroid --stop-polling 2>&1 >/dev/null
+
+exit 0
+

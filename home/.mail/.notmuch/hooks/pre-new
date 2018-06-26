@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# notmuch pre-new hook ... messages have not yet been imported into the database
+
+# Start the spinner on Astroid's UI
+# It is a fatal error to not have DISPLAY. When Astroid starts, it should add
+# DISPLAY to systemd --user's environment.
+logger -t notmuch "Astroid polling start requested during pre-new hook"; /usr/bin/astroid --start-polling 2>&1 >/dev/null
+
+# Ensure that this script exits with success, otherwise notmuch will fail out.
+exit 0

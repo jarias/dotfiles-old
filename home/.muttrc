@@ -8,6 +8,9 @@ set crypt_replyencrypt = yes
 set crypt_verify_sig=yes
 set pgp_autosign=yes
 
+set sort = threads
+set sort_aux = last-date-received
+
 # Folder hooks
 folder-hook 'account.com.gmail.personal' 'source ~/.mutt/account.com.gmail.personal'
 folder-hook 'account.com.gmail.edify' 'source ~/.mutt/account.com.gmail.edify'

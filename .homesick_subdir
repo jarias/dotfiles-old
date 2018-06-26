@@ -1,5 +1,7 @@
 .config
 .config/xfce4/terminal
+.config/astroid
+.mail/.notmuch
 .gnupg
 .mutt
 bin

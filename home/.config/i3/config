@@ -167,10 +167,10 @@ bindsym $mod+Shift+x exec xautolock -locknow
 set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
 bindsym $mod+Shift+e      mode $sysmenu
 mode $sysmenu {
-  bindsym e         exit
-  bindsym r         restart
-  bindsym p         exec systemctl poweroff
-  bindsym b         exec systemctl reboot
+  bindsym e         exit, mode "default"
+  bindsym r         restart, mode "default"
+  bindsym p         exec --no-startup-id  systemctl poweroff, mode "default"
+  bindsym b         exec --no-startup-id  systemctl reboot -i, mode "default"
   bindsym Return    mode "default"
   bindsym Escape    mode "default"
 }
