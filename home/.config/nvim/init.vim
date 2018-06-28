@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'nicoe/deoplete-khard'
 Plug 'fatih/vim-go'
 Plug 'jodosha/vim-godebug'
 Plug 'tpope/vim-git'

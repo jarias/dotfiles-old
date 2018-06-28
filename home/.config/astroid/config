@@ -40,8 +40,8 @@
         }
     },
     "editor": {
-        "cmd": "emacs %1",
-        "external_editor": "true",
+        "cmd": "urxvt -embed %3 -e zsh -c '~/bin/mail.sh %1'",
+        "external_editor": "false",
         "charset": "utf-8",
         "save_draft_on_force_quit": "true",
         "attachment_words": "attach",
