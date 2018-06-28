@@ -33,6 +33,7 @@ bindsym $mod+d exec rofi -show drun
 bindsym $mod+p exec rofi-pass
 bindsym $mod+b exec buku_run
 bindsym $mod+Shift+w exec networkmanager_dmenu
+bindsym $mod+Shift+m exec UDISKIE_DMENU_LAUNCHER="rofi" udiskie-dmenu -matching regex -dmenu -i -no-custom -multi-select
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -211,8 +212,6 @@ exec --no-startup-id xautolock -time 10 -locker '~/bin/lock.sh'
 exec --no-startup-id udiskie -2 -s
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/bin/load_i3_layout.sh
-exec --no-startup-id nm-applet
-#exec --no-startup-id run_keybase
 
 # Authy
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
@@ -220,8 +219,8 @@ for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
 exec --no-startup-id /usr/bin/chromium --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
 
 # bc as calculator
-for_window [title="bc"] floating enable
-for_window [title="bc"] resize set 2000 1000
-for_window [title="bc"] move scratchpad
-for_window [title="bc"] border pixel 5
-exec --no-startup-id alacritty -t bc -e bc -q
+for_window [class="bc" title="bc"] floating enable
+for_window [class="bc" title="bc"] resize set 2000 1000
+for_window [class="bc" title="bc"] move scratchpad
+for_window [class="bc" title="bc"] border pixel 5
+exec --no-startup-id alacritty --class bc -t bc -e bc -q
