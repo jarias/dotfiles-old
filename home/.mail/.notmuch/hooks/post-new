@@ -7,13 +7,20 @@ notmuch tag +inbox -- folder:personal/Inbox
 notmuch tag +inbox -- folder:edify/Inbox
 
 notmuch tag -inbox tag:archive
+notmuch tag -inbox tag:spam
 
 notmuch search --output files tag:archive and tag:edify and folder:edify/Inbox \
   | grep 'edify/Inbox' \
   | xargs -I '{}' mv '{}' ~/.mail/edify/All/
+notmuch search --output files tag:spam and tag:edify and folder:edify/Inbox \
+  | grep 'edify/Inbox' \
+  | xargs -I '{}' mv '{}' ~/.mail/edify/Spam/
 notmuch search --output files tag:archive and tag:personal and folder:personal/Inbox \
   | grep 'personal/Inbox' \
   | xargs -I '{}' mv '{}' ~/.mail/personal/All/
+notmuch search --output files tag:spam and tag:personal and folder:personal/Inbox \
+  | grep 'edify/Inbox' \
+  | xargs -I '{}' mv '{}' ~/.mail/edify/Spam/
 
 # Prepare the desktop notification messages
 newcount=$(notmuch count tag:new)

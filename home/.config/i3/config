@@ -203,6 +203,7 @@ for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="Slack Call Minipanel"] floating enable sticky enable move position center move right 1000px move down 800px
 for_window [title="Slack call.*"] resize shrink left 400 px
+for_window [title="^Sign in - Google Accounts - "] floating enable
 
 exec_always --no-startup-id /usr/local/bin/display-setup
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
@@ -219,8 +220,8 @@ for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
 exec --no-startup-id /usr/bin/chromium --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
 
 # bc as calculator
-for_window [class="bc" title="bc"] floating enable
-for_window [class="bc" title="bc"] resize set 2000 1000
-for_window [class="bc" title="bc"] move scratchpad
-for_window [class="bc" title="bc"] border pixel 5
+for_window [title="^bc"] floating enable
+for_window [title="^bc"] resize set 2000 1000
+for_window [title="^bc"] move scratchpad
+for_window [title="^bc"] border pixel 5
 exec --no-startup-id alacritty --class bc -t bc -e bc -q
