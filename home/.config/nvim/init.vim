@@ -121,11 +121,11 @@ let g:terraform_fmt_on_save = 1
 
 " Neoformat
 let g:neoformat_enabled_sql = []
+let g:neoformat_enabled_javascript = ['prettier']
 
-augroup NeoformatAutoFormat
+augroup fmt
   autocmd!
-
-  autocmd BufWritePre * Neoformat
+  autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
 " jsx
