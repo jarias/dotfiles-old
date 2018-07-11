@@ -34,10 +34,12 @@ Plug 'vim-scripts/yaml.vim'
 
 call plug#end()
 
+colorscheme dracula
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+"
 
 let g:deoplete#enable_at_startup = 1
 
@@ -148,7 +150,7 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'Dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
