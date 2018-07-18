@@ -217,7 +217,7 @@ exec --no-startup-id ~/bin/load_i3_layout.sh
 # Authy
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
-exec --no-startup-id /usr/bin/chromium --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
+exec --no-startup-id /usr/bin/google-chrome-stable --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
 
 # bc as calculator
 for_window [title="^bc"] floating enable

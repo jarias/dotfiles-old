@@ -170,13 +170,13 @@
     browser = /usr/bin/qutebrowser --target tab
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders = /usr/share/icons/Arc/actions/24@2x/:/usr/share/icons/Arc/devices/32@2x/
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true

@@ -9,6 +9,17 @@ notmuch tag +inbox -- folder:edify/Inbox
 notmuch tag -inbox tag:archive
 notmuch tag -inbox tag:spam
 
+notmuch tag -inbox folder:personal/Spam
+notmuch tag -inbox folder:edify/Spam
+
+notmuch tag -inbox +dmarc subject:Report domain
+notmuch tag +nomina -inbox +archive from:nominas@dd.com
+notmuch tag +gitlab from:gitlab@mg.gitlab.com
+notmuch tag +credomatic from:info@credomatic.com
+notmuch tag +digitalocean from:support@support.digitalocean.com
+notmuch tag +koru +jira from:jira@joinkoru.atlassian.net
+notmuch tag +jira from:jira@edifycr.atlassian.net
+
 notmuch search --output files tag:archive and tag:edify and folder:edify/Inbox \
   | grep 'edify/Inbox' \
   | xargs -I '{}' mv '{}' ~/.mail/edify/All/
@@ -30,7 +41,10 @@ if [ $newcount -gt 1 ]; then summary="${summary}s"; fi
 
 notmuch tag -new -- tag:new
 
-if [ $newcount -gt 0 ]; then logger -t notmuch "calling notify-send '$summary'"; /usr/bin/notify-send "$summary"; fi
+if [ $newcount -gt 0 ]; then
+  logger -t notmuch "calling notify-send '$summary'"
+  /usr/bin/notify-send -i mail-unread "$summary"
+fi
 
 logger -t notmuch "Astroid polling start requested during post-new hook"; /usr/bin/astroid --stop-polling 2>&1 >/dev/null
 

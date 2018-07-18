@@ -11,6 +11,10 @@
             "level": "0"
         }
     },
+    "terminal": {
+        "height": "10",
+        "font_description": "default"
+    },
     "thread_index": {
         "page_jump_rows": "6",
         "sort_order": "newest",
@@ -40,7 +44,7 @@
         }
     },
     "editor": {
-        "cmd": "urxvt -embed %3 -e zsh -c '~/bin/mail.sh %1'",
+        "cmd": "urxvt -embed %3 -e zsh -c '~\/bin\/mail.sh %1'",
         "external_editor": "false",
         "charset": "utf-8",
         "save_draft_on_force_quit": "true",
@@ -62,6 +66,7 @@
         "message_id_user": "",
         "user_agent": "default",
         "send_delay": "2",
+        "close_on_success": "false",
         "format_flowed": "true"
     },
     "poll": {
@@ -74,7 +79,7 @@
     "thread_view": {
         "open_html_part_external": "false",
         "open_external_link": "xdg-open",
-        "default_save_directory": "~/Downloads",
+        "default_save_directory": "~\/Downloads",
         "indent_messages": "false",
         "code_prettify": {
             "enable": "true",
@@ -91,7 +96,8 @@
     "crypto": {
         "gpg": {
             "path": "gpg2",
-            "always_trust": "true"
+            "always_trust": "true",
+            "enabled": "true"
         }
     },
     "saved_searches": {
@@ -137,7 +143,6 @@
             "signature_attach": "false",
             "select_query": ""
         }
-
     },
     "startup": {
         "queries": {

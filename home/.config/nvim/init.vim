@@ -31,6 +31,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mxw/vim-jsx'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/yaml.vim'
+Plug 'w0rp/ale'
 
 call plug#end()
 
