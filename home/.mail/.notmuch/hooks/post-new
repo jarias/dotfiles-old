@@ -6,19 +6,19 @@ notmuch tag +personal -- folder:personal/All
 notmuch tag +inbox -- folder:personal/Inbox
 notmuch tag +inbox -- folder:edify/Inbox
 
-notmuch tag -inbox tag:archive
-notmuch tag -inbox tag:spam
+notmuch tag -inbox -- tag:archive
+notmuch tag -inbox -- tag:spam
 
-notmuch tag -inbox folder:personal/Spam
-notmuch tag -inbox folder:edify/Spam
+notmuch tag -inbox -- folder:personal/Spam
+notmuch tag -inbox -- folder:edify/Spam
 
-notmuch tag -inbox +dmarc subject:Report domain
+notmuch tag -inbox +dmarc +archive -- subject:Report domain
 notmuch tag +nomina -inbox +archive from:nominas@dd.com
-notmuch tag +gitlab from:gitlab@mg.gitlab.com
-notmuch tag +credomatic from:info@credomatic.com
-notmuch tag +digitalocean from:support@support.digitalocean.com
-notmuch tag +koru +jira from:jira@joinkoru.atlassian.net
-notmuch tag +jira from:jira@edifycr.atlassian.net
+notmuch tag +gitlab -- from:gitlab@mg.gitlab.com
+notmuch tag +credomatic -- from:info@credomatic.com
+notmuch tag +digitalocean -- from:support@support.digitalocean.com
+notmuch tag +koru +jira -- from:jira@joinkoru.atlassian.net
+notmuch tag +jira -- from:jira@edifycr.atlassian.net
 
 notmuch search --output files tag:archive and tag:edify and folder:edify/Inbox \
   | grep 'edify/Inbox' \
