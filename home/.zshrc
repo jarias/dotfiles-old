@@ -175,9 +175,10 @@ eval "$(direnv hook zsh)"
 [[ -f /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
 source /usr/share/nvm/init-nvm.sh
 
-#source <(doctl completion zsh)
+source <(doctl completion zsh)
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 source ~/.config/git-flow-completion.zsh
+source /home/jarias/.local/bin/aws_zsh_completer.sh

@@ -203,7 +203,6 @@ for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="Slack Call Minipanel"] floating enable sticky enable move position center move right 1000px move down 800px
 for_window [title="Slack call.*"] resize shrink left 400 px
-for_window [title="^Sign in - Google Accounts - "] floating enable
 
 exec_always --no-startup-id /usr/local/bin/display-setup
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png

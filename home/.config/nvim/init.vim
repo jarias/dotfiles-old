@@ -32,6 +32,7 @@ Plug 'mxw/vim-jsx'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/yaml.vim'
 Plug 'w0rp/ale'
+Plug 'gabrielelana/vim-markdown'
 
 call plug#end()
 
@@ -67,6 +68,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set mouse=a
+set relativenumber
 
 hi Normal guibg=NONE ctermbg=NONE
 
