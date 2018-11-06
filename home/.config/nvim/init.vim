@@ -1,10 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nicoe/deoplete-khard'
-Plug 'zchee/deoplete-go'
 Plug 'fatih/vim-go'
 Plug 'jodosha/vim-godebug'
 Plug 'tpope/vim-git'
