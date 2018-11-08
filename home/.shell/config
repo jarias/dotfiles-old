@@ -15,7 +15,7 @@ export KEYTIMEOUT=1
 
 #HIDPI
 export GDK_SCALE=2
-export QT_SCREEN_SCALE_FACTORS=2
+export QT_SCREEN_SCALE_FACTORS="2;2"
 export WINIT_HIDPI_FACTOR=2
 
 # support colors in less

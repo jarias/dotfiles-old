@@ -123,7 +123,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bindsym $mod+a [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] scratchpad show; [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move position center
-bindsym $mod+m [title="^bc$"] scratchpad show; [title="^bc$"] move position center
+bindsym $mod+m [title="^bc"] scratchpad show; [title="^bc"] move position center
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
