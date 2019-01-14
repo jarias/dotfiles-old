@@ -238,4 +238,7 @@ bar {
     }
 }
 
-output eDP-1 scale 2
+output eDP-1 scale 2 background ~/Pictures/wallpaper.png fill
+output HDMI-A-1 background ~/Pictures/wallpaper.png fill
+
+gaps inner 10
