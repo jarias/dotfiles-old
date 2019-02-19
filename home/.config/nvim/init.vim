@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'leafgarland/typescript-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'scrooloose/nerdtree'
@@ -33,9 +34,11 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/yaml.vim'
 Plug 'w0rp/ale'
 Plug 'gabrielelana/vim-markdown'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
+syntax on
 colorscheme dracula
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
@@ -169,3 +172,9 @@ map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
 
 map <leader><leader>t :TagbarToggle<CR>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

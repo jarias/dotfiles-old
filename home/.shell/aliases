@@ -70,4 +70,3 @@ function zipr() {
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 
-alias dig=drill

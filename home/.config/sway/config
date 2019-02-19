@@ -205,7 +205,7 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 for_window [class="ssh-askpass"] floating enable
-for_window [class="^Pavucontrol$"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [title="Share your screen - Google Cast"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
