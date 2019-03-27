@@ -182,3 +182,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 source ~/.config/git-flow-completion.zsh
 source /home/jarias/.local/bin/aws_zsh_completer.sh
+
+source ~/.local/bin/virtualenvwrapper.sh
+
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi

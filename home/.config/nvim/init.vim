@@ -35,6 +35,7 @@ Plug 'vim-scripts/yaml.vim'
 Plug 'w0rp/ale'
 Plug 'gabrielelana/vim-markdown'
 Plug 'junegunn/vim-easy-align'
+Plug 'modille/groovy.vim'
 
 call plug#end()
 
@@ -50,7 +51,9 @@ let g:deoplete#enable_at_startup = 1
 
 set autoread
 set noshowmode
-set textwidth=100
+" set textwidth=100
+set textwidth=0
+set wrapmargin=0
 set colorcolumn=+1
 set encoding=utf-8
 set nowrap
@@ -130,6 +133,7 @@ let g:terraform_fmt_on_save = 1
 " Neoformat
 let g:neoformat_enabled_sql = []
 let g:neoformat_enabled_javascript = ['prettier']
+let g:neoformat_enabled_yaml = ['prettier']
 
 augroup fmt
   autocmd!
@@ -156,7 +160,7 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'Dracula',
+      \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

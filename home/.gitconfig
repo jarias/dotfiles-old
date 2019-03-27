@@ -55,3 +55,8 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+
+[diff "ansible-vault"]
+	textconv = ansible-vault view
+	# Do not cache the vault contents
+	cachetextconv = false

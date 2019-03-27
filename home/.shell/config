@@ -15,7 +15,7 @@ export KEYTIMEOUT=1
 
 #HIDPI
 export GDK_SCALE=2
-export QT_SCREEN_SCALE_FACTORS="2;2"
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export WINIT_HIDPI_FACTOR=2
 
 # support colors in less
@@ -27,3 +27,5 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+# virtualenv wrapper
+export WORKON_HOME=~/.virtualenvs
