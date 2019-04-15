@@ -106,7 +106,7 @@ zstyle ':completion:*' list-dirs-first true
 # ===================
 #    KEY BINDINGS
 # ===================
-bindkey -e
+bindkey -v
 
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -142,49 +142,9 @@ bindkey "\e[3~" delete-char
 # ===================
 unsetopt correct_all
 
-
 eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#VIM_PROMPT="[I] ❯"
-#
-#PROMPT='%(12V.%F{242}%12v%f .)'
-#PROMPT+='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
-#
-#prompt_pure_update_vim_prompt() {
-#    zle || {
-#        print "error: pure_update_vim_prompt must be called when zle is active"
-#        return 1
-#    }
-#    VIM_PROMPT=${${KEYMAP/vicmd/[N] ❯}/(main|viins)/[I] ❯}
-#    zle .reset-prompt
-#}
-#
-#function zle-line-init zle-keymap-select {
-#    prompt_pure_update_vim_prompt
-#}
-#zle -N zle-line-init
-#zle -N zle-keymap-select
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/jarias/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
-source /usr/share/nvm/init-nvm.sh
-
-source <(doctl completion zsh)
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 source ~/.config/git-flow-completion.zsh
 source /home/jarias/.local/bin/aws_zsh_completer.sh
-
-source ~/.local/bin/virtualenvwrapper.sh
-
-if [ $commands[kubectl] ]; then
-  source <(kubectl completion zsh)
-fi

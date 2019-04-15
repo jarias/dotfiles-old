@@ -37,7 +37,6 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'modille/groovy.vim'
 Plug 'lepture/vim-jinja'
-Plug 'chase/vim-ansible-yaml'
 
 call plug#end()
 
