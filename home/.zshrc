@@ -49,14 +49,6 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
-# =============
-#    PROMPT
-# =============
-fpath=( $HOME/.zfunctions $fpath )
-
-autoload -U promptinit
-promptinit
-prompt pure
 
 # ===================
 #    AUTOCOMPLETION
@@ -148,3 +140,13 @@ eval "$(direnv hook zsh)"
 
 source ~/.config/git-flow-completion.zsh
 source /home/jarias/.local/bin/aws_zsh_completer.sh
+
+# =============
+#    PROMPT
+# =============
+fpath=( $HOME/.zfunctions $fpath )
+
+autoload -U promptinit
+promptinit
+prompt pure
+
