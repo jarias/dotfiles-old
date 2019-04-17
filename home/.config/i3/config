@@ -215,14 +215,14 @@ for_window [title="Slack Call Minipanel"] floating enable sticky enable move pos
 for_window [title="Slack call.*"] resize shrink left 400 px
 for_window [class="Conky"] floating enable sticky enable
 
-exec_always --no-startup-id /usr/local/bin/display-setup
+#exec_always --no-startup-id /usr/local/bin/display-setup
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 
-exec --no-startup-id xautolock -time 10 -locker '~/bin/lock.sh'
-exec --no-startup-id udiskie -2 -s
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id ~/bin/load_i3_layout.sh
+#exec --no-startup-id xautolock -time 10 -locker '~/bin/lock.sh'
+#exec --no-startup-id udiskie -2 -s
+#exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id ~/bin/load_i3_layout.sh
 
 # Authy
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
@@ -235,3 +235,25 @@ for_window [title="^bc"] resize set 2000 1000
 for_window [title="^bc"] move scratchpad
 for_window [title="^bc"] border pixel 5
 exec --no-startup-id alacritty --class bc -t bc -e bc -q
+
+exec --no-startup-id wmctrl -c Plasma
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+# Avoid tiling popups, dropdown windows from plasma
+for_window [class="plasmashell"] floating enable
+for_window [class="Plasma"] floating enable
+for_window [class="krunner"] floating enable
+for_window [class="Kmix"] floating enable
+for_window [class="Klipper"] floating enable
+for_window [class="Plasmoidviewer"] floating enable
+
+# >>> Window Rules <<<
+
+# >>> Avoid tiling for non-Plasma stuff <<<
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="About"] floating enable 
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable

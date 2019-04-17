@@ -8,11 +8,11 @@
     "x": 0,
     "y": 0
   },
-  "name": "Firefox",
+  "name": "Chrome",
   "percent": 1,
   "swallows": [
     {
-      "class": "^Firefox$"
+      "class": "^Google-chrome$"
     }
   ],
   "type": "con"
