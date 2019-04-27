@@ -19,11 +19,6 @@ hide_edge_borders smart
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# MPD
-bindsym F5 exec mpc toggle
-# Spoticy
-bindsym F12 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-
 # start a terminal
 bindsym $mod+Return exec alacritty -e tmux
 # kill focused window
@@ -32,8 +27,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+p exec rofi-pass
 bindsym $mod+b exec buku_run
-bindsym $mod+Shift+w exec networkmanager_dmenu
-bindsym $mod+Shift+m exec UDISKIE_DMENU_LAUNCHER="rofi" udiskie-dmenu -matching regex -dmenu -i -no-custom -multi-select
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -175,16 +168,6 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # lock
 bindsym $mod+Shift+x exec xautolock -locknow
 
-set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
-bindsym $mod+Shift+e      mode $sysmenu
-mode $sysmenu {
-  bindsym e         exit, mode "default"
-  bindsym r         restart, mode "default"
-  bindsym p         exec --no-startup-id  systemctl poweroff, mode "default"
-  bindsym b         exec --no-startup-id  systemctl reboot -i, mode "default"
-  bindsym Return    mode "default"
-  bindsym Escape    mode "default"
-}
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
@@ -194,7 +177,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym Ctrl+Shift+4 exec xfce4-screenshooter
+bindsym Ctrl+Shift+4 exec /usr/bin/spectacle
 
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
@@ -215,14 +198,8 @@ for_window [title="Slack Call Minipanel"] floating enable sticky enable move pos
 for_window [title="Slack call.*"] resize shrink left 400 px
 for_window [class="Conky"] floating enable sticky enable
 
-#exec_always --no-startup-id /usr/local/bin/display-setup
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
-exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
-
-#exec --no-startup-id xautolock -time 10 -locker '~/bin/lock.sh'
-#exec --no-startup-id udiskie -2 -s
-#exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id ~/bin/load_i3_layout.sh
+exec --no-startup-id /usr/bin/compton
 
 # Authy
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
@@ -254,6 +231,6 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
-for_window [window_role="About"] floating enable 
+for_window [window_role="About"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable

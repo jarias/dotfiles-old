@@ -14,9 +14,9 @@ export KEYTIMEOUT=1
 #export CLUTTER_BACKEND=wayland
 
 #HIDPI
-export GDK_SCALE=2
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export WINIT_HIDPI_FACTOR=2
+#export GDK_SCALE=2
+#export QT_AUTO_SCREEN_SCALE_FACTOR=1
+#export WINIT_HIDPI_FACTOR=2
 
 # support colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
