@@ -27,6 +27,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+p exec rofi-pass
 bindsym $mod+b exec buku_run
+bindsym $mod+Shift+w exec networkmanager_dmenu
+bindsym $mod+Shift+m exec UDISKIE_DMENU_LAUNCHER="rofi" udiskie-dmenu -matching regex -dmenu -i -no-custom -multi-select
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -115,8 +117,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-bindsym $mod+a [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] scratchpad show; [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move position center
-bindsym $mod+m [title="^bc"] scratchpad show; [title="^bc"] move position center
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -166,7 +166,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # lock
-bindsym $mod+Shift+x exec xautolock -locknow
+#bindsym $mod+Shift+x exec xautolock -locknow
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -177,8 +177,9 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym Ctrl+Shift+4 exec /usr/bin/spectacle
+bindsym Ctrl+Shift+4 exec /usr/bin/flameshot gui
 
+for_window [class="^nm-connection-editor$"] floating enable
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
 for_window [class="^Steam$" title=".* - Chat"] floating enable
@@ -197,40 +198,43 @@ for_window [class="mpv"] floating enable
 for_window [title="Slack Call Minipanel"] floating enable sticky enable move position center move right 1000px move down 800px
 for_window [title="Slack call.*"] resize shrink left 400 px
 for_window [class="Conky"] floating enable sticky enable
+for_window [class="blueberry.py"] floating enable
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
-exec --no-startup-id /usr/bin/compton
+exec_always --no-startup-id /usr/local/bin/display-setup
+exec_always --no-startup-id /usr/bin/setxkbmap -layout us -variant altgr-intl -option caps:escape
+
+exec --no-startup-id /usr/bin/xautolock -time 10 -locker '~/bin/lock.sh'
+exec --no-startup-id /usr/bin/udiskie -2 -s
+exec --no-startup-id /usr/bin/xfce4-power-manager
+exec --no-startup-id ~/bin/load_i3_layout.sh
+exec --no-startup-id /usr/bin/dunst
+exec --no-startup-id /usr/bin/flameshot
+
+# bc as calculator
+bindsym $mod+m [title="^bc$"] scratchpad show; [title="^bc$"] move position center
+for_window [title="^bc$"] floating enable
+for_window [title="^bc$"] resize set 2000 1000
+for_window [title="^bc$"] move scratchpad
+for_window [title="^bc$"] border pixel 5
+exec --no-startup-id alacritty --class bc -t bc -e bc -q
+
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # Authy
+bindsym $mod+a [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] scratchpad show; [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move position center
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
 for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
 exec --no-startup-id /usr/bin/google-chrome-stable --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
 
-# bc as calculator
-for_window [title="^bc"] floating enable
-for_window [title="^bc"] resize set 2000 1000
-for_window [title="^bc"] move scratchpad
-for_window [title="^bc"] border pixel 5
-exec --no-startup-id alacritty --class bc -t bc -e bc -q
+set $sysmenu "system:  [r]eload  [e]xit  [p]oweroff  re[b]oot"
+bindsym $mod+Shift+e      mode $sysmenu
+mode $sysmenu {
+  bindsym e         exit, mode "default"
+  bindsym r         restart, mode "default"
+  bindsym p         exec --no-startup-id  systemctl poweroff, mode "default"
+  bindsym b         exec --no-startup-id  systemctl reboot -i, mode "default"
+  bindsym Return    mode "default"
+  bindsym Escape    mode "default"
+}
 
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-# Avoid tiling popups, dropdown windows from plasma
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable
-for_window [class="krunner"] floating enable
-for_window [class="Kmix"] floating enable
-for_window [class="Klipper"] floating enable
-for_window [class="Plasmoidviewer"] floating enable
-
-# >>> Window Rules <<<
-
-# >>> Avoid tiling for non-Plasma stuff <<<
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_role="About"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
+for_window [class="^jetbrains-.+"][window_type=dialog] focus

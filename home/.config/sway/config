@@ -14,7 +14,7 @@ set $mod Mod4
 font pango:Hack 10
 
 focus_follows_mouse no
-new_window pixel 1
+default_border pixel 1
 hide_edge_borders smart
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

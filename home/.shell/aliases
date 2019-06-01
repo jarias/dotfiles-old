@@ -1,3 +1,5 @@
+alias tf='terraform'
+
 alias www='python2 -m SimpleHTTPServer 8000'
 
 alias ipe='curl ipinfo.io/ip'
