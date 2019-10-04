@@ -1,3 +1,7 @@
+alias vew='source ~/.local/bin/virtualenvwrapper.sh'
+
+alias k8s='kubectl'
+
 alias tf='terraform'
 
 alias www='python2 -m SimpleHTTPServer 8000'

@@ -150,5 +150,11 @@ autoload -U promptinit
 promptinit
 prompt pure
 
+export VOLTA_HOME="$HOME/.volta"
+[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/jarias/.sdkman"
+[[ -s "/home/jarias/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jarias/.sdkman/bin/sdkman-init.sh"
