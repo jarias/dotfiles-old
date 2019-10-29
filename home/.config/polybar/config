@@ -40,11 +40,11 @@ tray-scale = 1.0
 tray-maxsize = 32
 
 [bar/int]
-monitor = eDP1
+monitor = eDP-1-1
 inherit = bar/base
 
 [bar/ext]
-monitor = HDMI1
+monitor = HDMI-1-1
 inherit = bar/base
 
 [module/i3]
