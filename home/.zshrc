@@ -158,3 +158,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/jarias/.sdkman"
 [[ -s "/home/jarias/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jarias/.sdkman/bin/sdkman-init.sh"
+
+export VIRTUALENVWRAPPER_SCRIPT=~/.local/bin/virtualenvwrapper.sh
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper_lazy.sh
+

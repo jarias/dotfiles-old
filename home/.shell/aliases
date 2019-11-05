@@ -10,6 +10,8 @@ alias ipe='curl ipinfo.io/ip'
 
 alias timestamp='date +%s'
 
+alias pip=pip3
+
 function randp() {
   < /dev/urandom tr -dc A-Z-a-z-0-9 | head -c${1:-32} | tr -d '\n'
 }
