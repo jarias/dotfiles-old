@@ -1,8 +1,26 @@
 alias vew='source ~/.local/bin/virtualenvwrapper.sh'
 
-alias k8s='kubectl'
+alias k='kubectl'
+
+alias kgp='kubectl get pod'
+
+alias kdp='kubectl describe pod'
+
+alias kgs='kubectl get svc'
+
+alias kds='kubectl describe svc'
+
+alias kgi='kubectl get ingress'
+
+alias kdi='kubectl describe ingress'
+
+alias kl='kubectl logs'
 
 alias tf='terraform'
+
+alias tfp='terraform plan -out plan.out'
+
+alias tfa='terraform apply plan.out'
 
 alias www='python2 -m SimpleHTTPServer 8000'
 

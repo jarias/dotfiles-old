@@ -356,7 +356,7 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 bindsym $mod+m [title="^bc$"] scratchpad show; [title="^bc$"] move position center
 for_window [title="^bc$"] floating enable
-for_window [title="^bc$"] resize set 2000 1000
+for_window [title="^bc$"] resize set 1500 1000
 for_window [title="^bc$"] move scratchpad
 for_window [title="^bc$"] border pixel 5
 exec --no-startup-id alacritty --class bc -t bc -e bc -q

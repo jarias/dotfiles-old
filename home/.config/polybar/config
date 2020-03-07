@@ -35,7 +35,7 @@ modules-right = wlan eth date battery
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-tray-position = none
+tray-position = right
 
 [bar/int]
 monitor = eDP-1-1
