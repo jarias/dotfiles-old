@@ -17,3 +17,5 @@ home/.config/fish/fish_history
 
 home/.boot2docker/boot2docker.iso.bak
 home/.boot2docker/boot2docker.iso
+
+home/.config/regolith/flags
