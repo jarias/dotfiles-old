@@ -155,7 +155,7 @@ bindsym $mod+Shift+Ctrl+9 move container to workspace number $ws19
 
 # move focused container to workspace, move to workspace
 ## Modify // Take Window to Workspace // <Super><Alt> 0..9 ##
-bindsym $mod+$alt+1 move container to workspace number $ws1; workspace number $ws1  
+bindsym $mod+$alt+1 move container to workspace number $ws1; workspace number $ws1
 bindsym $mod+$alt+2 move container to workspace number $ws2; workspace number $ws2
 bindsym $mod+$alt+3 move container to workspace number $ws3; workspace number $ws3
 bindsym $mod+$alt+4 move container to workspace number $ws4; workspace number $ws4
@@ -215,7 +215,7 @@ bindsym $mod+n exec /usr/share/rofication/rofication-gui.py
 
 # i3-snapshot for load/save current layout
 ## Modify // Save Window Layout // <Super> , ##
-bindsym $mod+comma  exec /usr/bin/i3-snapshot -o > /tmp/i3-snapshot 
+bindsym $mod+comma  exec /usr/bin/i3-snapshot -o > /tmp/i3-snapshot
 ## Modify // Load Window Layout // <Super> . ##
 bindsym $mod+period exec /usr/bin/i3-snapshot -c < /tmp/i3-snapshot
 
@@ -259,7 +259,7 @@ mode "Resize Mode" {
         bindsym Shift+minus gaps inner current minus 12
         bindsym Shift+plus gaps inner current plus 12
 
-        ## Resize // Exit Resize Mode // Escape or Enter ## 
+        ## Resize // Exit Resize Mode // Escape or Enter ##
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
