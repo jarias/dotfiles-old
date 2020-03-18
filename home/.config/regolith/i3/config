@@ -35,7 +35,7 @@ floating_modifier $mod
 hide_edge_borders smart
 
 ## Launch // Terminal // <Super> Enter ##
-bindsym $mod+Return exec /usr/bin/x-terminal-emulator
+bindsym $mod+Return exec /usr/bin/x-terminal-emulator -e tmux
 
 ## Launch // Browser // <Super><Shift> Enter ##
 bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
@@ -355,7 +355,7 @@ set_from_resource $i3-wm.bar.trayoutput i3-wm.bar.trayoutput primary
 set_from_resource $i3-wm.bar.stripworkspacenumbers i3-wm.bar.stripworkspacenumbers yes
 
 # i3xrocks config file. Override this for custom status indicators on the bar.
-set_from_resource $i3-wm.i3xrocks.config i3-wm.i3xrocks.config "/etc/regolith/i3xrocks/config"
+set_from_resource $i3-wm.i3xrocks.config i3-wm.i3xrocks.config "/home/jarias/.config/regolith/i3xrocks.config"
 
 # The bar configuration
 bar {
@@ -403,15 +403,12 @@ exec --no-startup-id alacritty --class bc -t bc -e bc -q
 bindsym Ctrl+Shift+4 exec /usr/bin/flameshot gui
 
 # Authy
-bindsym $mod+a [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] scratchpad show; [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move position center
-for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
-for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] move scratchpad
-exec --no-startup-id /usr/bin/google-chrome-stable --profile-directory=Default --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb
+bindsym $mod+a [instance="^authy desktop$"] scratchpad show; [instance="^authy desktop$"] move position center
+for_window [instance="^authy desktop$"] floating enable
+for_window [instance="^authy desktop$"] move scratchpad
+exec --no-startup-id /snap/bin/authy
 
-for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [title="^Zoom - .*$"] floating enable
-for_window [title="^Blizzard Battle.net$"] floating enable
-for_window [class="^nm-connection-editor$"] floating enable
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
 for_window [class="^Steam$" title=".* - Chat"] floating enable
@@ -429,7 +426,5 @@ for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="Slack Call Minipanel"] floating enable sticky enable move position center move right 1000px move down 800px
 for_window [title="Slack call.*"] resize shrink left 400 px
-for_window [class="Conky"] floating enable sticky enable
-for_window [class="blueberry.py"] floating enable
 
 bindsym $mod+p exec rofi-pass
