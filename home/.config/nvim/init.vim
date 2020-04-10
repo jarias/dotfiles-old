@@ -52,6 +52,7 @@ endif
 
 let g:deoplete#enable_at_startup = 1
 
+set backupcopy=yes
 set autoread
 set noshowmode
 " set textwidth=100
@@ -155,7 +156,10 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
+    \ 'go': ['~/go/bin/gopls'],
     \ }
+
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>

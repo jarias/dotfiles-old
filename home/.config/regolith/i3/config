@@ -426,5 +426,7 @@ for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="Slack Call Minipanel"] floating enable sticky enable move position center move right 1000px move down 800px
 for_window [title="Slack call.*"] resize shrink left 400 px
+for_window [class="^JetBrains Toolbox$"] floating enable
+for_window [title="Picture-in-Picture"] sticky enable
 
 bindsym $mod+p exec rofi-pass
