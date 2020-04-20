@@ -18,9 +18,9 @@ alias kl='kubectl logs'
 
 alias tf='terraform'
 
-alias kctx='kubectx'
+alias kctx='k ctx'
 
-alias kns='kubens'
+alias kns='k ns'
 
 alias tfp='terraform plan -out plan.out'
 

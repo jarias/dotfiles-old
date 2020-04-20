@@ -150,8 +150,6 @@ autoload -U promptinit
 promptinit
 prompt pure
 
-
-
 export VIRTUALENVWRAPPER_SCRIPT=~/.local/bin/virtualenvwrapper.sh
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.local/bin/virtualenvwrapper_lazy.sh
