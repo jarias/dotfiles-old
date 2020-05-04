@@ -1,2 +1,3 @@
-i3xrocks.date.format2: + %r
+i3xrocks.date.format2: + %x %r
 i3-wm.bar.position: top
+gnome.wallpaper: /home/jarias/Pictures/ponyo1.jpg

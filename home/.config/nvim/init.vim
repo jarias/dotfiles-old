@@ -2,11 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'nicoe/deoplete-khard'
 Plug 'fatih/vim-go'
 Plug 'jodosha/vim-godebug'
 Plug 'tpope/vim-git'
@@ -45,17 +42,9 @@ call plug#end()
 
 syntax on
 colorscheme dracula
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
-let g:deoplete#enable_at_startup = 1
-
 set backupcopy=yes
 set autoread
 set noshowmode
-" set textwidth=100
 set textwidth=0
 set wrapmargin=0
 set colorcolumn=+1
@@ -89,14 +78,13 @@ nmap <leader>h :set hlsearch!<CR>
 
 autocmd TermOpen * if &buftype == 'terminal' | :set nolist | endif
 
-" AutoPkg recipe files
-au BufNewFile,BufRead *.recipe set ft=xml
-au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal! g`\"" | endif
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
@@ -113,6 +101,8 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_term_mode = "split"
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 nnoremap <leader>nn :cnext<CR>
 nnoremap <leader>mm :cprevious<CR>
@@ -141,7 +131,7 @@ let g:neoformat_enabled_yaml = ['prettier']
 
 augroup fmt
   autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
+  autocmd BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
 augroup END
 
 " jsx
@@ -156,11 +146,10 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
-    \ 'go': ['~/go/bin/gopls'],
+    \ 'go': ['gopls'],
     \ }
 
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
@@ -170,7 +159,7 @@ let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head'

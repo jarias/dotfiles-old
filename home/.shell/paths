@@ -1,5 +1,5 @@
 export CDPATH=$HOME/Projects
-export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/go/bin
+export PATH=$PATH:$(ruby -e "print Gem.user_dir")/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/go/bin:~/go/bin
 export TMPDIR=/tmp
 export WORKON_HOME=$HOME/.virtualenvs
 

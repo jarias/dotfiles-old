@@ -54,7 +54,7 @@ alias gm='git smart-merge'
 alias gl='git smart-log'
 
 #Git
-alias cmb='git branch --merged master | grep -v '\* master' | xargs -n 1 git branch -d'
+alias gp='git push -u'
 
 # Utility
 alias reload='source ~/.zshrc'
