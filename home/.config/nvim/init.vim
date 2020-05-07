@@ -15,7 +15,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'hashivim/vim-terraform'
-Plug 'sbdchd/neoformat'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -23,10 +22,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/yaml.vim'
-Plug 'w0rp/ale'
 Plug 'gabrielelana/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'modille/groovy.vim'
@@ -124,16 +123,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Terraform
 let g:terraform_fmt_on_save = 1
 
-" Neoformat
-let g:neoformat_enabled_sql = []
-let g:neoformat_enabled_javascript = ['prettier']
-let g:neoformat_enabled_yaml = ['prettier']
-
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-augroup END
-
 " jsx
 let g:jsx_ext_required = 0
 
@@ -147,6 +136,8 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'go': ['gopls'],
+    \ 'yaml': ['yaml-language-server', '--stdio'],
+    \ 'json': ['vscode-json-languageserver', '--stdio'],
     \ }
 
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
@@ -178,3 +169,5 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
