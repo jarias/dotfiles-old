@@ -535,7 +535,7 @@ for_window [title="^bc$"] floating enable
 for_window [title="^bc$"] resize set 1500 1000
 for_window [title="^bc$"] move scratchpad
 for_window [title="^bc$"] border pixel 5
-exec --no-startup-id alacritty --class bc -t bc -e bc -q
+exec --no-startup-id kitty --class bc -T bc bc
 
 bindsym Ctrl+Shift+4 exec /usr/bin/flameshot gui
 

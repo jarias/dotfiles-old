@@ -1,62 +1,62 @@
 [user]
-	name = Julio Arias
-	email = jarias01@gmail.com
+  name = Julio Arias
+  email = jarias@users.noreply.github.com
 
 [alias]
-	undo = reset --soft HEAD^
-	ammend = commit --amend -C HEAD
-	credit = commit --amend --author "$1 <$2>" -C HEAD
-	st = status -sb
-	co = checkout
-	cm = commit
-	# Log display from screencast, with train tracks.
-	l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-	# Alternate log display from Scott Chacon
-	lol = log --pretty=oneline --abbrev-commit --graph --decorate
-	# Other useful aliases:
-	unstage = reset HEAD
-	staged = diff --cached
-	unstaged = diff
-	current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
-	# Usage: git track origin/feature-123-login-form
-	track = checkout -t
+  undo = reset --soft HEAD^
+  ammend = commit --amend -C HEAD
+  credit = commit --amend --author "$1 <$2>" -C HEAD
+  st = status -sb
+  co = checkout
+  cm = commit
+  # Log display from screencast, with train tracks.
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+  # Alternate log display from Scott Chacon
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  # Other useful aliases:
+  unstage = reset HEAD
+  staged = diff --cached
+  unstaged = diff
+  current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+  # Usage: git track origin/feature-123-login-form
+  track = checkout -t
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 
 [core]
-	excludesfile = ~/.global-gitignore
-	editor = vim
-	autocrlf = input
+  excludesfile = ~/.global-gitignore
+  editor = vim
+  autocrlf = input
 
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 [status]
-	submodule = 1
+  submodule = 1
 
 [push]
-	# Only push branches that have been set up to track a remote branch.
-	default = current
+  # Only push branches that have been set up to track a remote branch.
+  default = current
 
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 
 [credential]
-	helper = cache
+  helper = cache
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 
 [diff "ansible-vault"]
-	textconv = ansible-vault view
-	# Do not cache the vault contents
-	cachetextconv = false
+  textconv = ansible-vault view
+  # Do not cache the vault contents
+  cachetextconv = false

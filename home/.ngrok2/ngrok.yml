@@ -1,2 +1,3 @@
-console_ui: false
+authtoken: 1bdsXUvNyrUcSlgi6zflSnKUqKx_3YAxUBBzvEeFAjmCgecLn
 log: stdout
+console_ui: "false"

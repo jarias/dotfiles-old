@@ -100,3 +100,7 @@ function zipr() {
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 
+# Greatminds
+alias psql-assessments-dev='psql -h dev-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
+alias psql-assessments-stage='psql -h stage-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'
+alias psql-assessments-prod='psql -h prod-dp-assessments-1.cydjzxjnrfaw.us-east-1.rds.amazonaws.com -U assessments assessments'

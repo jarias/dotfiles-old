@@ -1,0 +1,12 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescriptreact",
+    "typescript.tsx",
+    "typescript",
+    "javascript",
+    "go",
+    "json"
+  ],
+  "python.jediEnabled": false,
+  "prettier.eslintIntegration": true
+}
