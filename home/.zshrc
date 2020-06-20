@@ -154,9 +154,6 @@ export VIRTUALENVWRAPPER_SCRIPT=~/.local/bin/virtualenvwrapper.sh
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.local/bin/virtualenvwrapper_lazy.sh
 
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 

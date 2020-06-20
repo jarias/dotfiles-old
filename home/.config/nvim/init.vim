@@ -33,11 +33,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pedrohdz/vim-yaml-folds'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
 syntax on
 colorscheme dracula
+set foldlevelstart=99
 set backupcopy=yes
 set autoread
 set noshowmode
